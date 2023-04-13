@@ -15,7 +15,7 @@ router.route('/dashboard/event_applications')
     res.status(200).render('event_applications');
   })
   .post((req, res) => {
-    res.redirect(303, '/event_applications');
+    res.redirect(303, '/dashboard/event_applications');
   });
 
 export { router };
