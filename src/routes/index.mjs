@@ -10,7 +10,7 @@ router.route('/')
     res.redirect(303, '/');
   });
 
-router.route('/event_applications')
+router.route('/dashboard/event_applications')
   .get((req, res) => {
     res.status(200).render('event_applications');
   })
