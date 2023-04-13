@@ -8,6 +8,14 @@ router.route('/')
   })
   .post((req, res) => {
     res.redirect(303, '/');
-  });;
+  });
+
+router.route('/event_applications')
+  .get((req, res) => {
+    res.status(200).render('event_applications');
+  })
+  .post((req, res) => {
+    res.redirect(303, '/');
+  });
 
 export { router };
