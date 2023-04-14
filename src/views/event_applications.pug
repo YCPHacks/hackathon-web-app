@@ -7,59 +7,335 @@ html
 
     body
 
-        h1.m-2 Event Applications
-            .container-md.text-center.p-2.border
 
-                //button.btn All
-                //    span.badge.text-bg-secondary.m-1= county.length
+        if(userRole.includes('Organizer'))
+            h1.m-2 Event Applications
+                .container-md.text-center.p-2.border
 
-                // each item of county
-                //
-                //     button.btn(type='button')= item.status
-                //
-                //         if (item.status === "accepted")
-                //             span.badge.text-bg-primary.m-1= item.count
-                //
-                //         else if (item.status === 'undecided')
-                //             span.badge.text-bg-warning.m-1= item.count
-                //
-                //         else if (item.status === 'declined')
-                //             span.badge.text-danger-emphasis.m-1= item.count
+                    //button.btn All
+                    //    span.badge.text-bg-secondary.m-1= county.length
 
-                a(href='/dashboard/event_applications/event_applications_summary').btn.btn-primary Summary
+                    // each item of county
+                    //
+                    //     button.btn(type='button')= item.status
+                    //
+                    //         if (item.status === "accepted")
+                    //             span.badge.text-bg-primary.m-1= item.count
+                    //
+                    //         else if (item.status === 'undecided')
+                    //             span.badge.text-bg-warning.m-1= item.count
+                    //
+                    //         else if (item.status === 'declined')
+                    //             span.badge.text-danger-emphasis.m-1= item.count
 
-            .container-md.text-center.p-2.my-3.border
+                    a(href='/dashboard/event_applications/event_applications_summary').btn.btn-primary Summary
 
-                form.d-flex(role='search')
-                    input.form-control.me-2(type='search', placeholder='Search', aria-label='Search')
-                    button.btn.btn-outline-success.mx-1(type='submit') Search
-                    button.btn.btn-outline-success.mx-1(type='submit') Download CSV
+                .container-md.text-center.p-2.my-3.border
 
-            - var x = 0;
-            .container-sm.overflow-x-scroll.mt-3.p-3
-                table.table.table-striped.table-bordered.my-4
-                    thead
-                        tr
-                            th user id
-                            th created at
-                            th updated at
-                            th status
-                            th age
-                            th country
-                            th school
-                            th education level
-                            th underrepresented group
-                            th gender
-                            th race
-                            th sexual orientation
-                            th major
-                            th t-shirt size
-                            th food restrictions
-                    tbody
-                        // each item of application
-                        //     - x++
-                        //     tr
-                        //         each column of item
-                        //             td= column
+                    form.d-flex(role='search')
+                        input.form-control.me-2(type='search', placeholder='Search', aria-label='Search')
+                        button.btn.btn-outline-success.mx-1(type='submit') Search
+                        button.btn.btn-outline-success.mx-1(type='submit') Download CSV
+
+                - var x = 0;
+                .container-sm.overflow-x-scroll.mt-3.p-3
+                    table.table.table-striped.table-bordered.my-4
+                        thead
+                            tr
+                                th user id
+                                th created at
+                                th updated at
+                                th status
+                                th age
+                                th country
+                                th school
+                                th education level
+                                th underrepresented group
+                                th gender
+                                th race
+                                th sexual orientation
+                                th major
+                                th t-shirt size
+                                th food restrictions
+                        tbody
+                            // each item of application
+                            //     - x++
+                            //     tr
+                            //         each column of item
+                            //             td= column
+
+        else if(userRoles.includes('Attendee'))
+            form.needs-validation.regContainer.pb-3(novalidate="")
+                .display-5.p-2.m-3 Required Contact Information
+                    hr
+                .col-lg-8.m-3
+                    label.form-label(for='firstName') First Name:
+                    input#firstName.form-control(type='value', required='')
+                    .invalid-feedback Please enter your first name
+
+                .col-lg-8.m-3
+                    label.form-label(for='lastName') Last Name:
+                    input#lastName.form-control(type='value', required='')
+                    .invalid-feedback Please enter your last name
+
+                .col-lg-8.m-3
+                    label.form-label(for='phone') Phone:
+                    input#phone.form-control(type='value', required='')
+                    .invalid-feedback Please enter your phone number
+
+                .col-lg-8.m-3
+                    label.form-label(for='age') Age
+                    select#age.form-select(required='')
+                        option(selected='', disabled='', value='') Select
+                        option(value='13') 13
+                        option(value='14') 14
+                        option(value='15') 15
+                        option(value='16') 16
+                        option(value='17') 17
+                        option(value='18') 18
+                        option(value='19') 19
+                        option(value='20') 20
+                        option(value='21') 21
+                        option(value='21+') 21+
+                    .invalid-feedback
+                        | Please select a valid age
+
+                .col-lg-8.m-3
+                    label.form-label(for='gender') What gender do you identify as?
+                    select#gender.form-select(required='')
+                        option(selected='', disabled='', value='') Select
+                        option(value='') Man
+                        option(value='') Woman
+                        option(value='') Non-binary
+                        option(value='') Agender
+                        // *****************************************
+                        option(value='7') Other
+                    .invalid-feedback
+                        | Please select your gender
+
+                .col-lg-8.m-3
+                    label.form-label(for='pronoun') What pronouns do you go by?
+                    select#pronoun.form-select(required='')
+                        option(selected='', disabled='', value='') Select
+                        option(value='') he/him
+                        option(value='') she/her
+                        option(value='') they/them
+                        option(value='') ze/zir
+                        option(value='') Other
+                    .invalid-feedback
+                        | Please select a pronoun
+
+                .col-lg-8.m-3
+                    label.form-label(for='typeSchool') In what type of educational institution are you currently enrolled in?
+                    select#typeSchool.form-select(required='')
+                        option(selected='', disabled='', value='') Select
+                        option(value='') Less than Secondary / High School
+                        option(value='') Secondary / High School
+                        option(value='') Undergraduate University (2 year - community college or similar)
+                        option(value='') Undergraduate University (3+ year)
+                        option(value='') Graduate University (Masters, Professional, Doctoral, etc)
+                        option(value='') Code School / Bootcamp
+                        option(value='') Other Vocational / Trade Program or Apprenticeship
+                        option(value='') Other
+                        option(value='') I’m not currently a student
+                        option(value='') Prefer not to answer
+                    .invalid-feedback
+                        | Please select type of institution
+
+                .col-lg-8.m-3
+                    label.form-label(for='school') What school do you currently attend? If you're no longer a student, what school / university did you most recently graduate from?
+                    select#school.form-select(required='')
+                        option(selected='', disabled='', value='') Select
+                        option(value='') ...
+                    .invalid-feedback
+                        | Please select school
+
+                .col-lg-8.m-3
+                    p Do you have any food allergies or dietary restrictions we should know about?
+                    .form-check(onclick="show()")
+                        input#validationFormCheck2.form-check-input(type='radio', name='radio-stacked', required='')
+                        label.form-check-label(for='validationFormCheck2') Yes
+                    .form-check(onclick="hide()")
+                        input#validationFormCheck3.form-check-input(type='radio', name='radio-stacked', required='')
+                        label.form-check-label(for='validationFormCheck3') No
+                        .invalid-feedback Please select one
+
+                    // TODO: check for bugs with form itself -- should be fine
+                    #tutorial(style="display: none;")
+                        label.form-label(for='allergyInput') Please list your dietary restrictions and allergies.
+                        textarea#allergyInput.form-control(rows='3', required='false')
+                        .invalid-feedback Please list restrictions here
+
+                .col-lg-8.m-3
+                    label.form-label(for='tshirt') T-Shirt Size
+                    select#tshirt.form-select
+                        option(selected='', disabled='') Select
+                        option(value='xs') XS
+                        option(value='sm') SM
+                        option(value='md') MD
+                        option(value='lg') LG
+                        option(value='xl') XL
+                        option(value='xxl') XXL
+                    .invalid-feedback
+                        | Please select T-Shirt Size
+
+                .display-5.p-2.m-3 Optional Demographic Information
+                    hr
+
+                .col-lg-8.m-3
+                    span What is your major / primary area of study? If you already graduated, what was your major / primary area of study? Select all that apply.
+                    .container
+                        .form-check
+                            input#defaultCheck1.form-check-input(type='checkbox', value='')
+                            label.form-check-label(for='defaultCheck1')
+                                | Computer science, computer engineering, or software engineering
+                        .form-check
+                            input#defaultCheck2.form-check-input(type='checkbox', value='')
+                            label.form-check-label(for='defaultCheck2')
+                                | Another engineering discipline (such as civil, electrical, mechanical, etc.)
+                        .form-check
+                            input#defaultCheck3.form-check-input(type='checkbox', value='')
+                            label.form-check-label(for='defaultCheck3')
+                                | Information systems, information technology, or system administration
+                        .form-check
+                            input#defaultCheck4.form-check-input(type='checkbox', value='')
+                            label.form-check-label(for='defaultCheck4')
+                                | A natural science (such as biology, chemistry, physics, etc.)
+                        .form-check
+                            input#defaultCheck5.form-check-input(type='checkbox', value='')
+                            label.form-check-label(for='defaultCheck5')
+                                | Mathematics or statistics
+                        .form-check
+                            input#defaultCheck6.form-check-input(type='checkbox', value='')
+                            label.form-check-label(for='defaultCheck6')
+                                | Web development or web design
+                        .form-check
+                            input#defaultCheck7.form-check-input(type='checkbox', value='')
+                            label.form-check-label(for='defaultCheck7')
+                                | Business discipline (such as accounting, finance, marketing, etc.)
+                        .form-check
+                            input#defaultCheck8.form-check-input(type='checkbox', value='')
+                            label.form-check-label(for='defaultCheck8')
+                                | Humanities discipline (such as literature, history, philosophy, etc.)
+                        .form-check
+                            input#defaultCheck9.form-check-input(type='checkbox', value='')
+                            label.form-check-label(for='defaultCheck9')
+                                | Social science (such as anthropology, psychology, political science, etc.)
+                        .form-check
+                            input#defaultCheck10.form-check-input(type='checkbox', value='')
+                            label.form-check-label(for='defaultCheck10')
+                                | Fine arts or performing arts (such as graphic design, music, studio art, etc.)
+                        .form-check
+                            input#defaultCheck11.form-check-input(type='checkbox', value='')
+                            label.form-check-label(for='defaultCheck11')
+                                | Health science (such as nursing, pharmacy, radiology, etc.)
+                        .form-check
+                            input#defaultCheck12.form-check-input(type='checkbox', value='')
+                            label.form-check-label(for='defaultCheck12')
+                                | Other (please specify)
+                        .form-check
+                            input#defaultCheck13.form-check-input(type='checkbox', value='')
+                            label.form-check-label(for='defaultCheck13')
+                                | Undecided / No Declared Major
+                        .form-check
+                            input#defaultCheck14.form-check-input(type='checkbox', value='')
+                            label.form-check-label(for='defaultCheck14')
+                                | My school does not offer majors / primary areas of study
+                        .form-check
+                            input#defaultCheck15.form-check-input(type='checkbox', value='')
+                            label.form-check-label(for='defaultCheck15')
+                                | Prefer not to answer
+
+                            .invalid-feedback
+                                | Please select major
+                .col-lg-8.m-3
+                    label.form-label(for='identify') Do you identify as part of an underrepresented group in the technology industry?
+                        select#identify.form-select(aria-label='Default select example')
+                            option(selected='', disabled='') Select
+                            option(value='') Yes
+                            option(value='') No
+                            option(value='') Unsure
+                            option(value='') Prefer Not to Answer
+
+                .col-lg-8.m-3
+                    label.form-label(for='describe') Which of the following best describes you?
+                        select#describe.form-select(aria-label='Default select example')
+                            option(selected='', value='Select', disabled='') Select
+                            option(value='') Asian Indian
+                            option(value='') Black or African
+                            option(value='') Chinese
+                            option(value='') Filipino
+                            option(value='') Guamanian or Chamorro
+                            option(value='') Hispanic / Latino / Spanish Origin
+                            option(value='') Japanese
+                            option(value='') Korean
+                            option(value='') Middle Eastern
+                            option(value='') Native American or Alaskan Native
+                            option(value='') Native Hawaiian
+                            option(value='') Samoan
+                            option(value='') Vietnamese
+                            option(value='') White
+                            option(value='') Other Asian (Thai, Cambodian, etc)
+                            option(value='') Other Pacific Islander
+                            option(value='') Other
+                            option(value='') Prefer Not to Answer
+
+                .col-lg-8.m-3
+                    label.form-label(for='preference') Do you consider yourself to be any of the following?
+                        select#preference.form-select(aria-label='Default select example')
+                            option(selected='', value='') Select
+                            option(value='') Heterosexual or straight
+                            option(value='') Gay or lesbian
+                            option(value='') Bisexual
+                            option(value='') Different identity
+                            option(value='') Prefer not to answer
+
+                .col-lg-8.m-3
+                    label.form-label(for='level') What is the highest level of formal education that you have completed?
+                        select#level.form-select(aria-label='Default select example')
+                            option(selected='', value='Select', disabled='') Select
+                            option(value='13') Less than Secondary / High School
+                            option(value='14') Secondary / High School
+                            option(value='15') Undergraduate University (2 year - community college or similar)
+                            option(value='16') Undergraduate University (3+ year)
+                            option(value='17') Graduate University (Masters, Professional, Doctoral, etc)
+                            option(value='18') Code School / Bootcamp
+                            option(value='19') Other Vocational / Trade Program or Apprenticeship
+                            option(value='20') Other
+                            option(value='21') I’m not currently a student
+                            option(value='21+') Prefer not to answer
+                .col-lg-8.m-3
+                        //label.input-group-text(for='inputGroupFile01') Upload Resume
+                        //input#inputGroupFile01.form-control(type='file', accept='.pdf', required='')
+                        label.form-label(for='fileinput') Upload Resume
+                            .text-muted.small &nbsp max. size 2MiB
+                        input#fileinput.form-control(onchange="validateSize(this)" type='file' accept='.pdf' required='')
+                .col-lg-8.m-3
+                    label.form-label(for='github') Github
+                    input#github(type="url" class='form-control' placeholder='Github' pattern=".*\.github\..*")
+                .col-lg-8.m-3
+                    label.form-label(for='linkedin') LinkedIn
+                    input#linkedin(type="url" class='form-control' placeholder='LinkedIn' pattern=".*\.linkedin\..*")
+
+                hr
+                .col-lg-8.m-3
+                    .form-check
+                        input#invalidCheck.form-check-input(type='checkbox', value='accept', required='')
+                        label.form-check-label(for='invalidCheck')
+                            | I have read and agreed to the&nbsp
+                            a(href='https://github.com/MLH/mlh-policies/blob/main/member-event-guidelines.md')
+                                | MLH Contest Terms and Conditions
+                            |  and the
+                            a(href='https://mlh.io/privacy') MLH Privacy Policy
+                    .form-check
+                        input#invalidCheck1.form-check-input(type='checkbox', value='accept', required='')
+                        label.form-check-label(for='invalidCheck1')
+                            | I have read and agreed to the&nbsp
+                            // TODO: correct pdf link
+                            a(href='https://github.com/YCPHacks/ycphacks-website-project/blob/front-end/photo_release.pdf') YCP Photo Release Form
 
 
+                        .invalid-feedback
+                            | You must agree before submitting.
+
+                button.btn.btn-primary(type='submit', onclick="verify()") Submit

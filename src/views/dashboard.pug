@@ -13,7 +13,6 @@ html
             p= userRoles
 
             if(userRoles.includes('Organizer'))
-                p=userRoles
                 .outside.bd-example.bd-example-cols.m-3
                     .container.text-center
                         .row.row-cols-sm-2.row-cols-md-4.g-4.g-lg-4
@@ -74,7 +73,6 @@ html
                                 p.card-text
                                     | This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
                                 a.btn.btn-primary(href='#') Go somewhere
-
 
             else if(userRoles.includes('Attendee'))
                 h1.m-2 Home
