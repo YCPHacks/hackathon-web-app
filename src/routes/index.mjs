@@ -1,5 +1,8 @@
 import express from 'express';
 
+import pkg from 'express-openid-connect';
+const { requiresAuth } = pkg;
+
 const router = express.Router();
 
 router.route('/')
@@ -10,18 +13,21 @@ router.route('/')
     res.redirect(303, '/');
   });
 
-router.route('/judging_criteria')
-    .get((req, res) => {
-        res.status(200).render('judging_criteria');
-    })
 router.route('/gallery')
-    .get((req, res) => {
-        res.status(200).render('gallery');
-    })
+  .get((req, res) => {
+    res.status(200).render('gallery');
+  });
+
+router.route('/judging_criteria')
+  .get((req, res) => {
+    res.status(200).render('judging_criteria');
+  });
+
 router.route('/past_events')
-    .get((req, res) => {
-        res.status(200).render('past_events');
-    })
+  .get((req, res) => {
+    res.status(200).render('past_events');
+  });
+
 
 ///////////////////////////////////
 //                               //
@@ -30,7 +36,7 @@ router.route('/past_events')
 ///////////////////////////////////
 
 
-// TODO: authentication middleware
+router.all('/dashboard/*', requiresAuth());
 
 
 ////////////////////////////////////
@@ -39,10 +45,11 @@ router.route('/past_events')
 //                                //
 ////////////////////////////////////
 
+
 router.route('/dashboard')
-    .get((req, res) => {
-        res.status(200).render('dashboard');
-    });
+  .get((req, res) => {
+    res.status(200).render('dashboard');
+  });
 
 router.route('/dashboard/event_applications')
   .get((req, res) => {
