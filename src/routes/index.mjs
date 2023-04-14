@@ -3,6 +3,8 @@ import express from 'express';
 import pkg from 'express-openid-connect';
 const { requiresAuth } = pkg;
 
+import { dashboard_router } from './dashboard.mjs';
+
 const router = express.Router();
 
 router.route('/')
@@ -36,11 +38,8 @@ router.route('/past_events')
 ///////////////////////////////////
 
 
-router.use((req, res, next) => {
-  requiresAuth();
-
-  next();
-});
+router.all('/dashboard', requiresAuth());
+router.all('/dashboard/*', requiresAuth());
 
 
 ////////////////////////////////////
@@ -50,32 +49,6 @@ router.use((req, res, next) => {
 ////////////////////////////////////
 
 
-router.route('/dashboard')
-  .get((req, res) => {
-    res.status(200).render('dashboard');
-  });
-
-router.route('/dashboard/event_applications')
-    .get((req, res) => {
-        res.status(200).render('event_applications');
-    })
-    .post((req, res) => {
-        res.redirect(303, '/dashboard/event_applications');
-    });
-
-router.route('/dashboard/event_applications/event_applications_summary')
-    .get((req, res) => {
-        res.status(200).render('event_applications_summary');
-    })
-
-router.route('/dashboard/hardware_items')
-    .get((req, res) => {
-        res.status(200).render('hardware_items');
-    });
-
-router.route('/dashboard/hardware_items/available')
-    .get((req, res) => {
-        res.status(200).render('hardware_items_available');
-    });
+router.use(dashboard_router);
 
 export {router};
