@@ -46,7 +46,7 @@ router.route('/dashboard/hardware_items')
 
 router.route('/dashboard/hardware_items/available')
   .get((req, res) => {
-    res.status(200).render('available');
+    res.status(200).render('hardware_items_available');
   });
 
 export { router };
