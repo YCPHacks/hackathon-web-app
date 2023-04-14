@@ -1,0 +1,90 @@
+html
+    head
+        include includes/dashboardBar
+
+        link(rel='stylesheet', type='text/css', href='/static/stylesheets/dashboard.css')
+
+
+
+    body
+        // ADMINISTRATOR VIEW
+        h1.m-2 Hardware Inventory
+        .d-flex.justify-content-around
+            button.btn.btn-success.m-1(type='button', data-bs-toggle='modal', data-bs-target='#newHardware')
+                | Create New Hardware Item
+
+            a.btn.btn-secondary.m-1(href='/dashboard/hardware_items/available')
+                | View All Available Items
+
+            //button.btn.btn-secondary.m-1(type='button', data-bs-toggle='modal', data-bs-target='#viewHardware')
+            //    | View All Checked-Out Items
+
+        #newHardware.modal.fade(data-bs-backdrop='static', data-bs-keyboard='false', tabindex='-1', aria-labelledby='staticBackdropLabel', aria-hidden='true')
+            .modal-dialog
+                .modal-content
+                    .modal-header
+                        h1#staticBackdropLabel.modal-title.fs-5 Create New Hardware
+                        button.btn-close(type='button', data-bs-dismiss='modal', aria-label='Close')
+                    .modal-body
+                        form(method='POST' action='/dashboard/hardware_items')
+                            .form-floating.mb-3
+                                input#floatingName.form-control(type='text', placeholder='Name' name='name')
+                                label(for='floatingName') Name
+                            .form-floating.mb-3
+                                input#floatingCount.form-control(type='text', placeholder='Link' name='link')
+                                label(for='floatingCount') Link
+                            // Category
+                            select.form-select.mb-3(aria-label='Select Category' name='category')
+                                option(selected='' disabled='') Select Category
+                                option(value='building parts') building parts
+                                option(value='cables') cables
+                                option(value='general') general
+                                option(value='kits') kits
+                                option(value='microcontrollers') microcontrollers
+                                option(value='microprocessors') microprocessors
+                                option(value='motor drivers') motor drivers
+                                option(value='motors') motors
+                                option(value='passive devices') passive devices
+                                option(value='quadcopters') quadcopters
+                                option(value='sensors') sensors
+                                option(value='software defined radios') software defined radios
+                                option(value='soldering items') soldering items
+                                option(value='switches') switches
+                                option(value='wearables') wearables
+                                option(value='wheels') wheels
+                                option(value='wires') wires
+                                option(value='other') other
+                            //.form-floating.mb-3
+                            select.form-select.mb-3(aria-label='Select Status' name='status')
+                                option(selected='' disabled='') Select Status
+                                option(value='available') Available
+                                option(value='unavailable') Unavailable
+                            .form-floating.mb-3
+                                input#floatingLocation.form-control(type='text', placeholder='Location' name='location')
+                                label(for='floatingLocation') Location
+                            button.btn.btn-secondary(type='button', data-bs-dismiss='modal') Close
+                            button.btn.btn-primary(type='submit') Submit
+        .container-sm.overflow-x-scroll.mt-3.p-3
+
+            table.table.table-striped.table-bordered.my-4
+                thead
+                    tr
+                        th(scope='col') Name
+                        th(scope='col') Link
+                        th(scope='col') Category
+                        th(scope='col') Status
+                        th(scope='col') Location
+                    tbody
+                        each item of data
+                            tr
+                                each value of item
+                                    td=value
+                                td
+                                    .d-grid.gap-2.text-nowrap.justify-content-evenly
+                                        a.btn.btn-secondary(href='') Message on Discord
+                                        button.btn.btn-danger(type='button') Return Item
+                                    //.d-grid.gap-2.text-nowrap.justify-content-evenly
+                                    //    button.btn.btn-danger(type='button') Return Item
+                                    //a(href='https://discordapp.com/api/webhooks/1092228852203401236/T6EP0MZrnFnhHaHXN4_ZLcDusZ7NOVTgwA5SWwpkrhXjV35K7GxNKhauhMbDlEKRUpe7')
+
+        //// PARTICIPANT VIEW
