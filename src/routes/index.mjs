@@ -10,11 +10,12 @@ router.route('/')
     res.redirect(303, '/');
   });
 
+
+
 router.route('/dashboard')
     .get((req, res) => {
         res.status(200).render('dashboard');
     })
-
 
 router.route('/dashboard/event_applications')
   .get((req, res) => {
