@@ -10,10 +10,18 @@ router.route('/')
     res.redirect(303, '/');
   });
 
-router.route('/dashboard')
-  .get((req, res) => {
-    res.status(200).render('dashboard');
-  });
+router.route('/judging_criteria')
+    .get((req, res) => {
+        res.status(200).render('judging_criteria');
+    })
+router.route('/gallery')
+    .get((req, res) => {
+        res.status(200).render('gallery');
+    })
+router.route('/past_events')
+    .get((req, res) => {
+        res.status(200).render('past_events');
+    })
 
 ///////////////////////////////////
 //                               //
@@ -30,6 +38,11 @@ router.route('/dashboard')
 //  👇  PRIVATE ROUTES BELOW  👇  //
 //                                //
 ////////////////////////////////////
+
+router.route('/dashboard')
+    .get((req, res) => {
+        res.status(200).render('dashboard');
+    });
 
 router.route('/dashboard/event_applications')
   .get((req, res) => {
