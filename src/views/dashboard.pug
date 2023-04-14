@@ -12,7 +12,7 @@ html
 
             p= userRoles
 
-            if(userRoles = 'Organizer')
+            if(userRoles.includes('Organizer'))
                 .outside.bd-example.bd-example-cols.m-3
                     .container.text-center
                         .row.row-cols-sm-2.row-cols-md-4.g-4.g-lg-4
@@ -76,44 +76,43 @@ html
 
 
             if(userRoles.includes('Attendee'))
-                p I should only see this if i am an attendee
-            //    h1.m-2 Home
-            //        .row.row-cols-1.row-cols-md-3.g-0.m-3.text-center
-            //            .col
-            //                .card.m-1
-            //                    .card-body
-            //                        h2.card-title Check In
-            //                        hr
-            //                        p.card-text
-            //                            | QR Code
-            //                        a.btn.btn-primary(href='') Go somewhere
-            //            .col
-            //                .card.m-1
-            //                    .card-body
-            //                        h2.card-title Upcoming Events
-            //                        hr
-            //                        p.card-text
-            //                            table.table
-            //                                thead
-            //                                    tr
-            //                                        th(scope='col') Event
-            //                                        th(scope='col') Time
-            //                                tbody
-            //                                    tr
-            //                                        td Event
-            //                                        td 10:00
-            //                                    tr
-            //                                        td Event 1
-            //                                        td 12:00
-            //                        a.btn.btn-secondary(href='') View All
-            //            .col
-            //                .card.m-1
-            //                    .card-body
-            //                        h2.card-title Discord Channel
-            //                        hr
-            //                        p.card-text
-            //                            | This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-            //                        a.btn.btn-primary(href='') Go to Discord Channel
+                h1.m-2 Home
+                    .row.row-cols-1.row-cols-md-3.g-0.m-3.text-center
+                        .col
+                            .card.m-1
+                                .card-body
+                                    h2.card-title Check In
+                                    hr
+                                    p.card-text
+                                        | QR Code
+                                    a.btn.btn-primary(href='') Go somewhere
+                        .col
+                            .card.m-1
+                                .card-body
+                                    h2.card-title Upcoming Events
+                                    hr
+                                    p.card-text
+                                        table.table
+                                            thead
+                                                tr
+                                                    th(scope='col') Event
+                                                    th(scope='col') Time
+                                            tbody
+                                                tr
+                                                    td Event
+                                                    td 10:00
+                                                tr
+                                                    td Event 1
+                                                    td 12:00
+                                    a.btn.btn-secondary(href='') View All
+                        .col
+                            .card.m-1
+                                .card-body
+                                    h2.card-title Discord Channel
+                                    hr
+                                    p.card-text
+                                        | This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+                                    a.btn.btn-primary(href='') Go to Discord Channel
 
                 //ADMINISTRATOR DASHBOARD VIEW
             //nav
