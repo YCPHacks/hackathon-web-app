@@ -18,31 +18,31 @@ html(lang='en')
     body
 
         // TODO: changing active tab link
-        if(userRoles = 'Organizer')
-            ul.nav.nav-tabs.justify-content-center
-                li.nav-item
-                    a.nav-link.active(aria-current='page', href='/dashboard') Dashboard Home
-                li.nav-item
-                    a.nav-link(href='/dashboard/hardware_items') Hardware
-                li.nav-item
-                    a.nav-link(href='#') Check In
-                li.nav-item
-                    a.nav-link(href='/dashboard/event_applications') Applications
-                li.nav-item
-                    a.nav-link(href='/dashboard/event_applications/summary') Information
-                li.nav-item
-                    a.nav-link(href='#') Prizes
-                li.nav-item
-                    a.nav-link(href='#') Projects
-                // TODO: dropdown
-                li.nav-item
-                    a.nav-link(href='#') Admin
-                li.nav-item
-                    a.nav-link(href='/') Back to Home Page
+        //if(userRoles = 'Organizer')
+        ul.nav.nav-tabs.justify-content-center
+            li.nav-item
+                a.nav-link.active(aria-current='page', href='/dashboard') Dashboard Home
+            li.nav-item
+                a.nav-link(href='/dashboard/hardware_items') Hardware
+            li.nav-item
+                a.nav-link(href='#') Check In
+            li.nav-item
+                a.nav-link(href='/dashboard/event_applications') Applications
+            li.nav-item
+                a.nav-link(href='/dashboard/event_applications/summary') Information
+            li.nav-item
+                a.nav-link(href='#') Prizes
+            li.nav-item
+                a.nav-link(href='#') Projects
+            // TODO: dropdown
+            li.nav-item
+                a.nav-link(href='#') Admin
+            li.nav-item
+                a.nav-link(href='/') Back to Home Page
 
-                if(isAuthenticated)
-                    li.nav-item
-                        a.nav-link(href='/logout') Logout
+            if(isAuthenticated)
+                li.nav-item
+                    a.nav-link(href='/logout') Logout
 
         //if(userRoles = 'Attendee')
         //    ul.nav.nav-tabs.justify-content-center
