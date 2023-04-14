@@ -13,18 +13,18 @@ html
                 //button.btn All
                 //    span.badge.text-bg-secondary.m-1= county.length
 
-                each item of county
-
-                    button.btn(type='button')= item.status
-
-                        if (item.status === "accepted")
-                            span.badge.text-bg-primary.m-1= item.count
-
-                        else if (item.status === 'undecided')
-                            span.badge.text-bg-warning.m-1= item.count
-
-                        else if (item.status === 'declined')
-                            span.badge.text-danger-emphasis.m-1= item.count
+                // each item of county
+                //
+                //     button.btn(type='button')= item.status
+                //
+                //         if (item.status === "accepted")
+                //             span.badge.text-bg-primary.m-1= item.count
+                //
+                //         else if (item.status === 'undecided')
+                //             span.badge.text-bg-warning.m-1= item.count
+                //
+                //         else if (item.status === 'declined')
+                //             span.badge.text-danger-emphasis.m-1= item.count
 
                 a(href='/dashboard/event_applications/summary').btn.btn-primary summary
 
@@ -56,10 +56,10 @@ html
                             th t-shirt size
                             th food restrictions
                     tbody
-                        each item of application
-                            - x++
-                            tr
-                                each column of item
-                                    td= column
+                        // each item of application
+                        //     - x++
+                        //     tr
+                        //         each column of item
+                        //             td= column
 
 
