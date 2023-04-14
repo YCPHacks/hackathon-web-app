@@ -1,0 +1,60 @@
+/*html, body {*/
+/*    !*background-color: #efebeb;*!*/
+/*    !*background-image: linear-gradient(90deg, #8eb5da 0%, #1bb144 100%);*!*/
+/*    background-image: url("../images/bg2.png");*/
+/*    background-repeat: no-repeat;*/
+/*    height: 100vh;*/
+/*    font-weight: 500;*/
+/*    font-size: 1.2em;*/
+/*    text-align: center;*/
+/*    font-family: Sora, sans-serif;*/
+/*    position: relative;*/
+/*    overflow-x: hidden;*/
+/*    color: white;*/
+/*    z-index: 0;*/
+/*}*/
+
+.ycpHeader {
+    font-family: 'MuseoModerno', serif;
+    color: #ffffff;
+    font-size: 2.5em;
+    letter-spacing: 1.5pt;
+    margin-bottom: 0px;
+}
+
+.hacks {
+    font-size: 1.5em;
+    font-weight: 700;
+    letter-spacing: 2pt;
+    margin-top: 0px;
+    margin-bottom: 3px;
+    color: #ffffff;
+}
+
+.ycpHeader, .insides{
+    background: #323362;
+}
+
+.sponsored{
+    width: 85%;
+    background: #343462;
+}
+
+.list-group-item{
+    background-color: transparent;
+    font-size: 16px;
+    border: none;
+    color: white;
+}
+.list-group{
+    border: 2px rgba(255, 255, 255, 0.52) double;
+    background: #ffffff2b;
+}
+
+hr {
+    border-width: 0 0 1px;
+    color: #000000;
+    border-image: linear-gradient(90deg, rgba(135, 206, 235, 0), #000000 50%, rgba(135, 206, 235, 0) 100%) 0 0 100%;
+    border-style: solid;
+}
+
