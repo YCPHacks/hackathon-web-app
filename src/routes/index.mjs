@@ -28,5 +28,9 @@ router.route('/dashboard/hardware_items')
     .get((req, res) => {
         res.status(200).render('hardware_items');
     })
+router.route('/dashboard/hardware_items/available')
+    .get((req, res) => {
+        res.status(200).render('available');
+    })
 
 export { router };
