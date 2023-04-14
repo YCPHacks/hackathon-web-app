@@ -55,15 +55,19 @@ html(lang='en')
                         li.nav-item
                             a.navbarLink.nav-link(href='past_events') Past Events
                         |
-                        li.nav-item.dropdown
-                            a.nav-link.dropdown-toggle.me-3(href='#', role='button', data-bs-toggle='dropdown', aria-expanded='false')
-                                | Account
-                            ul.dropdown-menu.dropdown-menu.end.dropdown-menu-lg-start
-                                li
-                                    a.dropdown-item(href='/dashboard') Dashboard
-                                li
-                                    hr.dropdown-divider
-                                li
-                                    a.dropdown-item(href='/logout') Logout
+                        if(isAuthenticated)
+                            li.nav-item.dropdown
+                                a.nav-link.dropdown-toggle.me-3(href='#', role='button', data-bs-toggle='dropdown', aria-expanded='false')
+                                    | Account
+                                ul.dropdown-menu.dropdown-menu.end.dropdown-menu-lg-start
+                                    li
+                                        a.dropdown-item(href='/dashboard') Dashboard
+                                    li
+                                        hr.dropdown-divider
+                                    li
+                                        a.dropdown-item(href='/logout') Logout
+                        else
+                            li.nav-item
+                                a.navbarLink.nav-link(href='past_events') Login
             a#mlh-trust-badge(style='display:block;max-width:100px;min-width:60px;position:absolute;right:50px;top:0;width:10%;z-index:10000', href='https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2023-season&utm_content=blue', target='_blank')
                 img.mlh-logo(src='https://s3.amazonaws.com/logged-assets/trust-badge/2023/mlh-trust-badge-2023-blue.svg', alt='Major League Hacking 2023 Hackathon Season', style='width:100%')
