@@ -39,6 +39,10 @@ html(lang='en')
             li.nav-item
                 a.nav-link(href='/') Back to Home Page
 
+            if(isAuthenticated)
+                li.nav-item
+                    a.nav-link(href='/logout') Logout
+
 
         // PARTICIPANT VIEW
         //ul.nav.nav-tabs.justify-content-center
