@@ -52,21 +52,26 @@ router.route('/dashboard')
   });
 
 router.route('/dashboard/event_applications')
-  .get((req, res) => {
-    res.status(200).render('event_applications');
-  })
-  .post((req, res) => {
-    res.redirect(303, '/dashboard/event_applications');
-  });
+    .get((req, res) => {
+        res.status(200).render('event_applications');
+    })
+    .post((req, res) => {
+        res.redirect(303, '/dashboard/event_applications');
+    });
+
+router.route('/dashboard/event_applications/event_applications_summary')
+    .get((req, res) => {
+        res.status(200).render('event_applications_summary');
+    })
 
 router.route('/dashboard/hardware_items')
-  .get((req, res) => {
-    res.status(200).render('hardware_items');
-  });
+    .get((req, res) => {
+        res.status(200).render('hardware_items');
+    });
 
 router.route('/dashboard/hardware_items/available')
-  .get((req, res) => {
-    res.status(200).render('hardware_items_available');
-  });
+    .get((req, res) => {
+        res.status(200).render('hardware_items_available');
+    });
 
-export { router };
+export {router};
