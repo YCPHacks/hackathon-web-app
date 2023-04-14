@@ -36,7 +36,7 @@ router.route('/past_events')
 ///////////////////////////////////
 
 
-router.all('/dashboard/*', requiresAuth());
+router.all('/dashboard', requiresAuth());
 
 
 ////////////////////////////////////
