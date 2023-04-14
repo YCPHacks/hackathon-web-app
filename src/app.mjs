@@ -6,8 +6,9 @@ const app = express();
 
 app.set('view engine', 'pug');
 app.set('views', './src/views');
+app.use('/static', express.static('public'));
 
 app.use('/', router);
-app.use('/static', express.static('public'));
+
 
 export { app };
