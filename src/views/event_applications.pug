@@ -84,19 +84,10 @@ html
                     .invalid-feedback Please enter your phone number
 
                 .col-lg-8.m-3
+
                     label.form-label(for='age') Age
-                    select#age.form-select(required='')
-                        option(selected='', disabled='', value='') Select
-                        option(value='13') 13
-                        option(value='14') 14
-                        option(value='15') 15
-                        option(value='16') 16
-                        option(value='17') 17
-                        option(value='18') 18
-                        option(value='19') 19
-                        option(value='20') 20
-                        option(value='21') 21
-                        option(value='21+') 21+
+                    input.form-control#age(type='number', name='age', min='13', max='99', required='')
+
                     .invalid-feedback
                         | Please select a valid age
 
