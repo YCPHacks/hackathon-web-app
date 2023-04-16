@@ -20,17 +20,18 @@ html(lang='en')
         nav.navbar.navbar-expand-xl
             .container-fluid
 
+                a.navbar-brand.text-white(href='/' aria-label='Home' tabindex='-1')
+                    //#desktopHeader
+                    .me-2.d-inline-block
+                        img(src='/static/images/fountain_white.png', alt='ycp_fountain', width='auto', height='25')
+                        a.replaceText.text-decoration-none#style-2(href='/', data-replace='Home' aria-label='Home')
+                            span YCP Hacks
+
                 button.navbar-toggler.bg-light(type='button', data-bs-toggle='collapse', data-bs-target='#navbarTogglerDemo01', aria-controls='navbarTogglerDemo01', aria-expanded='false', aria-label='Toggle navigation')
                     span.navbar-toggler-icon
 
                 #navbarTogglerDemo01.collapse.navbar-collapse
 
-                    a.navbar-brand.text-white.d-none.d-xl-block(href='/' aria-label='Home' tabindex='-1')
-                        #desktopHeader
-                            .me-2.d-inline-block
-                                img(src='/static/images/fountain_white.png', alt='ycp_fountain', width='auto', height='25')
-                                a.replaceText.text-decoration-none#style-2(href='/', data-replace='Home' aria-label='Home')
-                                    span YCP Hacks
 
 
                     ul.navbar-nav.me-auto.mb-2.mb-lg-0
