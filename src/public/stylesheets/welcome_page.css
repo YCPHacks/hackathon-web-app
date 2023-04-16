@@ -395,12 +395,12 @@ td, tr {
     transform: translateY(2px);
 }
 
-hr {
-    border-width: 0 0 1px;
-    color: #000000;
-    border-image: linear-gradient(90deg, rgba(135, 206, 235, 0), #000000 50%, rgba(135, 206, 235, 0) 100%) 0 0 100%;
-    border-style: solid;
-}
+/*hr {*/
+/*    border-width: 0 0 1px;*/
+/*    color: #000000;*/
+/*    border-image: linear-gradient(90deg, rgba(135, 206, 235, 0), #000000 50%, rgba(135, 206, 235, 0) 100%) 0 0 100%;*/
+/*    border-style: solid;*/
+/*}*/
 
 .img2 {
     width: 100%;
