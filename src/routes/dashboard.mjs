@@ -15,7 +15,7 @@ dashboard.route('/event_applications')
     res.redirect(303, '/event_applications');
   });
 
-dashboard.route('/event_applications/summary')
+dashboard.route('/summary')
   .get((req, res) => {
     res.status(200).render('event_applications_summary');
   });
