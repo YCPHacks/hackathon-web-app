@@ -30,6 +30,11 @@ router.route('/past_events')
     res.status(200).render('past_events');
   });
 
+router.route('/sponsor')
+    .get((req, res) => {
+        res.status(200).render('sponsor');
+    });
+
 
 ///////////////////////////////////
 //                               //
