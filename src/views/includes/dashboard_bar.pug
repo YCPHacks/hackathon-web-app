@@ -1,78 +1,77 @@
+title  YCP Hacks
+meta(name='viewport', content='width=device-width, initial-scale=1')
+link(rel='icon', type='image/x-icon', href='/static/images/favicon.png')
+link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css', rel='stylesheet', integrity='sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD', crossorigin='anonymous')
+script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js', integrity='sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN', crossorigin='anonymous')
+link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+link(rel='stylesheet', type='text/css', href='https://fonts.googleapis.com/css?family=MuseoModerno')
+link(rel='stylesheet', type='text/css', href='https://fonts.googleapis.com/css?family=Sora')
+link(rel='stylesheet', href='/static/stylesheets/dashboard.css')
+script(src='https://kit.fontawesome.com/5aea80cc0d.js', crossorigin='anonymous')
 
-        title  YCP Hacks
-        meta(name='viewport', content='width=device-width, initial-scale=1')
-        link(rel='icon', type='image/x-icon', href='/static/images/favicon.png')
-        link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css', rel='stylesheet', integrity='sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD', crossorigin='anonymous')
-        script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js', integrity='sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN', crossorigin='anonymous')
-        link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
-        link(rel='stylesheet', type='text/css', href='https://fonts.googleapis.com/css?family=MuseoModerno')
-        link(rel='stylesheet', type='text/css', href='https://fonts.googleapis.com/css?family=Sora')
-        link(rel='stylesheet', href='/static/stylesheets/dashboard.css')
-        script(src='https://kit.fontawesome.com/5aea80cc0d.js', crossorigin='anonymous')
+body
 
-    body
+    // TODO: changing active tab link
+    if (userRoles.includes('Organizer'))
+        ul.nav.nav-tabs.justify-content-center
+            li.nav-item
+                a.nav-link.active(aria-current='page', href='/dashboard') Dashboard Home
+            li.nav-item
+                a.nav-link(href='/dashboard/hardware_items') Hardware
+            li.nav-item
+                a.nav-link(href='#') Check In
+            li.nav-item
+                a.nav-link(href='/dashboard/event_applications') Applications
+            li.nav-item
+                a.nav-link(href='/dashboard/event_applications/summary') Information
+            li.nav-item
+                a.nav-link(href='#') Prizes
+            li.nav-item
+                a.nav-link(href='#') Projects
+            // TODO: dropdown
+            li.nav-item
+                a.nav-link(href='#') Admin
+            li.nav-item
+                a.nav-link(href='/') Back to Home Page
 
-        // TODO: changing active tab link
-        if (userRoles.includes('Organizer'))
-            ul.nav.nav-tabs.justify-content-center
+            if(isAuthenticated)
                 li.nav-item
-                    a.nav-link.active(aria-current='page', href='/dashboard') Dashboard Home
-                li.nav-item
-                    a.nav-link(href='/dashboard/hardware_items') Hardware
-                li.nav-item
-                    a.nav-link(href='#') Check In
-                li.nav-item
-                    a.nav-link(href='/dashboard/event_applications') Applications
-                li.nav-item
-                    a.nav-link(href='/dashboard/event_applications/summary') Information
-                li.nav-item
-                    a.nav-link(href='#') Prizes
-                li.nav-item
-                    a.nav-link(href='#') Projects
-                // TODO: dropdown
-                li.nav-item
-                    a.nav-link(href='#') Admin
-                li.nav-item
-                    a.nav-link(href='/') Back to Home Page
+                    a.nav-link(href='/logout') Logout
 
-                if(isAuthenticated)
-                    li.nav-item
-                        a.nav-link(href='/logout') Logout
+    else if(userRoles.includes('Attendee'))
+        ul.nav.nav-tabs.justify-content-center
+            li.nav-item
+                a.nav-link.active(aria-current='page', href='/dashboard') Dashboard Home
+            li.nav-item
+                a.nav-link(href='/dashboard/event_applications') Apply
 
-        else if(userRoles.includes('Attendee'))
-            ul.nav.nav-tabs.justify-content-center
-                li.nav-item
-                    a.nav-link.active(aria-current='page', href='/dashboard') Dashboard Home
-                li.nav-item
-                    a.nav-link(href='/dashboard/event_applications') Apply
+            // TODO: dropdown
+            li.nav-item
+                a.nav-link(href='/') Back to Home Page
 
-                // TODO: dropdown
+            if(isAuthenticated)
                 li.nav-item
-                    a.nav-link(href='/') Back to Home Page
-
-                if(isAuthenticated)
-                    li.nav-item
-                        a.nav-link(href='/logout') Logout
+                    a.nav-link(href='/logout') Logout
 
 
-        // PARTICIPANT VIEW
-        //ul.nav.nav-tabs.justify-content-center
-        //    li.nav-item
-        //        a.nav-link.active(aria-current='page', href='/dashboard') Dashboard Home
-        //    li.nav-item
-        //        a.nav-link(href='/dashboard/hardware_items') Hardware
-        //    li.nav-item
-        //        a.nav-link(href='#') Check In
-        //    li.nav-item
-        //        a.nav-link(href='/dashboard/event_applications') Applications
-        //    li.nav-item
-        //        a.nav-link(href='/dashboard/event_applications/summary') Information
-        //    li.nav-item
-        //        a.nav-link(href='#') Prizes
-        //    li.nav-item
-        //        a.nav-link(href='#') Projects
-        //    // TODO: dropdown
-        //    li.nav-item
-        //        a.nav-link(href='#') Admin
-        //    li.nav-item
-        //        a.nav-link(href='/views/welcomePage') Back to Home Page
+    // PARTICIPANT VIEW
+    //ul.nav.nav-tabs.justify-content-center
+    //    li.nav-item
+    //        a.nav-link.active(aria-current='page', href='/dashboard') Dashboard Home
+    //    li.nav-item
+    //        a.nav-link(href='/dashboard/hardware_items') Hardware
+    //    li.nav-item
+    //        a.nav-link(href='#') Check In
+    //    li.nav-item
+    //        a.nav-link(href='/dashboard/event_applications') Applications
+    //    li.nav-item
+    //        a.nav-link(href='/dashboard/event_applications/summary') Information
+    //    li.nav-item
+    //        a.nav-link(href='#') Prizes
+    //    li.nav-item
+    //        a.nav-link(href='#') Projects
+    //    // TODO: dropdown
+    //    li.nav-item
+    //        a.nav-link(href='#') Admin
+    //    li.nav-item
+    //        a.nav-link(href='/views/welcomePage') Back to Home Page
