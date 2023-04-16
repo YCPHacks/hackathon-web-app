@@ -39,10 +39,10 @@ html, body {
     color: black;
 }
 
-.navbar-nav {
-    right: 130px;
-    position: relative;
-}
+/*.navbar-nav {*/
+/*    right: 130px;*/
+/*    position: relative;*/
+/*}*/
 
 /* ----- FOR MLH FLAG (theres probably a better way how to do this) ----- */
 @media (min-width: 992px) {
