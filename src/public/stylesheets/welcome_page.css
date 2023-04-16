@@ -124,6 +124,7 @@ main{
 
 .carousel, .carousel-inner, .carousel-item, .carousel-item-container {
     height: 300px;
+    background: rgba(255, 255, 255, 0.37);
 }
 
 .carousel-item-container {
