@@ -7,12 +7,14 @@ html
 
 
     body
+        // SVG lines
         svg.svg(viewbox='0 0 300 300')
             path.path(fill='none', stroke='white', stroke-width='0.2', d='M0,0Q6.759098,89.428076,82.668977,89.948007c75.909879.519931,78.509532,31.71577,90.987868,60.051992q12.478336,28.336222,44.194106,35.09532')
         svg.svg(viewbox='0 0 300 300')
             path.path(fill='none', stroke='white', stroke-width='0.2', d='M0,0Q8.158033,134.791582,84.067912,135.311513c75.909879.519931,74.212797-24.103302,109.099155,0q34.886358,24.103302,67.869823,71.675608')
-
+        // Floating alien
         img.alien(src='static/assets/alien2.png')
+
 
         main
             .intro.d-flex.flex-column
@@ -23,8 +25,9 @@ html
                 a.introButtons.m-1(href='/dashboard') Register Now!
                 p
                     // TODO: possible change
-                    a.introButtons.m-1(href='https://discord.gg/Mx2eH35j') Discord
-                    a.introButtons.m-1(href='/') Sponsor Us
+                    a.introButtons.m-1(href='/') Discord
+                    // TODO: sponsor page
+                    a.introButtons.m-1(href='/sponsor') Sponsor Us
                 // TODO: implement smooth scrolling
                 a(href='#jump' tabindex='-1' aria-label='jump to content')
                     i.fa-solid.fa-chevron-down.scrollDown(style='color: white;' )
@@ -80,7 +83,7 @@ html
                         #sat-tab-pane.tab-pane.fade(role='tabpanel', aria-labelledby='profile-tab', tabindex='0')
                             - const saturday = [["Event","1000","Business Center"],["Event","1000","Business Center"],["Event","1000","Business Center"],["Event","1000","Business Center"]];
                             table.table.table-striped
-                                thead9
+                                thead
                                     tr
                                         th(scope='col') Event
                                         th(scope='col') Time
@@ -228,7 +231,6 @@ html
 
             // Sponsor Carousel
             h1.display-5.text-center.mt-5.sponsorSection Our Sponsors!
-
             #carouselExampleAutoplaying.carousel.carousel-dark.slide(data-bs-ride='carousel')
 
                 .carousel-inner
@@ -308,7 +310,6 @@ html
                         .memberContainer
                             .memberTitle Josh Kopelcheck
                             .memberLabel Backend
-
 
         include includes/footer
         .planet
