@@ -11,20 +11,24 @@ app.set('views', './src/views');
 
 app.use('/static', express.static('./src/public'));
 
-app.use(auth({
-  authorizationParams: {
-    audience: 'https://ycphacks.io/api',
-    response_type: 'code',
-    scope: 'openid profile email'
-  },
-  authRequired: false,
-  idpLogout: true
-}));
+app.use(
+  auth({
+    authorizationParams: {
+      audience: process.env.AUDIENCE,
+      response_type: 'code',
+      scope: 'openid profile email'
+    },
+    authRequired: false,
+    idpLogout: true
+  })
+);
 
 app.use((req, res, next) => {
   res.locals.isAuthenticated = req.oidc.isAuthenticated();
-  res.locals.user = req.oidc.user;
+  res.locals.user = req.oidc.user ?? {};
   res.locals.userRoles = req.oidc.user?.[`${process.env.NAMESPACE}/roles`];
+
+  console.log(res.locals);
 
   next();
 });
