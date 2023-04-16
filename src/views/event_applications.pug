@@ -3,10 +3,10 @@ html
         include includes/dashboard_bar
 
         link(rel='stylesheet', type='text/css', href='/static/stylesheets/dashboard.css')
+        script(src='/static/scripts/dashboard.js')
 
 
     body
-
 
         if(userRoles.includes('Organizer'))
             h1.m-2 Event Applications
@@ -84,7 +84,6 @@ html
                     .invalid-feedback Please enter your phone number
 
                 .col-lg-8.m-3
-
                     label.form-label(for='age') Age
                     input.form-control#age(type='number', name='age', min='13', max='99', required='')
 
@@ -239,6 +238,7 @@ html
 
                             .invalid-feedback
                                 | Please select major
+
                 .col-lg-8.m-3
                     label.form-label(for='identify') Do you identify as part of an underrepresented group in the technology industry?
                         select#identify.form-select(aria-label='Default select example')
@@ -318,13 +318,13 @@ html
                                 | MLH Contest Terms and Conditions
                             |  and the
                             a(href='https://mlh.io/privacy') MLH Privacy Policy
+
                     .form-check
                         input#invalidCheck1.form-check-input(type='checkbox', value='accept', required='')
                         label.form-check-label(for='invalidCheck1')
                             | I have read and agreed to the&nbsp
                             // TODO: correct pdf link
                             a(href='https://github.com/YCPHacks/ycphacks-website-project/blob/front-end/photo_release.pdf') YCP Photo Release Form
-
 
                         .invalid-feedback
                             | You must agree before submitting.
