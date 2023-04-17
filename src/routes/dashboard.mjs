@@ -7,6 +7,11 @@ dashboard.route('/')
     res.status(200).render('dashboard');
   });
 
+dashboard.route('/apply')
+  .get((req, res) => {
+    res.status(200).render('apply');
+});
+
 dashboard.route('/event_applications')
   .get((req, res) => {
     res.status(200).render('event_applications');
