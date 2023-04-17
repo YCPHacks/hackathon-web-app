@@ -32,7 +32,7 @@ body
             li.nav-item
                 a.nav-link(href='#') Admin
             li.nav-item
-                a.nav-link(href='/') Back to Home Page
+                a.nav-link(href='/') Back to Main Site
 
             if(isAuthenticated)
                 li.nav-item
@@ -43,35 +43,30 @@ body
             li.nav-item
                 a.nav-link.active(aria-current='page', href='/dashboard') Dashboard Home
             li.nav-item
-                a.nav-link(href='/dashboard/event_applications') Apply
+                a.nav-link(href='/dashboard/apply') Apply
 
             // TODO: dropdown
             li.nav-item
-                a.nav-link(href='/') Back to Home Page
+                a.nav-link(href='/') Back to Main Site
 
             if(isAuthenticated)
                 li.nav-item
                     a.nav-link(href='/logout') Logout
 
+    else
+        // if user does not have a role
 
-    // PARTICIPANT VIEW
-    //ul.nav.nav-tabs.justify-content-center
-    //    li.nav-item
-    //        a.nav-link.active(aria-current='page', href='/dashboard') Dashboard Home
-    //    li.nav-item
-    //        a.nav-link(href='/dashboard/hardware_items') Hardware
-    //    li.nav-item
-    //        a.nav-link(href='#') Check In
-    //    li.nav-item
-    //        a.nav-link(href='/dashboard/event_applications') Applications
-    //    li.nav-item
-    //        a.nav-link(href='/dashboard/event_applications/summary') Information
-    //    li.nav-item
-    //        a.nav-link(href='#') Prizes
-    //    li.nav-item
-    //        a.nav-link(href='#') Projects
-    //    // TODO: dropdown
-    //    li.nav-item
-    //        a.nav-link(href='#') Admin
-    //    li.nav-item
-    //        a.nav-link(href='/views/welcomePage') Back to Home Page
+        ul.nav.nav-tabs.justify-content-center
+
+            li.nav-item
+                a.nav-link.active(aria-current='page', href='/dashboard') Dashboard Home
+
+            li.nav-item
+                a.nav-link(href='/dashboard/apply') Apply
+
+            li.nav-item
+                a.nav-link(href='/') Back to Main Site
+
+            if(isAuthenticated)
+                li.nav-item
+                    a.nav-link(href='/logout') Logout
