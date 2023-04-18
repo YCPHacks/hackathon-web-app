@@ -37,30 +37,27 @@ html
                         button.btn.btn-outline-success.mx-1(type='submit') Search
                         button.btn.btn-outline-success.mx-1(type='submit') Download CSV
 
-                - var x = 0;
                 .container-sm.overflow-x-scroll.mt-3.p-3
                     table.table.table-striped.table-bordered.my-4
                         thead
                             tr
-                                th user id
-                                th created at
-                                th updated at
+                                th user_id
+                                th created_at
+                                th updated_at
                                 th status
                                 th age
                                 th country
                                 th school
-                                th education level
-                                th underrepresented group
-                                th gender
-                                th race
-                                th sexual orientation
                                 th major
-                                th t-shirt size
-                                th food restrictions
-                        tbody
-                            // each item of application
-                            //     - x++
-                            //     tr
-                            //         each column of item
-                            //             td= column
 
+                        tbody
+                            each event_application of event_applications
+                                tr
+                                    td= event_application.user_id
+                                    td= event_application.created_at
+                                    td= event_application.updated_at
+                                    td= event_application.status
+                                    td= event_application.age
+                                    td= event_application.country
+                                    td= event_application.school
+                                    td= event_application.major
