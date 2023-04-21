@@ -14,8 +14,26 @@ async function verify() {
             form.classList.add('was-validated')
         }, false)
     })
+}
+
+
+function edit(){
+    alert('Editing applicant form.')
+
+    const form = document.getElementById('editing').elements;
+    for (let i = 0; i < form.length; i++) {
+        // Disable all form controls
+        form[i].removeAttribute('readonly')
+    }
+    document.getElementById('update').removeAttribute('disabled')
+}
+function save(){
 
 }
+
+
+
+
 
 function show() {
     const form = document.getElementById('allergyInput');
