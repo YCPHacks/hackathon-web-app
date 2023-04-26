@@ -19,7 +19,7 @@ block nav
     if (userRoles.includes('Organizer'))
         ul.nav.nav-tabs.justify-content-center
             li.nav-item
-                a.nav-link.active(aria-current='page', href='/dashboard') Dashboard Home
+                a.nav-link(aria-current='page', href='/dashboard') Dashboard Home
             li.nav-item
                 a.nav-link(href='/dashboard/hardware_items') Hardware
             //li.nav-item
@@ -44,7 +44,7 @@ block nav
     else if(userRoles.includes('Attendee'))
         ul.nav.nav-tabs.justify-content-center
             li.nav-item
-                a.nav-link.active(aria-current='page', href='/dashboard') Dashboard Home
+                a.nav-link(aria-current='page', href='/dashboard') Dashboard Home
             li.nav-item
                 a.nav-link(href='/dashboard/apply') Apply
             li.nav-item
@@ -58,7 +58,7 @@ block nav
         ul.nav.nav-tabs.justify-content-center
 
             li.nav-item
-                a.nav-link.active(aria-current='page', href='/dashboard') Dashboard Home
+                a.nav-link(aria-current='page', href='/dashboard') Dashboard Home
 
             li.nav-item
                 a.nav-link(href='/dashboard/apply') Apply
