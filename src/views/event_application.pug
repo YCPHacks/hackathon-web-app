@@ -6,9 +6,9 @@ block main
         .d-flex.align-items-center.justify-content-center
             h2.px-2 Application Status
             // TODO: dynamically load badges
-            if (event_applicationID.status === 'accepted')
+            if (event_applicationID[3] === 'accepted')
                 span.badge.text-bg-success Accepted
-            else if (event_applicationID.status === 'undecided')
+            else if (event_applicationID[3]  === 'undecided')
                 span.badge.text-bg-secondary Undecided
         hr
 
@@ -20,14 +20,14 @@ block main
                         input.form-control(type='text', readonly = '', id!=attributes.id value!=attributes.value)
         form#editing
             +application('Name')(value=event_applicationID.name, for="name", id="name")
-            +application('Age')(value=event_applicationID.age, for="age", id="age")
-            +application('Country')(value=event_applicationID.country, for="country", id="country")
-            +application('Major')(value=event_applicationID.major, for="major", id="major")
+            +application('Age')(value=event_applicationID[4] , for="age", id="age")
+            +application('Country')(value=event_applicationID[5] , for="country", id="country")
+            +application('Major')(value=event_applicationID[7], for="major", id="major")
 
 
         .d-flex.justify-content-end
             // TODO: add query params
-            if (event_applicationID.status === 'accepted')
+            if (event_applicationID[3]  === 'accepted')
                 button.mx-1.btn.btn-success.disabled Accept
             button.mx-1.btn.btn-danger Deny
             button.mx-1.btn.btn-warning Waitlist
