@@ -33,10 +33,10 @@ block main
 
         mixin application(label)
 
-                .row.mb-3
-                    label.col-sm-2.col-form-label(for!=attributes.for)= label
-                    .col-sm-6
-                        input.form-control(type='text', readonly, id!=attributes.id value!=attributes.value)
+            .row.mb-3
+                label.col-sm-2.col-form-label(for!=attributes.for)= label
+                .col-sm-6
+                    input.form-control(type='text', readonly, id!=attributes.id value!=attributes.value)
         form#editing
             //+application('Name')(value=event_application.name, for="name", id="name")
             +application('Age')(value= event_application[0][4], for="age", id="age")
@@ -49,13 +49,13 @@ block main
 
         .d-flex.justify-content-end
             // TODO: add query params
-            if (event_application[0][3]  === 'accepted')
+            if (event_application[0][3] === 'accepted')
                 button.mx-1.btn.btn-success.disabled Accept
-            if (event_application[0][3]  === 'denied')
+            if (event_application[0][3] === 'denied')
                 button.mx-1.btn.btn-danger.disabled Deny
-             if (event_application[0][3]  === 'waitlisted')
+            if (event_application[0][3] === 'waitlisted')
                 button.mx-1.btn.btn-warning.disabled Waitlist
-            if (event_application[0][3]  === 'flagged')
+            if (event_application[0][3] === 'flagged')
                 button.mx-1.btn.btn-secondary.disabled Flag
 
             button.mx-1.btn.btn-info(onclick=`edit()`) Edit
