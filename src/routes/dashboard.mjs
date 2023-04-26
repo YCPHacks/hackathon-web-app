@@ -14,34 +14,34 @@ dashboard.route('/')
   });
 
 dashboard.route('/apply')
-  .get((req, res) => {
+  .get((req, res, next) => {
     res.status(200).render('apply');
 });
 
 dashboard.route('/event_applications')
-  .get((req, res) => {
-    res.locals.event_applications = await listEventApplications;
+  .get(async (req, res, next) => {
+    res.locals.event_applications = await listEventApplications(req, res, next);
   
     res.status(200).render('event_applications');
   })
-  .post((req, res) => {
-    await createEventApplication;
+  .post(async (req, res, next) => {
+    await createEventApplication(req, res, next);
   
     res.redirect(303, '/event_applications');
   });
 
 dashboard.route('/summary')
-  .get((req, res) => {
+  .get((req, res, next) => {
     res.status(200).render('event_applications_summary');
   });
 
 dashboard.route('/hardware_items')
-  .get((req, res) => {
+  .get((req, res, next) => {
     res.status(200).render('hardware_items');
   });
 
 dashboard.route('/hardware_items/available')
-  .get((req, res) => {
+  .get((req, res, next) => {
       res.status(200).render('hardware_items_available');
   });
 
