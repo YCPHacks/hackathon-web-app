@@ -53,12 +53,12 @@ function hide() {
 
 function validateSize(input) {
     const fileSize = input.files[0].size / 1024 / 1024; // in MiB
-    console.log(input.files[0].name);
+    // console.log(input.files[0].name);
 
     if (fileSize > 2) {
         alert('File size exceeds 2 MiB, please try uploading something smaller!');
         input.value = null;
-        console.log("successfully reset");
+        // console.log("successfully reset");
     } else {
         // alert("its fine");
     }
