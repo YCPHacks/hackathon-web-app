@@ -51,7 +51,7 @@ block main
                     tbody
                         each event_application of event_applications
                             tr
-                                td= event_application.user_id
+                                td= event_application[0]
                                 td= event_application.created_at
                                 td= event_application.updated_at
                                 td= event_application.status
