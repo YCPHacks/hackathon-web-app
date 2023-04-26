@@ -11,6 +11,7 @@ block head
     link(rel='stylesheet', type='text/css', href='https://fonts.googleapis.com/css?family=Sora')
     script(src='https://kit.fontawesome.com/5aea80cc0d.js', crossorigin='anonymous')
     script(src='/static/scripts/dashboard.js')
+
     block styles
         link(rel='stylesheet', href='/static/stylesheets/dashboard.css')
 
@@ -22,8 +23,7 @@ block nav
                 a.nav-link.active(aria-current='page', href='/dashboard') Dashboard Home
             li.nav-item
                 a.nav-link(href='/dashboard/hardware_items') Hardware
-            //li.nav-item
-            //    a.nav-link(href='#') Check In
+
             li.nav-item
                 a.nav-link(href='/dashboard/event_applications') Applications
             //li.nav-item
