@@ -6,6 +6,7 @@ block main
 
     if(userRoles.includes('Organizer'))
         h1.m-2 Event Applications
+
         .container-md.text-center.p-2.border
 
             //button.btn All
@@ -26,7 +27,7 @@ block main
 
             // TODO: check if this is the right path
             a(href='/dashboard/summary').btn.btn-primary Summary
-            a(href='/dashboard/event_applications/event_applicationID').btn.btn-primary See indiv
+            //a(href='/dashboard/event_applications/event_applicationID').btn.btn-primary See indiv
 
         .container-md.text-center.p-2.my-3.border
 
@@ -51,7 +52,8 @@ block main
                 tbody
                     each event_application of event_applications
                         tr
-                            td= event_application[0]
+                            td
+                                a(href= '/' + event_application[0])= event_application[0]
                             td= event_application[1]
                             td= event_application[2]
                             td= event_application[3]
