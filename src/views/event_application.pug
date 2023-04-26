@@ -8,8 +8,27 @@ block main
             // TODO: dynamically load badges
             if (event_application[0][3] === 'accepted')
                 span.badge.text-bg-success Accepted
-            else if (event_application[0][3]  === 'undecided')
-                span.badge.text-bg-secondary Undecided
+
+            else if (event_application[0][3] === 'pending')
+                span.badge.text-bg-secondary Pending
+
+            else if (event_application[0][3] === 'denied')
+                span.badge.text-bg-secondary Denied
+
+            else if (event_application[0][3] === 'flagged')
+                span.badge.text-bg-secondary Flagged
+
+            else if (event_application[0][3] === 'waitlisted')
+                span.badge.text-bg-secondary Waitlisted
+
+            //
+            //
+            //else if (event_application[0][3]  === 'undecided')
+            //    span.badge.text-bg-secondary Undecided
+            //
+            //else if (event_application[0][3] === 'declined')
+            //    span.badge.text-bg-danger Declined
+
         hr
 
         mixin application(label)
@@ -29,11 +48,16 @@ block main
             // TODO: add query params
             if (event_application[0][3]  === 'accepted')
                 button.mx-1.btn.btn-success.disabled Accept
-            button.mx-1.btn.btn-danger Deny
-            button.mx-1.btn.btn-warning Waitlist
-            button.mx-1.btn.btn-secondary Flag
+            else if (event_application[0][3]  === 'denied')
+                button.mx-1.btn.btn-danger.disabled Deny
+            else if (event_application[0][3]  === 'waitlisted')
+                button.mx-1.btn.btn-warning.disabled Waitlist
+            else if (event_application[0][3]  === 'flagged')
+                button.mx-1.btn.btn-secondary.disabled Flag
             button.mx-1.btn.btn-info(onclick=`edit()`) Edit
-            button#update.mx-1.btn.btn-success(disabled) Update/Save
+            else if (event_application[0][3]  === '')
+                button#update.mx-1.btn.btn-success.disabled(disabled) Update/Save
+
 
     .container-md.text-center.p-4.border
         h2 Resume
