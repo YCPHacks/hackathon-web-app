@@ -19,12 +19,12 @@ dashboard.route('/apply')
 });
 
 dashboard.route('/event_applications')
-  .get((req, res) => {
+  .get(async (req, res) => {
     res.locals.event_applications = await listEventApplications;
   
     res.status(200).render('event_applications');
   })
-  .post((req, res) => {
+  .post(async (req, res) => {
     await createEventApplication;
   
     res.redirect(303, '/event_applications');
