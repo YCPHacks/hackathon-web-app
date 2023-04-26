@@ -32,7 +32,7 @@ dashboard.route('/event_applications')
 
 dashboard.route('/event_applications/:event_application_id')
   .get(async (req, res, next) => {
-    res.locals.event_applications = await getEventApplication(req, res, next);
+    res.locals.event_application = await getEventApplication(req, res, next);
   
     res.status(200).render('event_application');
   });
