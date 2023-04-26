@@ -19,8 +19,8 @@ block main
                     .col-sm-6
                         input.form-control(type='text', readonly = '', id!=attributes.id value!=attributes.value)
         form#editing
-            +application('Name')(value=event_application.name, for="name", id="name")
-            +application('Age')(value=event_application[4] , for="age", id="age")
+            //+application('Name')(value=event_application.name, for="name", id="name")
+            +application('Age')(value=event_application[4], for="age", id="age")
             +application('Country')(value=event_application[5] , for="country", id="country")
             +application('Major')(value=event_application[7], for="major", id="major")
 
