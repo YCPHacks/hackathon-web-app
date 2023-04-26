@@ -29,7 +29,7 @@ block main
             //else if (event_application[0][3] === 'declined')
             //    span.badge.text-bg-danger Declined
 
-        a(href='/dashboard/event_applications').btn.btn-secondary Go Back 
+        a(href='/dashboard/event_applications').btn.btn-secondary Go Back
 
         hr
 
@@ -40,12 +40,32 @@ block main
                 .col-sm-6
                     input.form-control(type='text', readonly, id!=attributes.id value!=attributes.value)
         form#editing
+
+            .row.mb-3
+                label.form-label(for='age') Age
+                .col-sm-6
+                    input.form-control#age(type='number', name='age', min='13', max='99', value= event_application[0][4], disabled)
+
+
+
             //+application('Name')(value=event_application.name, for="name", id="name")
-            +application('Age')(value= event_application[0][4], for="age", id="age")
-            +application('Country')(value= event_application[0][5], for="country", id="country")
-            +application('Major')(value= event_application[0][6], for="school", id="school")
-            +application('Major')(value= event_application[0][7], for="major", id="major")
-            +application('Status')(value= event_application[0][3], for="status", id="status")
+            //+application('Age')(value= event_application[0][4], for="age", id="age")
+            //+application('Country')(value= event_application[0][5], for="country", id="country")
+            //+application('Major')(value= event_application[0][6], for="school", id="school")
+            //+application('Major')(value= event_application[0][7], for="major", id="major")
+
+
+            //.row.mb-3
+            //    label.col-sm-2.col-form-label(for='status')
+            //    .col-sm-6
+            //        select.form-select#status(disabled)
+            //            option(selected='', value= event_application[0][3]) Open this select menu
+            //            option(value='1') One
+            //            option(value='2') Two
+            //            option(value='3') Three
+
+
+            //+application('Status')(value= event_application[0][3], for="status", id="status")
 
         .d-flex.justify-content-end
             // TODO: add query params

@@ -23,10 +23,12 @@ function edit(){
     const form = document.getElementById('editing').elements;
     for (let i = 0; i < form.length; i++) {
         // Disable all form controls
-        form[i].removeAttribute('readonly')
+        form[i].removeAttribute('disabled')
     }
-    document.getElementById('update').removeAttribute('disabled')
+
+    // document.getElementById('update').removeAttribute('disabled')
 }
+
 function save(){
 
 }
