@@ -21,7 +21,7 @@ export async function getEventApplication(req, res, next) {
 
   const result = await response.json();
 
-  res.status(200).json(result);
+  return result;
 }
 
 export async function listEventApplications(req, res, next) {
@@ -35,5 +35,5 @@ export async function listEventApplications(req, res, next) {
 
   const result = await response.json();
 
-  res.status(200).json(result);
+  return result;
 }
