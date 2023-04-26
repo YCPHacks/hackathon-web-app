@@ -37,8 +37,10 @@ dashboard.route('/event_applications/:event_application_id')
     res.status(200).render('event_application');
   });
 
-dashboard.route('/summary')
+dashboard.route('/event_applications/summary')
   .get((req, res, next) => {
+    res.locals.event_applications_summary = await getEventApplicationsSummary(req, res, next);
+
     res.status(200).render('event_applications_summary');
   });
 

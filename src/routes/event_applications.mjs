@@ -21,4 +21,7 @@ router.route('/event_applications')
 router.route('/event_applications/:event_application_id')
   .get(await getEventApplication);
 
+router.route('/event_applications/summary')
+  .get(await getEventApplicationsSummary);
+
 export { router };

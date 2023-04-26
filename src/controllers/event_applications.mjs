@@ -24,6 +24,20 @@ export async function getEventApplication(req, res, next) {
   return result.data;
 }
 
+export async function getEventApplicationsSummary(req, res, next) {
+  const accessToken = req.oidc.accessToken;
+
+  const response = await fetch(`${process.env.API_BASE_URL}/event_applications/summary`, {
+    headers: {
+      'Authorization': `${accessToken.token_type} ${accessToken.access_token}`
+    }
+  });
+
+  const result = await response.json();
+
+  return result.data;
+}
+
 export async function listEventApplications(req, res, next) {
   const accessToken = req.oidc.accessToken;
 
