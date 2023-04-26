@@ -35,8 +35,6 @@ app.use((req, res, next) => {
   res.locals.user = req.oidc.user ?? {};
   res.locals.userRoles = req.oidc.user?.[`${process.env.NAMESPACE}/roles`];
 
-  console.log(res.locals);
-
   next();
 });
 
