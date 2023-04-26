@@ -41,11 +41,89 @@ block main
                     input.form-control(type='text', readonly, id!=attributes.id value!=attributes.value)
         form#editing
 
+            // -- Age
             .row.mb-3
-                label.form-label(for='age') Age
+                label.col-sm-2.col-form-label(for='age') Age
                 .col-sm-6
                     input.form-control#age(type='number', name='age', min='13', max='99', value= event_application[0][4], disabled)
+            // -- Country
+            .row.mb-3
+                label.col-sm-2.col-form-label(for='country') Country
+                .col-sm-6
+                    select#country.form-select(name='country', disabled)
+                        option(selected, value= event_application[5])
+                        option(value='United States of America') United States of America
 
+            // -- School
+            .row.mb-3
+                label.col-sm-2.col-form-label(for='country') School
+                .col-sm-6
+                    select#school.form-select(required, name='school', disabled)
+                        option(selected, value= event_application[0][6])
+                        //option(value='York
+            // -- Major
+            .row.mb-3
+                span What is your major / primary area of study? If you already graduated, what was your major / primary area of study? Select all that apply.                fieldset
+                    .form-check
+                        input#defaultCheck1.form-check-input(type='checkbox', value='Computer science, computer engineering, or software engineering', name='major')
+                        label.form-check-label(for='defaultCheck1')
+                            | Computer science, computer engineering, or software engineering
+                    .form-check
+                        input#defaultCheck2.form-check-input(type='checkbox', value='Another engineering discipline (such as civil, electrical, mechanical, etc.)', name='major')
+                        label.form-check-label(for='defaultCheck2')
+                            | Another engineering discipline (such as civil, electrical, mechanical, etc.)
+                    .form-check
+                        input#defaultCheck3.form-check-input(type='checkbox', value='Another engineering discipline (such as civil, electrical, mechanical, etc.)', name='major')
+                        label.form-check-label(for='defaultCheck3')
+                            | Information systems, information technology, or system administration
+                    .form-check
+                        input#defaultCheck4.form-check-input(type='checkbox', value='A natural science (such as biology, chemistry, physics, etc.)', name='major')
+                        label.form-check-label(for='defaultCheck4')
+                            | A natural science (such as biology, chemistry, physics, etc.)
+                    .form-check
+                        input#defaultCheck5.form-check-input(type='checkbox', value='Mathematics or statistics', name='major')
+                        label.form-check-label(for='defaultCheck5')
+                            | Mathematics or statistics
+                    .form-check
+                        input#defaultCheck6.form-check-input(type='checkbox', value='Web development or web design', name='major')
+                        label.form-check-label(for='defaultCheck6')
+                            | Web development or web design
+                    .form-check
+                        input#defaultCheck7.form-check-input(type='checkbox', value='Business discipline (such as accounting, finance, marketing, etc.)', name='major')
+                        label.form-check-label(for='defaultCheck7')
+                            | Business discipline (such as accounting, finance, marketing, etc.)
+                    .form-check
+                        input#defaultCheck8.form-check-input(type='checkbox', value='Humanities discipline (such as literature, history, philosophy, etc.)', name='major')
+                        label.form-check-label(for='defaultCheck8')
+                            | Humanities discipline (such as literature, history, philosophy, etc.)
+                    .form-check
+                        input#defaultCheck9.form-check-input(type='checkbox', value='Social science (such as anthropology, psychology, political science, etc.)', name='major')
+                        label.form-check-label(for='defaultCheck9')
+                            | Social science (such as anthropology, psychology, political science, etc.)
+                    .form-check
+                        input#defaultCheck10.form-check-input(type='checkbox', value='Fine arts or performing arts (such as graphic design, music, studio art, etc.)', name='major')
+                        label.form-check-label(for='defaultCheck10')
+                            | Fine arts or performing arts (such as graphic design, music, studio art, etc.)
+                    .form-check
+                        input#defaultCheck11.form-check-input(type='checkbox', value='Health science (such as nursing, pharmacy, radiology, etc.)', name='major')
+                        label.form-check-label(for='defaultCheck11')
+                            | Health science (such as nursing, pharmacy, radiology, etc.)
+                    .form-check
+                        input#defaultCheck12.form-check-input(type='checkbox', value='Other (please specify)', name='major')
+                        label.form-check-label(for='defaultCheck12')
+                            | Other (please specify)
+                    .form-check
+                        input#defaultCheck13.form-check-input(type='checkbox', value='Undecided / No Declared Major', name='major')
+                        label.form-check-label(for='defaultCheck13')
+                            | Undecided / No Declared Major
+                    .form-check
+                        input#defaultCheck14.form-check-input(type='checkbox', value='My school does not offer majors / primary areas of study', name='major')
+                        label.form-check-label(for='defaultCheck14')
+                            | My school does not offer majors / primary areas of study
+                    .form-check
+                        input#defaultCheck15.form-check-input(type='checkbox', value='Prefer not to answer', name='major')
+                        label.form-check-label(for='defaultCheck15')
+                            | Prefer not to answer
 
 
             //+application('Name')(value=event_application.name, for="name", id="name")
