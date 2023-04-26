@@ -44,11 +44,13 @@ block main
             +application('Major')(value= event_application[0][7], for="major", id="major")
             +application('Status')(value= event_application[0][3], for="status", id="status")
 
+        p= event_application[0][3]
+
 
         .d-flex.justify-content-end
             // TODO: add query params
-            //if (event_application[0][3]  === 'accepted')
-            button.mx-1.btn.btn-success.disabled Accept
+            if (event_application[0][3]  === 'accepted')
+                button.mx-1.btn.btn-success.disabled Accept
             else if (event_application[0][3]  === 'denied')
                 button.mx-1.btn.btn-danger.disabled Deny
             else if (event_application[0][3]  === 'waitlisted')
