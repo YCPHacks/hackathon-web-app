@@ -1,0 +1,61 @@
+extends includes/dashboard_bar
+
+
+
+block main
+
+    if(userRoles.includes('Organizer'))
+        h1.m-2 Event Applications
+            .container-md.text-center.p-2.border
+
+                //button.btn All
+                //    span.badge.text-bg-secondary.m-1= county.length
+
+                // each item of county
+                //
+                //     button.btn(type='button')= item.status
+                //
+                //         if (item.status === "accepted")
+                //             span.badge.text-bg-primary.m-1= item.count
+                //
+                //         else if (item.status === 'undecided')
+                //             span.badge.text-bg-warning.m-1= item.count
+                //
+                //         else if (item.status === 'declined')
+                //             span.badge.text-danger-emphasis.m-1= item.count
+
+                // TODO: check if this is the right path
+                a(href='/dashboard/summary').btn.btn-primary Summary
+                a(href='/dashboard/event_applications/event_applicationID').btn.btn-primary See indiv
+
+            .container-md.text-center.p-2.my-3.border
+
+                form.d-flex(role='search')
+                    input.form-control.me-2(type='search', placeholder='Search', aria-label='Search')
+                    button.btn.btn-outline-success.mx-1(type='submit') Search
+                    button.btn.btn-outline-success.mx-1(type='submit') Download CSV
+
+            .container-sm.overflow-x-scroll.mt-3.p-3
+                table.table.table-striped.table-bordered.my-4
+                    thead
+                        tr
+                            th user_id
+                            th created_at
+                            th updated_at
+                            th status
+                            th age
+                            th country
+                            th school
+                            th major
+
+                    tbody
+                        each event_application of event_applications
+                            tr
+                                td= event_application.user_id
+                                td= event_application.created_at
+                                td= event_application.updated_at
+                                td= event_application.status
+                                td= event_application.age
+                                td= event_application.country
+                                td= event_application.school
+                                td= event_application.major
