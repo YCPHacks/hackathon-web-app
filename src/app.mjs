@@ -30,6 +30,16 @@ app.use(helmet({}));
 
 app.use('/static', express.static('./src/public'));
 
+app.use((req, res, next) => {
+  res.locals.isAuthenticated = req.oidc.isAuthenticated();
+  res.locals.user = req.oidc.user ?? {};
+  res.locals.userRoles = req.oidc.user?.[`${process.env.NAMESPACE}/roles`];
+
+  console.log(res.locals);
+
+  next();
+});
+
 app.use('/', router);
 
 app.use((req, res) => {

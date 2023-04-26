@@ -9,8 +9,10 @@ import express from 'express';
 import pkg from 'express-openid-connect';
 const { requiresAuth } = pkg;
 
-import { router as event_applications } from './event_applications.mjs';
-import { router as hardware_items } from './hardware_items.mjs';
+import { dashboard } from './dashboard.mjs';
+
+// import { router as event_applications } from './event_applications.mjs';
+// import { router as hardware_items } from './hardware_items.mjs';
 
 const router = express.Router();
 
@@ -34,9 +36,6 @@ router.get('/sponsor', (req, res) => {
   res.status(200).render('sponsor');
 });
 
-router.use('/dashboard', requiresAuth(), [
-  event_applications,
-  hardware_items
-]);
+router.use('/dashboard', requiresAuth(), dashboard);
 
 export { router };
