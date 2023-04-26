@@ -41,13 +41,14 @@ block main
                 thead
                     tr
                         th user_id
-                        th created_at
-                        th updated_at
-                        th status
-                        th age
-                        th country
-                        th school
-                        th major
+                        //th created_at
+                        //th updated_at
+                        th Status
+                        th Age
+                        th Country
+                        th School
+                        th Major
+                        th M
 
                 tbody
                     each event_application of event_applications
@@ -55,9 +56,12 @@ block main
                             td
                                 a(href= '/dashboard/event_applications/' + event_application[0])= event_application[0]
                             td= event_application[1]
-                            td= event_application[2]
+                            //td= event_application[2]
                             td= event_application[3]
                             td= event_application[4]
                             td= event_application[5]
                             td= event_application[6]
                             td= event_application[7]
+                            td= event_application[8]
+                            td= event_application[9]
+                            td= event_application[10]
