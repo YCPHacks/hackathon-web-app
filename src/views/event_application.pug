@@ -51,15 +51,15 @@ block main
             // TODO: add query params
             if (event_application[0][3]  === 'accepted')
                 button.mx-1.btn.btn-success.disabled Accept
-            else if (event_application[0][3]  === 'denied')
+            if (event_application[0][3]  === 'denied')
                 button.mx-1.btn.btn-danger.disabled Deny
-            else if (event_application[0][3]  === 'waitlisted')
+             if (event_application[0][3]  === 'waitlisted')
                 button.mx-1.btn.btn-warning.disabled Waitlist
-            else if (event_application[0][3]  === 'flagged')
+            if (event_application[0][3]  === 'flagged')
                 button.mx-1.btn.btn-secondary.disabled Flag
 
             button.mx-1.btn.btn-info(onclick=`edit()`) Edit
-           
+
             button#update.mx-1.btn.btn-success.disabled(disabled) Update/Save
 
 
