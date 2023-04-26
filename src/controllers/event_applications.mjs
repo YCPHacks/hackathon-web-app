@@ -4,6 +4,8 @@
  *
  */
 
+import { fetch } from 'undici';
+
 export async function createEventApplication(req, res, next) {
   res.sendStatus(201);
 }

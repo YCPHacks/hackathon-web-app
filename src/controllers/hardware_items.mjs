@@ -4,6 +4,8 @@
  *
  */
 
+import { fetch } from 'undici';
+
 export async function createHardwareItem(req, res, next) {
   res.sendStatus(201);
 }
