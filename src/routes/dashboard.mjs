@@ -1,5 +1,11 @@
 import express from 'express';
 
+import {
+  createEventApplication,
+  getEventApplication,
+  listEventApplications
+} from '../controllers/event_applications.mjs';
+
 const dashboard = express.Router();
 
 dashboard.route('/')
@@ -14,9 +20,13 @@ dashboard.route('/apply')
 
 dashboard.route('/event_applications')
   .get((req, res) => {
+    res.locals.event_applications = await listEventApplications;
+  
     res.status(200).render('event_applications');
   })
   .post((req, res) => {
+    await createEventApplication;
+  
     res.redirect(303, '/event_applications');
   });
 
