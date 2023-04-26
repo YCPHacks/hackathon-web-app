@@ -28,6 +28,8 @@ app.use(auth({
 app.use(helmet({}));
 */
 
+app.use('/static', express.static('./src/public'));
+
 app.use('/', router);
 
 app.use((req, res) => {
