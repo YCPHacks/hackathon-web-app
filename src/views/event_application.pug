@@ -41,11 +41,9 @@ block main
             //+application('Name')(value=event_application.name, for="name", id="name")
             +application('Age')(value= event_application[0][4], for="age", id="age")
             +application('Country')(value= event_application[0][5], for="country", id="country")
+            +application('Major')(value= event_application[0][6], for="school", id="school")
             +application('Major')(value= event_application[0][7], for="major", id="major")
             +application('Status')(value= event_application[0][3], for="status", id="status")
-
-        p= event_application[0][3]
-
 
         .d-flex.justify-content-end
             // TODO: add query params

@@ -16,7 +16,7 @@ block main
                                 span.badge.text-bg-secondary.m-1 0
 
                     +badges('Total Applicants')
-                    +badges('RSVP&apos;d')
+                    +badges('RSVPd')
                     +badges('Hardware Checkouts')
                     +badges('Mentorship Requests')
                     +badges('Listed Events')
@@ -66,20 +66,20 @@ block main
                                         td Event 1
                                         td 12:00
                         a.btn.btn-secondary(href='#') View All
-            .col
-                .card
-                    .card-body
-                        h5.card-title Card title
-                        p.card-text
-                            | This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                        a.btn.btn-primary(href='#') Go somewhere
-            .col
-                .card
-                    .card-body
-                        h5.card-title Card title
-                        p.card-text
-                            | This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                        a.btn.btn-primary(href='#') Go somewhere
+            //.col
+            //    .card
+            //        .card-body
+            //            h5.card-title Card title
+            //            p.card-text
+            //                | This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+            //            a.btn.btn-primary(href='#') Go somewhere
+            //.col
+            //    .card
+            //        .card-body
+            //            h5.card-title Card title
+            //            p.card-text
+            //                | This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+            //            a.btn.btn-primary(href='#') Go somewhere
 
     else if (userRoles.includes('Attendee'))
         .display-5.m-2 Home
