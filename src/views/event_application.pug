@@ -17,13 +17,15 @@ block main
                 .row.mb-3
                     label.col-sm-2.col-form-label(for!=attributes.for)= label
                     .col-sm-6
-                        input.form-control(type='text', readonly = '', id!=attributes.id value!=attributes.value)
+                        input.form-control(type='text', readonly, id!=attributes.id value!=attributes.value)
         form#editing
             //+application('Name')(value=event_application.name, for="name", id="name")
-            +application('Age')(value=event_application[4], for="age", id="age")
-            +application('Country')(value=event_application[5] , for="country", id="country")
-            +application('Major')(value=event_application[7], for="major", id="major")
-
+            +application('Age')(value= event_application[4], for="age", id="age")
+            +application('Country')(value= event_application[5], for="country", id="country")
+            +application('Major')(value= event_application[7], for="major", id="major")
+        p= event_application[4]
+        p= event_application[5]
+        p= event_application[2]
 
         .d-flex.justify-content-end
             // TODO: add query params
