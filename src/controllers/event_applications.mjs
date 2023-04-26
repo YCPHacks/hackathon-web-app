@@ -19,8 +19,6 @@ export async function getEventApplication(req, res, next) {
     }
   });
 
-console.log(accessToken);
-
   const result = await response.json();
 
   res.status(200).json(result);
