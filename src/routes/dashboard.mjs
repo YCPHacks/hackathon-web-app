@@ -38,7 +38,7 @@ dashboard.route('/event_applications/:event_application_id')
   });
 
 dashboard.route('/event_applications/summary')
-  .get((req, res, next) => {
+  .get(async (req, res, next) => {
     res.locals.event_applications_summary = await getEventApplicationsSummary(req, res, next);
 
     res.status(200).render('event_applications_summary');
