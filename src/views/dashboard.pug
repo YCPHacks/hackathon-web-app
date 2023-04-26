@@ -5,33 +5,48 @@ block main
     p= userRoles
 
     if(userRoles.includes('Organizer'))
+        .display-5.m-2 Home
         .outside.bd-example.bd-example-cols.m-3
             .container.text-center
                 .row.row-cols-sm-2.row-cols-md-4.g-4.g-lg-4
-                    .col.text-decoration-none
-                        .p-3 Total Applicants
-                            span.badge.text-bg-secondary.m-1 0
-                    .col.text-decoration-none
-                        .p-3 RSVP&apos;d
-                            span.badge.text-bg-secondary.m-1 0
-                    .col.text-decoration-none
-                        .p-3 Hardware Checkouts
-                            span.badge.text-bg-secondary.m-1 0
-                    .col.text-decoration-none
-                        .p-3 Mentorship Requests
-                            span.badge.text-bg-secondary.m-1 0
-                    .col.text-decoration-none
-                        .p-3 Listed Events
-                            span.badge.text-bg-secondary.m-1 0
-                    .col.text-decoration-none
-                        .p-3 Listed Prizes
-                            span.badge.text-bg-secondary.m-1 0
-                    .col.text-decoration-none
-                        .p-3 Hardware Items
-                            span.badge.text-bg-secondary.m-1 0
-                    .col.text-decoration-none
-                        .p-3 Listed Projects
-                            span.badge.text-bg-secondary.m-1 0
+
+                    mixin badges(title)
+                        .col.text-decoration-none
+                            .p-3= title
+                                span.badge.text-bg-secondary.m-1 0
+
+                    +badges('Total Applicants')
+                    +badges('RSVP&apos;d')
+                    +badges('Hardware Checkouts')
+                    +badges('Mentorship Requests')
+                    +badges('Listed Events')
+                    +badges('Listed Prizes')
+                    +badges('Hardware Items')
+                    +badges('Listed Projects')
+                    //.col.text-decoration-none
+                    //    .p-3 Total Applicants
+                    //        span.badge.text-bg-secondary.m-1 0
+                    //.col.text-decoration-none
+                    //    .p-3 RSVP&apos;d
+                    //        span.badge.text-bg-secondary.m-1 0
+                    //.col.text-decoration-none
+                    //    .p-3 Hardware Checkouts
+                    //        span.badge.text-bg-secondary.m-1 0
+                    //.col.text-decoration-none
+                    //    .p-3 Mentorship Requests
+                    //        span.badge.text-bg-secondary.m-1 0
+                    //.col.text-decoration-none
+                    //    .p-3 Listed Events
+                    //        span.badge.text-bg-secondary.m-1 0
+                    //.col.text-decoration-none
+                    //    .p-3 Listed Prizes
+                    //        span.badge.text-bg-secondary.m-1 0
+                    //.col.text-decoration-none
+                    //    .p-3 Hardware Items
+                    //        span.badge.text-bg-secondary.m-1 0
+                    //.col.text-decoration-none
+                    //    .p-3 Listed Projects
+                    //        span.badge.text-bg-secondary.m-1 0
         .row.row-cols-1.row-cols-md-3.g-4.text-center.m-3
             .col
                 .card
@@ -67,7 +82,7 @@ block main
                         a.btn.btn-primary(href='#') Go somewhere
 
     else if (userRoles.includes('Attendee'))
-        h1.m-2 Home
+        .display-5.m-2 Home
         .row.row-cols-1.row-cols-md-3.g-0.m-3.text-center
             .col
                 .card.m-1
