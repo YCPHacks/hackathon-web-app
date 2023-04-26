@@ -1,6 +1,5 @@
-doctype html
 html
-    head
+    block head
         title  YCP Hacks
         meta(name='viewport', content='width=device-width, initial-scale=1')
         link(rel='icon', type='image/x-icon', href='/static/images/favicon.png')
@@ -10,7 +9,16 @@ html
         link(rel='stylesheet', type='text/css', href='https://fonts.googleapis.com/css?family=MuseoModerno')
         link(rel='stylesheet', type='text/css', href='https://fonts.googleapis.com/css?family=Sora')
         script(src='https://kit.fontawesome.com/5aea80cc0d.js', crossorigin='anonymous')
-        link(rel='stylesheet', href='/static/stylesheets/404.css')
+        block styles
+            link(rel='stylesheet', type='text/css', href='/static/stylesheets/navbar.css')
     body
-        block content
-            .hehe.centered default
+
+        block nav
+            include ../includes/navbar
+
+        block main
+            p Default content from layout
+
+
+        block footer
+            include ../includes/footer

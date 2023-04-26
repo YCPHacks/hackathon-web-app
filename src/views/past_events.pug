@@ -1,0 +1,70 @@
+extends layout/layout
+
+block append styles
+    link(rel='stylesheet', type='text/css', href='/static/stylesheets/past_events.css')
+
+block main
+    .container
+        h1.ycpHeader.my-3.insides get inspired by past projects!
+        .d-flex.justify-content-center
+            .row.row-cols-md-3.col-md-1.g-4
+
+                mixin card(path, name, link)
+                    .col-sm-12
+                        .card
+                            img.card-img-top&attributes({'src': path}, {'alt' : 'name'})
+                            .card-body.p-2
+                                p.card-text
+                                    a.link.text-decoration-none&attributes({'href' : link}) view on devpost
+
+                +card('/static/images/devpost/virtual-teacher.png', '...', '/static/images/devpost/virtual-teacher.png')
+                +card('/static/images/devpost/project-hydra.png','...','https://devpost.com/software/project-hydra-ar-night-vision')
+                +card('/static/images/devpost/fluid-sim.png','...','https://devpost.com/software/fluid-boid-simulations')
+                +card('/static/images/devpost/accountabillie.png','...','https://devpost.com/software/accountabilliebuddies')
+                +card('/static/images/devpost/super-hack.png','...','https://devpost.com/software/game-super-hack-quest-working-title')
+                +card('/static/images/devpost/hows-it-growing.png','...','https://devpost.com/software/plantcare-cdxhoa')
+
+        a.link.text-decoration-none.text-white.insides(href='https://ycp-hacks-2022.devpost.com/project-gallery') see more!
+        hr
+
+        h2.ycpHeader.my-3.insides past events
+        .d-flex.justify-content-center
+            mixin table(events)
+                tr
+                    td= events
+
+            table.table.table-success.table-striped.table-bordered
+                tr
+                    th.table-dark Events
+                +table('Midnight Nerf War')
+                +table('Smash Bros Ultimate 1v1 Tourney')
+                +table('Slideshow Karaoke')
+                +table('Midnight Whoopie Pies')
+
+        hr
+
+        h2.ycpHeader.my-3.insides past prizes
+        .d-flex.justify-content-center
+            table.table.table-success.table-striped.table-bordered
+                tr
+                    th.table-dark Prizes
+                +table('iPad')
+                +table('Surface Go')
+                +table('Smart TV')
+                +table('Quest 2')
+                +table('Nintendo Switch')
+                +table('Creality Ender 3D Printer')
+                +table('TECBOSS 3D Pen and filament')
+                +table('Beats Solo 3 Headphones')
+                +table('Amazon Echo')
+                +table('Apple Homepod Mini')
+                +table('Google Nest Speaker')
+                +table('Beats Pill')
+                +table('Gaming Keyboard and Mouse')
+                +table('Gaming Chair')
+                +table('Arduino Starter Kit')
+                +table('Google Swag!')
+                +table('$200+ in gift cards')
+                +table('$1000+ in cash prizes')
+                +table('Sponsored Hacks to Come!')
+
