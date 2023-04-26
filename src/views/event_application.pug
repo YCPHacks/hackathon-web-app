@@ -57,9 +57,10 @@ block main
                 button.mx-1.btn.btn-warning.disabled Waitlist
             else if (event_application[0][3]  === 'flagged')
                 button.mx-1.btn.btn-secondary.disabled Flag
+
             button.mx-1.btn.btn-info(onclick=`edit()`) Edit
-            else if (event_application[0][3]  === '')
-                button#update.mx-1.btn.btn-success.disabled(disabled) Update/Save
+           
+            button#update.mx-1.btn.btn-success.disabled(disabled) Update/Save
 
 
     .container-md.text-center.p-4.border
