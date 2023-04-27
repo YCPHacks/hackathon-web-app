@@ -73,24 +73,20 @@ block main
                     th(scope='col') Location
                 tbody
                     tr
-                        //td= hardware_items[0]
-                        //td= hardware_items.data[0]
-
-
-                      each hardware of hardware_items
-                          tr
-                             td= hardware[0]
-                             td= hardware[1]
-                             td= hardware[2]
-                             td= hardware[3]
-                             td= hardware[4]
-                             // each value of item
-                             //     td=value
-                             // td
-                             //     .d-grid.gap-2.text-nowrap.justify-content-evenly
-                             //         a.btn.btn-secondary(href='') Message on Discord
-                             //         button.btn.btn-danger(type='button') Return Item
-                             //    .d-grid.gap-2.text-nowrap.justify-content-evenly
-                             //        button.btn.btn-danger(type='button') Return Item
+                        each hardware of hardware_items
+                            tr
+                                td= hardware[0]
+                                td= hardware[1]
+                                td= hardware[2]
+                                td= hardware[3]
+                                td= hardware[4]
+                                // each value of item
+                                //     td=value
+                                // td
+                                //     .d-grid.gap-2.text-nowrap.justify-content-evenly
+                                //         a.btn.btn-secondary(href='') Message on Discord
+                                //         button.btn.btn-danger(type='button') Return Item
+                                //    .d-grid.gap-2.text-nowrap.justify-content-evenly
+                                //        button.btn.btn-danger(type='button') Return Item
 
     //// PARTICIPANT VIEW
