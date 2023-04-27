@@ -7,9 +7,6 @@
 import { fetch } from 'undici';
 
 export async function createHardwareItem(req, res, next) {
-  console.log(req);
-  console.log(req.body);
-
   const accessToken = req.oidc.accessToken;
 
   const response = await fetch(`${process.env.API_BASE_URL}/hardware_items`, {
