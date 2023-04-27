@@ -46,12 +46,14 @@ dashboard.route('/event_applications/summary')
 
 dashboard.route('/hardware_items')
   .get((req, res, next) => {
+    res.locals.hardware_items = await listHardwareItems(req, res, next);
+
     res.status(200).render('hardware_items');
   });
 
 dashboard.route('/hardware_items/available')
   .get((req, res, next) => {
-      res.status(200).render('hardware_items_available');
+    res.status(200).render('hardware_items_available');
   });
 
 export { dashboard };
