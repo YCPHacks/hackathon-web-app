@@ -72,13 +72,18 @@ block main
                     th(scope='col') Status
                     th(scope='col') Location
                 tbody
-                     each hardware of hardware_items
-                         tr
-                            td= hardware[0]
-                            td= hardware[1]
-                            td= hardware[2]
-                            td= hardware[3]
-                            td= hardware[4]
+                    tr
+                        td= hardware_items[0]
+                        td= hardware_items.data[0]
+
+
+                     // each hardware of hardware_items
+                     //     tr
+                     //        td= hardware[0]
+                     //        td= hardware[1]
+                     //        td= hardware[2]
+                     //        td= hardware[3]
+                     //        td= hardware[4]
                              // each value of item
                              //     td=value
                              // td
