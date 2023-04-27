@@ -58,7 +58,7 @@ block main
 
             // TODO-- Gender
             .row.mb-3
-                label.form-label(for='gender') What gender do you identify as?
+                label.col-sm-2.col-form-label(for='gender') What gender do you identify as?
                 .col-sm-6
                     select#gender.form-select(name='gender', disabled)
                         option(selected, disabled, value=event_application[0][10])= event_application[0][10]
