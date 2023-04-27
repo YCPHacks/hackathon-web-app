@@ -3,9 +3,12 @@ import express from 'express';
 import {
   createEventApplication,
   getEventApplication,
-  listEventApplications,
-  listHardwareItems
+  listEventApplications
 } from '../controllers/event_applications.mjs';
+
+import {
+  listHardwareItems
+} from '../controllers/hardware_items.mjs';
 
 const dashboard = express.Router();
 
