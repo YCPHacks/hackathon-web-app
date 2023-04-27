@@ -3,19 +3,19 @@ extends includes/dashboard_bar
 block main
 
     h1.m-2 Available Hardware
-        .d-flex.justify-content-around
-            a.btn.btn-secondary.m-1(href='/dashboard/hardware_items')
-                | Back to all
+    .d-flex.justify-content-around
+        a.btn.btn-secondary.m-1(href='/dashboard/hardware_items')
+            | Back to all
 
-        .container-sm.overflow-x-scroll.mt-3.p-3
-            table.table.table-striped.table-bordered.my-4
-                thead
-                    tr
-                        th Hardware Name
-                        th Count Available
-                tbody
-                    // each item of available
-                    //     - x++
-                    //     tr
-                    //         each column of item
-                    //             td= column
+    .container-sm.overflow-x-scroll.mt-3.p-3
+        table.table.table-striped.table-bordered.my-4
+            thead
+                tr
+                    th Hardware Name
+                    th Count Available
+            tbody
+                // each item of available
+                //     - x++
+                //     tr
+                //         each column of item
+                //             td= column
