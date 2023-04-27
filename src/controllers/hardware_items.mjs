@@ -20,8 +20,6 @@ export async function listHardwareItems(req, res, next) {
   });
 
   const result = await response.json();
-  
-  console.log(result);
 
   return result.data;
 }
