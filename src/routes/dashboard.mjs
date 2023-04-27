@@ -3,7 +3,7 @@ import express from 'express';
 import {
   createEventApplication,
   getEventApplication,
-  listEventApplications..
+  listEventApplications,
   listHardwareItems
 } from '../controllers/event_applications.mjs';
 
