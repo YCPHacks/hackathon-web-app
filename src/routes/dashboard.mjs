@@ -7,6 +7,7 @@ import {
 } from '../controllers/event_applications.mjs';
 
 import {
+  createHardwareItem,
   listHardwareItems
 } from '../controllers/hardware_items.mjs';
 
@@ -53,6 +54,11 @@ dashboard.route('/hardware_items')
     res.locals.hardware_items = await listHardwareItems(req, res, next);
 
     res.status(200).render('hardware_items');
+  })
+  .post(async (req, res, next) => {
+    await createHardwareItem(req, res, next);
+  
+    res.redirect(303, '/hardware_items');
   });
 
 dashboard.route('/hardware_items/available')
