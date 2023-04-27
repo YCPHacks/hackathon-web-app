@@ -14,6 +14,8 @@ const app = express();
 app.set('view engine', 'pug');
 app.set('views', './src/views');
 
+app.use(express.json());
+
 app.use(auth({
   authorizationParams: {
     audience: process.env.AUDIENCE,
