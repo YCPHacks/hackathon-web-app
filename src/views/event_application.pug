@@ -46,6 +46,7 @@ block main
                 label.col-sm-2.col-form-label(for='age') Age
                 .col-sm-6
                     input.form-control#age(type='number', name='age', min='13', max='99', value= event_application[0][4], disabled)
+
             // -- Country
             .row.mb-3
                 label.col-sm-2.col-form-label(for='country') Country
@@ -56,8 +57,9 @@ block main
 
 
             // TODO-- Gender
-            .col-lg-8.m-3
+            .row.mb-3
                 label.form-label(for='gender') What gender do you identify as?
+                .col-sm-6
                 select#gender.form-select(name='gender', disabled)
                     option(selected, disabled, value=event_application[0][10])= event_application[0][10]
                     option(value='Man') Man
@@ -145,7 +147,7 @@ block main
             //                    | Prefer not to answer
             // todo -- Food Restrictions
             .row.mb-3
-                label.col-sm-2.col-form-label(for='food')
+                label.col-sm-2.col-form-label(for='food') Food Restrictions
                 .col-sm-6
                     select#food.form-select(name='food_restrict', disabled)
                         option(selected='', value=event_application[0][16])=event_application[0][16]
@@ -153,7 +155,7 @@ block main
                         option(value='No') No
             // todo -- T-Shirt Size
             .row.mb-3
-                label.col-sm-2.col-form-label(for='tshirt')
+                label.col-sm-2.col-form-label(for='tshirt') T-Shirt Size
                 .col-sm-6
                     select#tshirt.form-select(name='t_shirt_size', disabled)
                         option(selected, value=event_application[0][15])= event_application[0][15]
@@ -165,7 +167,7 @@ block main
             // -------------------------------------------
             // todo -- Pronouns
             .row.mb-3
-                label.col-sm-2.col-form-label(for='pronoun') Pronouns
+                label.col-sm-2.col-form-label(for='pronoun') What pronouns do you go by?
                 .col-sm-6
                     select#pronoun.form-select(name='pronoun', disabled)
                         option(selected='', value=event_application[0][11])= event_application[0][11]
@@ -183,7 +185,7 @@ block main
             //            option(value='Computer science, computer engineering, or software engineering') Computer science, computer engineering, or software engineering
             // todo -- underrep group
             .row.mb-3
-                label.col-sm-2.col-form-label(for='identify')
+                label.col-sm-2.col-form-label(for='identify') Do you identify as part of an underrepresented group in the technology industry?
                 .col-sm-6
                     select#identify.form-select(name='underrep_group', disabled)
                         option(selected='', value=event_application[0][14])= event_application[0][14]
@@ -193,7 +195,7 @@ block main
                         option(value='Prefer not to answer') Prefer not to answer
             // todo -- race
             .row.mb-3
-                label.col-sm-2.col-form-label(for='describe')
+                label.col-sm-2.col-form-label(for='describe') Which of the following best describes you?
                 .col-sm-6
                     select#describe.form-select(name='race', disabled)
                         option(selected, value=event_application[0][12])= event_application[0][12]
@@ -217,7 +219,7 @@ block main
                         option(value='Prefer not to answer') Prefer not to answer
             // -- sexual orientation
             .row.mb-3
-                label.col-sm-2.col-form-label(for='preference')
+                label.col-sm-2.col-form-label(for='preference') Do you consider yourself to be any of the following?
                 .col-sm-6
                     select#preference.form-select(name='sexual_orient', disabled)
                         option(selected, value=event_application[0][13], disabled)= event_application[0][13]
@@ -228,7 +230,7 @@ block main
                         option(value='Prefer not to answer') Prefer not to answer
             // todo -- edu_completed
             .row.mb-3
-                label.col-sm-2.col-form-label(for='level')
+                label.col-sm-2.col-form-label(for='level') What is the highest level of formal education that you have completed?
                 .col-sm-6
                     select#level.form-select(required, name='edu_completed', disabled)
                         option(selected, value='', disabled) Select
@@ -243,13 +245,13 @@ block main
                         option(value='Prefer not to answer') Prefer not to answer
             //  -- github
             .row.mb-3
-                label.col-sm-2.col-form-label(for='github')
+                label.col-sm-2.col-form-label(for='github') Github
                 .col-sm-6
                     input#github(type="url" class='form-control' placeholder='Github' pattern=".*\.github\..*", name='github', disabled, value=event_application[0][17])
 
             //  -- linkedin
             .row.mb-3
-                label.col-sm-2.col-form-label(for='linkedin')
+                label.col-sm-2.col-form-label(for='linkedin') Linkedin
                 .col-sm-6
                     input#linkedin(type="url" class='form-control' placeholder='LinkedIn' pattern=".*\.linkedin\..*", name='linkedin', disabled, value=event_application[0][18])
 
