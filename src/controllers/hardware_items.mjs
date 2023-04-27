@@ -10,9 +10,13 @@ export async function createHardwareItem(req, res, next) {
   const accessToken = req.oidc.accessToken;
 
   const response = await fetch(`${process.env.API_BASE_URL}/hardware_items`, {
+    method: 'POST',
     headers: {
       'Authorization': `${accessToken.token_type} ${accessToken.access_token}`
-    }
+    },
+    body: JSON.stringify({
+      hardware_item: req.body.hardware_item
+    })
   });
 
   return;
