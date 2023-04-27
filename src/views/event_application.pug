@@ -51,7 +51,7 @@ block main
                 label.col-sm-2.col-form-label(for='country') Country
                 .col-sm-6
                     select#country.form-select(name='country', disabled)
-                        option(selected, value= event_application[5])= event_application[0][5]
+                        option(selected, value= event_application[0][5])= event_application[0][5]
                         option(value='United States of America') United States of America
 
 
@@ -59,7 +59,7 @@ block main
             .col-lg-8.m-3
                 label.form-label(for='gender') What gender do you identify as?
                 select#gender.form-select(name='gender', disabled)
-                    option(selected, disabled, value=event_application[10])= event_application[10]
+                    option(selected, disabled, value=event_application[0][10])= event_application[0][10]
                     option(value='Man') Man
                     option(value='Woman') Woman
                     option(value='Non-Binary') Non-Binary
