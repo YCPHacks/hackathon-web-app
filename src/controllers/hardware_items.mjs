@@ -12,7 +12,8 @@ export async function createHardwareItem(req, res, next) {
   const response = await fetch(`${process.env.API_BASE_URL}/hardware_items`, {
     method: 'POST',
     headers: {
-      'Authorization': `${accessToken.token_type} ${accessToken.access_token}`
+      'Authorization': `${accessToken.token_type} ${accessToken.access_token}`,
+      'Content-Type': 'application/json'
     },
     body: JSON.stringify({
       name: req.body.name,
