@@ -8,6 +8,7 @@ import { fetch } from 'undici';
 
 export async function createHardwareItem(req, res, next) {
   res.sendStatus(201);
+}
 
 export async function listHardwareItems(req, res, next) {
   const accessToken = req.oidc.accessToken;
