@@ -58,7 +58,7 @@ dashboard.route('/hardware_items')
   .post(async (req, res, next) => {
     await createHardwareItem(req, res, next);
   
-    res.redirect(303, '/hardware_items');
+    res.redirect(303, '/dashboard/hardware_items');
   });
 
 dashboard.route('/hardware_items/available')
