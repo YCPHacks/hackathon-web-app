@@ -45,7 +45,7 @@ dashboard.route('/event_applications/summary')
   });
 
 dashboard.route('/hardware_items')
-  .get((req, res, next) => {
+  .get(async (req, res, next) => {
     res.locals.hardware_items = await listHardwareItems(req, res, next);
 
     res.status(200).render('hardware_items');
