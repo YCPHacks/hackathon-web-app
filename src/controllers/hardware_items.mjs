@@ -8,6 +8,7 @@ import { fetch } from 'undici';
 
 export async function createHardwareItem(req, res, next) {
   console.log(req);
+  console.log(req.body);
 
   const accessToken = req.oidc.accessToken;
 
