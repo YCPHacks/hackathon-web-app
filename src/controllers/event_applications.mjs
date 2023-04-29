@@ -15,7 +15,8 @@ export async function getEventApplication(req, res, next) {
 
   const response = await fetch(`${process.env.API_BASE_URL}/event_applications/${req.params.event_application_id}`, {
     headers: {
-      'Authorization': `${accessToken.token_type} ${accessToken.access_token}`
+      'Authorization':
+          `${accessToken.token_type} ${accessToken.access_token}`
     }
   });
 
@@ -29,7 +30,8 @@ export async function getEventApplicationsSummary(req, res, next) {
 
   const response = await fetch(`${process.env.API_BASE_URL}/event_applications/summary`, {
     headers: {
-      'Authorization': `${accessToken.token_type} ${accessToken.access_token}`
+      'Authorization':
+           `${accessToken.token_type} ${accessToken.access_token}`
     }
   });
 
@@ -43,7 +45,8 @@ export async function listEventApplications(req, res, next) {
 
   const response = await fetch(`${process.env.API_BASE_URL}/event_applications`, {
     headers: {
-      'Authorization': `${accessToken.token_type} ${accessToken.access_token}`
+      'Authorization':
+           `${accessToken.token_type} ${accessToken.access_token}`
     }
   });
 

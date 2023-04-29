@@ -37,8 +37,7 @@ export async function createHardwareItem(req, res, next) {
 export async function listHardwareItems(req, res, next) {
   const accessToken = req.oidc.accessToken;
 
-  const response =
-      await fetch(`${process.env.API_BASE_URL}/hardware_items`, {
+  const response = await fetch(`${process.env.API_BASE_URL}/hardware_items`, {
     headers: {
       'Authorization':
           `${accessToken.token_type} ${accessToken.access_token}`
