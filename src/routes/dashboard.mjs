@@ -23,6 +23,11 @@ dashboard.route('/apply')
     res.status(200).render('apply');
 });
 
+dashboard.route('/check_in')
+    .get((req, res, next) => {
+        res.status(200).render('check_in');
+    });
+
 dashboard.route('/event_applications')
   .get(async (req, res, next) => {
     res.locals.event_applications = await listEventApplications(req, res, next);
