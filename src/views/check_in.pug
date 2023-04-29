@@ -6,8 +6,11 @@ block main
     p Insert email of attendee to check them in
     form
         .form-floating.mb-3
-            input#floatingInput.form-control(type='email', placeholder='name@example.com')
+            label(for='floatingInput') Email address
+            
             .col-sm-6
-                label(for='floatingInput') Email address
+                input#floatingInput.form-control(type='email', placeholder='name@example.com')
+
+
 
         button.btn.btn-outline-secondary(type='submit') Check In
