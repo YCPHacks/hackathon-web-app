@@ -2,14 +2,13 @@ extends includes/dashboard_bar
 
 
 block main
+
     .display-5.m-2 Check In
-    p Insert email of attendee to check them in
-    
-    form.row.row-cols-sm-auto.g-3.align-items-center
-        .col-12
-            label.visually-hidden(for='inlineFormInputGroupUsername') Username
-            .input-group
-                .input-group-text @
-                input#inlineFormInputGroupUsername.form-control(type='text', placeholder='Username', fdprocessedid='um6bcf')
-        .col-12
-            button.btn.btn-primary(type='submit', fdprocessedid='fh6cwq') Submit
+    p.m-2 Insert email of attendee to check them in
+
+    form.row.row-cols-sm-auto.g-3.align-items-center.m-4
+        .col-md-6
+            label.visually-hidden(for='email') Email
+                input#email.form-control(type='text', placeholder='Email')
+        .col-md-6
+            button.btn.btn-outline-secondary(type='submit') Check In
