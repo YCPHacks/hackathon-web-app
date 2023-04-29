@@ -97,18 +97,18 @@ block main
         // -- No accont
     else
         .display-5.m-2 Home
-            .row.row-cols-1.row-cols-md-3.g-0.m-3.text-center
-                // -- If no application
-                .col
-                    .card.m-1
-                        .card-body
-                            h2.card-title Check In
-                            hr
-                            p.card-text
-                                p Yay! You completed the first step to attending our Hackathon!
-                                p In order to participate, you will need to fill out our application
-                                p What better time than now?
-                            a.btn.btn-primary(href='/dashboard/apply') Apply Now!
+        .row.row-cols-1.row-cols-md-1.g-0.m-3.text-center
+            // -- If no application
+            .col
+                .card.m-1
+                    .card-body
+                        h2.card-title Check In
+                        hr
+                        p.card-text
+                            p Yay! You completed the first step to attending our Hackathon!
+                            p In order to participate, you will need to fill out our application
+                            p What better time than now?
+                        a.btn.btn-primary(href='/dashboard/apply') Apply Now!
 
     //else if (userRoles.includes('Attendee'))
     //    .display-5.m-2 Home
