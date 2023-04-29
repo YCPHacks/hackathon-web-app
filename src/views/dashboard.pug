@@ -3,8 +3,9 @@ extends includes/dashboard_bar
 
 block main
     //p= userRoles
+    .display-5.m-2 Home
     if(userRoles.includes('Organizer'))
-        .display-5.m-2 Home
+        //.display-5.m-2 Home
         .outside.bd-example.bd-example-cols.m-3
             .container.text-center
                 .row.row-cols-sm-2.row-cols-md-4.g-4.g-lg-4
@@ -79,7 +80,7 @@ block main
             //                | This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
             //            a.btn.btn-primary(href='#') Go somewhere
     else if (userRoles.includes('Attendee'))
-        .display-5.m-2 Home
+        //.display-5.m-2 Home
         .row.row-cols-1.row-cols-md-3.g-0.m-3.text-center
             // -- If no application
             .col
@@ -94,12 +95,12 @@ block main
                             p We will send a notification whenever there have been updates
                             | to your application! :)
 
-        // -- No accont
+        // -- No account
     else
-        .display-5.m-2 Home
-        .row.row-cols-1.row-cols-md-1.g-0.m-3.text-center
+
+        .row.row-cols-1.row-cols-md-1.g-0.m-3.text-center.justify-content-center
             // -- If no application
-            .col
+            .col-md-6
                 .card.m-1
                     .card-body
                         h2.card-title Check In
