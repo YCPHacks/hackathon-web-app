@@ -2,6 +2,10 @@ extends includes/dashboard_bar
 
 block main
         if (userRoles.includes('Attendee'))
+
+
+            // --       
+        else
             form.needs-validation.regContainer.pb-3(method='POST', action= 'http://localhost:3000/dashboard/apply', novalidate="")
                 .display-5.p-2.m-3 Required Contact Information
                     hr
