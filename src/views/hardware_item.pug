@@ -4,4 +4,32 @@ block main
 
     .display-5.m-2 Hardware Item X
 
+    .row.row-cols-1.row-cols-md-2.g-4.text-center.m-3.justify-content-center
+        .col-md-6
+            .card
+                .card-body
+                    h5.card-title Hardware Info
+                    hr
+                    p.card-text
+                        p name
+                        p count
+                        p link
+                        p category
+        .col-md-6
+            .card
+                .card-body
+                    h5.card-title Checkout this Item
+                    hr
+                    p.card-text
+                        .text-center.p-2.my-3.border
+                            form.d-flex
+                                input.form-control.me-2.p-3(type='text', placeholder='Email', aria-label='Email')
+                                button.btn.btn-outline-secondary.mx-1.text-nowrap(type='submit') Check In
 
+        .col-md-12
+            .card
+                .card-body
+                    h5.card-title Checked Out By:
+                    hr
+                    p.card-text
+                        p This item hasnt been checked out yet
