@@ -6,6 +6,17 @@ block main
     .display-5.m-2 Check In
     p.m-2 Insert email of attendee to check them in
 
+    .outside.bd-example.bd-example-cols.m-3
+        .container.text-center
+            .row.row-cols-sm-2.row-cols-md-4.g-4.g-lg-4
+
+                mixin badges(title)
+                    .col.text-decoration-none
+                        .p-3= title
+                            span.badge.text-bg-secondary.m-1 0
+                +badges('Check-In Attendees')
+                +badges("RSVP'd Users")
+    
     .container-md.text-center.p-2.my-3.border
         form.d-flex
             input.form-control.me-2(type='text', placeholder='Email', aria-label='Email')
