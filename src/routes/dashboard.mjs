@@ -71,4 +71,9 @@ dashboard.route('/hardware_items/available')
     res.status(200).render('hardware_items_available');
   });
 
+dashboard.route('/hardware_items/hardware_item')
+    .get((req, res, next) => {
+        res.status(200).render('hardware_items');
+    });
+
 export { dashboard };
