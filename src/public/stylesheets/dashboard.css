@@ -123,3 +123,9 @@ input.form-control.popup {
 a#mlh-trust-badge{
     display: none!important;
 }
+hr {
+    border-width: 0 0 1px;
+    color: #ffffff;
+    border-image: linear-gradient(90deg, rgba(135, 206, 235, 0), #86a3e3 50%, rgba(135, 206, 235, 0) 100%) 0 0 100%;
+    border-style: solid;
+}

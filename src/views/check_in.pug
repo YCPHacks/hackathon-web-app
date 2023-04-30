@@ -4,7 +4,7 @@ extends includes/dashboard_bar
 block main
 
     .display-5.m-2 Check In
-    hr
+
     //p.m-2 Insert email of attendee to check them in
 
     .outside.bd-example-cols.m-3
@@ -17,7 +17,7 @@ block main
                             span.badge.text-bg-secondary.m-1 0
                 +badges('Check-In Attendees')
                 +badges("RSVP'd Users")
-
+    hr
     .container-md.text-center.p-2.my-3.border
         form.d-flex
             input.form-control.me-2.p-3(type='text', placeholder='Email', aria-label='Email')
