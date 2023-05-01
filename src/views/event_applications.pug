@@ -9,6 +9,11 @@ block main
 
         .container-md.text-center.p-2.border
 
+            each event_application of event_applications
+
+                if(event_application[4] === 'pending')
+                    button.btn(type='button')= event_application[4]
+                        span.badge.text-bg-primary.m-1 wu
             //button.btn All
             //    span.badge.text-bg-secondary.m-1= county.length
 
