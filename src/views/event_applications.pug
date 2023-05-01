@@ -61,13 +61,13 @@ block main
                         th Github
                         th Linkedin
 
-                tbody  
+                tbody
                     each event_application of event_applications
                         tr
                             td
                                 a(href= '/dashboard/event_applications/' + event_application[0])= event_application[0]
                             td= event_application[1]
-                            //td= event_application[2]
+                            td= event_application[2]
                             td= event_application[3]
                             td= event_application[4]
                             td= event_application[5]
