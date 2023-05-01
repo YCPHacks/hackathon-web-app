@@ -61,8 +61,14 @@ block main
                             label(for='floatingLocation') Location
                         button.btn.btn-secondary(type='button', data-bs-dismiss='modal') Close
                         button.btn.btn-primary(type='submit') Submit
-    .container-sm.overflow-x-scroll.mt-3.p-3
 
+    .container-md.text-center.p-2.my-3.border
+        form.d-flex(role='search')
+            input.form-control.me-2#myInput(type='search', placeholder='Search', aria-label='Search', onkeyup='searchHardware()')
+            button.btn.btn-outline-success.mx-1(type='submit') Search
+            button.btn.btn-outline-success.mx-1(type='submit') Download CSV
+
+    .container-sm.overflow-x-scroll.mt-3.p-3
         table.table.table-striped.table-bordered.my-4
             thead
                 tr
