@@ -46,7 +46,7 @@ block main
                 label.col-sm-2.col-form-label(for='gender') What gender do you identify as?
                 .col-sm-6
                     select#gender.form-select(name='gender', disabled)
-                        option(selected, disabled, value=event_application[0][10])= event_application[0][10]
+                        option(selected, disabled, value=event_application[0][11])= event_application[0][11]
                         option(value='Man') Man
                         option(value='Woman') Woman
                         option(value='Non-Binary') Non-Binary
@@ -64,7 +64,7 @@ block main
                 label.col-sm-2.col-form-label(for='major') Major
                 .col-sm-6
                     select#major.form-select(name='major', disabled)
-                        option(selected, value= event_application[0][7])= event_application[0][7]
+                        option(selected, value= event_application[0][8])= event_application[0][8]
                         option(value= 'Prefer not to answer') Prefer not to answer
             //.row.mb-3
             //    label.col-sm-2.col-form-label(for='major') What is your major / primary area of study? If you already graduated, what was your major / primary area of study? Select all that apply.
@@ -135,7 +135,7 @@ block main
                 label.col-sm-2.col-form-label(for='food') Food Restrictions
                 .col-sm-6
                     select#food.form-select(name='food_restrict', disabled)
-                        option(selected='', value=event_application[0][16])=event_application[0][16]
+                        option(selected='', value=event_application[0][17])=event_application[0][17]
                         option(value='Yes') Yes
                         option(value='No') No
             //  -- T-Shirt Size
@@ -143,7 +143,7 @@ block main
                 label.col-sm-2.col-form-label(for='tshirt') T-Shirt Size
                 .col-sm-6
                     select#tshirt.form-select(name='t_shirt_size', disabled)
-                        option(selected, value=event_application[0][15])= event_application[0][15]
+                        option(selected, value=event_application[0][16])= event_application[0][16]
                         option(value='S') SM
                         option(value='M') MD
                         option(value='L') LG
@@ -155,7 +155,7 @@ block main
                 label.col-sm-2.col-form-label(for='pronoun') What pronouns do you go by?
                 .col-sm-6
                     select#pronoun.form-select(name='pronoun', disabled)
-                        option(selected='', value=event_application[0][11])= event_application[0][11]
+                        option(selected='', value=event_application[0][12])= event_application[0][12]
                         option(value='he/him') he/him
                         option(value='she/her') she/her
                         option(value='they/them') they/them
@@ -173,7 +173,7 @@ block main
                 label.col-sm-2.col-form-label(for='identify') Do you identify as part of an underrepresented group in the technology industry?
                 .col-sm-6
                     select#identify.form-select(name='underrep_group', disabled)
-                        option(selected='', value=event_application[0][14])= event_application[0][14]
+                        option(selected='', value=event_application[0][15])= event_application[0][15]
                         option(value='Yes') Yes
                         option(value='No') No
                         option(value='Unsure') Unsure
@@ -183,7 +183,7 @@ block main
                 label.col-sm-2.col-form-label(for='describe') Which of the following best describes you?
                 .col-sm-6
                     select#describe.form-select(name='race', disabled)
-                        option(selected, value=event_application[0][12])= event_application[0][12]
+                        option(selected, value=event_application[0][13])= event_application[0][13]
                         option(value='Asian Indian') Asian Indian
                         option(value='Black or African') Black or African
                         option(value='Chinese') Chinese
@@ -207,7 +207,7 @@ block main
                 label.col-sm-2.col-form-label(for='preference') Do you consider yourself to be any of the following?
                 .col-sm-6
                     select#preference.form-select(name='sexual_orient', disabled)
-                        option(selected, value=event_application[0][13], disabled)= event_application[0][13]
+                        option(selected, value=event_application[0][14], disabled)= event_application[0][14]
                         option(value='Heterosexual or straight') Heterosexual or straight
                         option(value='Gay or lesbian') Gay or lesbian
                         option(value='Bisexual') Bisexual
@@ -232,13 +232,13 @@ block main
             .row.mb-3
                 label.col-sm-2.col-form-label(for='github') Github
                 .col-sm-6
-                    input#github(type="url" class='form-control' placeholder='Github' pattern=".*\.github\..*", name='github', disabled, value=event_application[0][17])
+                    input#github(type="url" class='form-control' placeholder='Github' pattern=".*\.github\..*", name='github', disabled, value=event_application[0][18])
 
             //  -- linkedin
             .row.mb-3
                 label.col-sm-2.col-form-label(for='linkedin') Linkedin
                 .col-sm-6
-                    input#linkedin(type="url" class='form-control' placeholder='LinkedIn' pattern=".*\.linkedin\..*", name='linkedin', disabled, value=event_application[0][18])
+                    input#linkedin(type="url" class='form-control' placeholder='LinkedIn' pattern=".*\.linkedin\..*", name='linkedin', disabled, value=event_application[0][19])
 
 
             //+application('Name')(value=event_application.name, for="name", id="name")
