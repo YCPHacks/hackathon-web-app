@@ -26,7 +26,7 @@ function edit(){
         form[i].removeAttribute('disabled')
     }
 
-    // document.getElementById('update').removeAttribute('disabled')
+    document.getElementById('update').removeAttribute('disabled')
 }
 
 function save(){
