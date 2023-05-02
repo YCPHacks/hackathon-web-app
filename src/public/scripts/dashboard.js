@@ -34,7 +34,7 @@ function save(){
     const form = document.getElementById('editing').elements;
     for (let i = 0; i < form.length; i++) {
         // Disable all form controls
-        form[i].setAttribute('disabled')
+        form[i].setAttribute('disabled', 'true')
     }
 }
 
