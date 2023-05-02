@@ -6,53 +6,38 @@ block main
         .d-flex.align-items-center.justify-content-center
             h2.px-2 Application Status
             // TODO: dynamically load badges
-            if (event_application[0][3] === 'accepted')
+            if (event_application[0][4] === 'accepted')
                 span.badge.text-bg-success Accepted
 
-            else if (event_application[0][3] === 'pending')
+            else if (event_application[0][4] === 'pending')
                 span.badge.text-bg-secondary Pending
 
-            else if (event_application[0][3] === 'denied')
+            else if (event_application[0][4] === 'denied')
                 span.badge.text-bg-secondary Denied
 
-            else if (event_application[0][3] === 'flagged')
+            else if (event_application[0][4] === 'flagged')
                 span.badge.text-bg-secondary Flagged
 
-            else if (event_application[0][3] === 'waitlisted')
+            else if (event_application[0][4] === 'waitlisted')
                 span.badge.text-bg-secondary Waitlisted
-
-            //
-            //
-            //else if (event_application[0][3]  === 'undecided')
-            //    span.badge.text-bg-secondary Undecided
-            //
-            //else if (event_application[0][3] === 'declined')
-            //    span.badge.text-bg-danger Declined
-
         a(href='/dashboard/event_applications').btn.btn-secondary Go Back
 
         hr
 
-        mixin application(label)
-
-            .row.mb-3
-                label.col-sm-2.col-form-label(for!=attributes.for)= label
-                .col-sm-6
-                    input.form-control(type='text', readonly, id!=attributes.id value!=attributes.value)
         form#editing
 
             // -- Age
             .row.mb-3
                 label.col-sm-2.col-form-label(for='age') Age
                 .col-sm-6
-                    input.form-control#age(type='number', name='age', min='13', max='99', value= event_application[0][4], disabled)
+                    input.form-control#age(type='number', name='age', min='13', max='99', value= event_application[0][5], disabled)
 
             // -- Country
             .row.mb-3
                 label.col-sm-2.col-form-label(for='country') Country
                 .col-sm-6
                     select#country.form-select(name='country', disabled)
-                        option(selected, value= event_application[0][5])= event_application[0][5]
+                        option(selected, value= event_application[0][6])= event_application[0][6]
                         option(value='United States of America') United States of America
 
 
