@@ -16,8 +16,7 @@ async function verify() {
     })
 }
 
-
-function edit(){
+function edit() {
     alert('Editing applicant form.')
 
     const form = document.getElementById('editing').elements;
@@ -29,7 +28,7 @@ function edit(){
     document.getElementById('update').removeAttribute('disabled')
 }
 
-function save(){
+function save() {
 
     const form = document.getElementById('editing').elements;
     for (let i = 0; i < form.length; i++) {
@@ -39,14 +38,10 @@ function save(){
 }
 
 
-
-
-
 function show() {
     const form = document.getElementById('allergyInput');
     const submit = document.getElementById('tutorial');
     form.setAttribute("required", "")
-    // submit.style.visibility = 'visible';
     submit.style.display = 'block';
 }
 
@@ -60,18 +55,14 @@ function hide() {
 
 function validateSize(input) {
     const fileSize = input.files[0].size / 1024 / 1024; // in MiB
-    // console.log(input.files[0].name);
 
     if (fileSize > 2) {
         alert('File size exceeds 2 MiB, please try uploading something smaller!');
         input.value = null;
-        // console.log("successfully reset");
-    } else {
-        // alert("its fine");
     }
 }
 
-async function searchTable(){
+async function searchTable() {
     var input, filter, table, tr, td, i, txtValue;
     input = document.getElementById("myInput");
     filter = input.value.toUpperCase();
@@ -92,7 +83,7 @@ async function searchTable(){
     }
 }
 
-async function searchHardware(){
+async function searchHardware() {
     var input, filter, table, tr, td, i, txtValue;
     input = document.getElementById("myInput");
     filter = input.value.toUpperCase();
