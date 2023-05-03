@@ -45,7 +45,6 @@ block main
                         option(selected, value= event_application[0][6])= event_application[0][6]
                         option(value='United States of America') United States of America
 
-
             // -- Gender
             .row.mb-3
                 label.col-sm-2.col-form-label(for='gender') What gender do you identify as?
@@ -154,7 +153,7 @@ block main
                         option(value='L') LG
                         option(value='XL') XL
                         option(value='XXL') XXL
-            // -------------------------------------------
+
             //  -- Pronouns
             .row.mb-3
                 label.col-sm-2.col-form-label(for='pronoun') What pronouns do you go by?
@@ -166,13 +165,14 @@ block main
                         option(value='they/them') they/them
                         option(value='Other') Other
                         option(value='Prefer Not to Answer') Prefer Not to Answer
-            ////  -- Major
+            //  -- Major
             //.row.mb-3
             //    label.col-sm-2.col-form-label(for='major')
             //    .col-sm-6
             //        select#major.form-select(name='major')
             //            option(selected='', disabled='') Select
             //            option(value='Computer science, computer engineering, or software engineering') Computer science, computer engineering, or software engineering
+
             //  -- underrep group
             .row.mb-3
                 label.col-sm-2.col-form-label(for='identify') Do you identify as part of an underrepresented group in the technology industry?
@@ -245,44 +245,14 @@ block main
                 .col-sm-6
                     input#linkedin(type="url" class='form-control' placeholder='LinkedIn' pattern=".*\.linkedin\..*", name='linkedin', disabled, value=event_application[0][19])
 
-
-            //+application('Name')(value=event_application.name, for="name", id="name")
-            //+application('Age')(value= event_application[0][4], for="age", id="age")
-            //+application('Country')(value= event_application[0][5], for="country", id="country")
-            //+application('Major')(value= event_application[0][6], for="school", id="school")
-            //+application('Major')(value= event_application[0][7], for="major", id="major")
-
-
-            //.row.mb-3
-            //    label.col-sm-2.col-form-label(for='status')
-            //    .col-sm-6
-            //        select.form-select#status(disabled)
-            //            option(selected='', value= event_application[0][3]) Open this select menu
-            //            option(value='1') One
-            //            option(value='2') Two
-            //            option(value='3') Three
-
-
-            //+application('Status')(value= event_application[0][3], for="status", id="status")
-
         .d-flex.justify-content-end
             // TODO: add query params
-            //if (event_application[0][3] === 'accepted')
             button.mx-1.btn.btn-success Accept
-            //if (event_application[0][3] === 'denied')
             button.mx-1.btn.btn-danger Deny
-            //if (event_application[0][3] === 'waitlisted')
             button.mx-1.btn.btn-warning Waitlist
-            //if (event_application[0][3] === 'flagged')
             button.mx-1.btn.btn-secondary Flag
-
             button.mx-1.btn.btn-info(onclick=`edit()`) Edit
-
             button#update.mx-1.btn.btn-success(disabled, onclick=`save()`) Update/Save
 
-
-    .container-md.text-center.p-4.border
-        h2 Resume
-        hr
 
 

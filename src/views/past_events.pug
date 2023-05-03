@@ -9,6 +9,7 @@ block main
         .d-flex.justify-content-center
             .row.row-cols-md-3.col-md-1.g-4
 
+                // -- Past Events Card Mixin
                 mixin card(path, name, link)
                     .col-sm-12
                         .card
@@ -16,7 +17,7 @@ block main
                             .card-body.p-2
                                 p.card-text
                                     a.link.text-decoration-none&attributes({'href' : link}) view on devpost
-
+                // -- Mixin
                 +card('/static/images/devpost/virtual-teacher.png', '...', '/static/images/devpost/virtual-teacher.png')
                 +card('/static/images/devpost/project-hydra.png','...','https://devpost.com/software/project-hydra-ar-night-vision')
                 +card('/static/images/devpost/fluid-sim.png','...','https://devpost.com/software/fluid-boid-simulations')
@@ -27,12 +28,13 @@ block main
         a.link.text-decoration-none.text-white.backgroundBlend(href='https://ycp-hacks-2022.devpost.com/project-gallery') see more!
         hr
 
-        h2.ycpHeader.my-3.backgroundBlend past events
+        h2.ycpHeader.my-3.backgroundBlend Past Events
         .d-flex.justify-content-center
+            // -- Table Mixin
             mixin table(events)
                 tr
                     td= events
-
+            // -- Past Events Table
             table.table.table-success.table-striped.table-bordered
                 tr
                     th.table-dark Events
@@ -40,11 +42,11 @@ block main
                 +table('Smash Bros Ultimate 1v1 Tourney')
                 +table('Slideshow Karaoke')
                 +table('Midnight Whoopie Pies')
-
         hr
 
-        h2.ycpHeader.my-3.backgroundBlend past prizes
+        h2.ycpHeader.my-3.backgroundBlend Past Prizes
         .d-flex.justify-content-center
+            // -- Past Prizes Table
             table.table.table-success.table-striped.table-bordered
                 tr
                     th.table-dark Prizes

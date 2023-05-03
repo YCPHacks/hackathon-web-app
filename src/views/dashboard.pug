@@ -1,11 +1,10 @@
 extends includes/dashboard_bar
 
-
 block main
-    //p= userRoles
+
     .display-5.m-2 Home
+
     if(userRoles.includes('Organizer'))
-        //.display-5.m-2 Home
         .bd-example-cols.m-3
             .container.text-center
                 .row.row-cols-sm-2.row-cols-md-4.g-4.g-lg-4
@@ -22,30 +21,7 @@ block main
                     +badges('Listed Prizes')
                     +badges('Hardware Items')
                     +badges('Listed Projects')
-                    //.col.text-decoration-none
-                    //    .p-3 Total Applicants
-                    //        span.badge.text-bg-secondary.m-1 0
-                    //.col.text-decoration-none
-                    //    .p-3 RSVP&apos;d
-                    //        span.badge.text-bg-secondary.m-1 0
-                    //.col.text-decoration-none
-                    //    .p-3 Hardware Checkouts
-                    //        span.badge.text-bg-secondary.m-1 0
-                    //.col.text-decoration-none
-                    //    .p-3 Mentorship Requests
-                    //        span.badge.text-bg-secondary.m-1 0
-                    //.col.text-decoration-none
-                    //    .p-3 Listed Events
-                    //        span.badge.text-bg-secondary.m-1 0
-                    //.col.text-decoration-none
-                    //    .p-3 Listed Prizes
-                    //        span.badge.text-bg-secondary.m-1 0
-                    //.col.text-decoration-none
-                    //    .p-3 Hardware Items
-                    //        span.badge.text-bg-secondary.m-1 0
-                    //.col.text-decoration-none
-                    //    .p-3 Listed Projects
-                    //        span.badge.text-bg-secondary.m-1 0
+
         hr
         .row.row-cols-1.row-cols-md-3.g-4.text-center.m-3.justify-content-center
             .col
@@ -66,22 +42,8 @@ block main
                                         td Event 1
                                         td 12:00
                         a.btn.btn-secondary(href='#') View All
-            //.col
-            //    .card
-            //        .card-body
-            //            h5.card-title Card title
-            //            p.card-text
-            //                | This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-            //            a.btn.btn-primary(href='#') Go somewhere
-            //.col
-            //    .card
-            //        .card-body
-            //            h5.card-title Card title
-            //            p.card-text
-            //                | This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-            //            a.btn.btn-primary(href='#') Go somewhere
+
     else if (userRoles.includes('Attendee'))
-        //.display-5.m-2 Home
         .row.row-cols-1.row-cols-md-3.g-0.m-3.text-center.justify-content-center
             // -- If no application
             .col
@@ -95,7 +57,6 @@ block main
                                 If there is anything you would like to change in your application, head to the My Application tab and change what you want!
                             p.
                                 We will send a notification whenever there have been updates to your application! :)
-
         // -- No account
     else
 
