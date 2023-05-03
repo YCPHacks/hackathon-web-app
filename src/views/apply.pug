@@ -10,21 +10,25 @@ block main
             form.needs-validation.regContainer.pb-3(method='POST', action= 'http://localhost:3000/dashboard/apply', novalidate="")
                 .display-5.p-2.m-3 Required Contact Information
                     hr
+
                 .col-lg-8.m-3
                     label.form-label(for='firstName') First Name:
                     input#firstName.form-control(type='value', required)
-                    .invalid-feedback Please enter your first name
+                    .invalid-feedback
+                        | Please enter your first name
 
                 .col-lg-8.m-3
                     label.form-label(for='lastName') Last Name:
                     input#lastName.form-control(type='value', required)
-                    .invalid-feedback Please enter your last name
+                    .invalid-feedback
+                        | Please enter your last name
 
                 // TODO: make phone type
                 .col-lg-8.m-3
                     label.form-label(for='phone') Phone:
                     input#phone.form-control(type='tel', pattern='[0-9]{3}-[0-9]{3}-[0-9]{4}', required)
-                    .invalid-feedback Please enter your phone number
+                    .invalid-feedback
+                        | Please enter your phone number
 
                 .col-lg-8.m-3
                     label.form-label(for='age') Age
@@ -277,7 +281,7 @@ block main
                     input#linkedin(type="url" class='form-control' placeholder='LinkedIn' pattern=".*\.linkedin\..*", name='linkedin', required)
                     .invalid-feedback
                         | Ensure this is a Linkedin link
-                //
+
                 hr
                 .col-lg-8.m-3
                     .form-check
