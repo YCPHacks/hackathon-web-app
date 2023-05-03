@@ -25,6 +25,11 @@ block main
         hr
 
         form#editing
+            // -- Email
+            .row.mb-3
+                label.col-sm-2.col-form-label(for='email') Email
+                .col-sm-6
+                    input.form-control#email(type='text', value= event_application[0][1], disabled)
 
             // -- Age
             .row.mb-3
