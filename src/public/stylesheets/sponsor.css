@@ -1,10 +1,5 @@
 body {
-    /*background-color: #efebeb;*/
-    /*font-family: 'Sora';*/
-    /*background-image: linear-gradient(90deg, #8eb5da 0%, #1bb144 100%);*/
-    /*font-weight: 500;*/
     color: black;
-    /*font-size: 1.2em;*/
 }
 
 /* ----- TEXT STYLES -----*/
@@ -13,38 +8,23 @@ body {
     color: #ffffff;
     font-size: 8vw;
     letter-spacing: 1.5pt;
-    /* sad attempt of svg background :( */
-    /*display: grid;*/
-    /*align-items: center;*/
-    /*background: url("../images/gooey.svg") center no-repeat;*/
-    /*background-size: 47vw;*/
-    /*height: 510px;*/
 }
 
-.hacks {
+.tierText {
     font-size: 4.5em;
     font-family: 'Gruppo', cursive;
     font-weight: 700;
-    padding: 15px;
     letter-spacing: 2pt;
     margin-top: 0;
-    margin-bottom: 3px;
     color: #ffffff;
 }
 
 /* ----- BOTTOM SPONSOR CONTAINER ----- */
 .bottom {
-    /*background: rgba(255, 255, 255, 0.37);*/
     width: fit-content;
     padding: 20px;
+    border: 1px white solid;
 }
-
-/* ----- SPONSOR CONTAINERS ----- */
-/**,*/
-/**:before,*/
-/**:after {*/
-/*    box-sizing: border-box;*/
-/*}*/
 
 .container {
     max-width: 400px;
@@ -54,7 +34,7 @@ body {
     position: relative;
 }
 
-.intro {
+.sponsorImageBG {
     position: relative;
     min-height: 320px;
     height: 95%;
@@ -90,11 +70,9 @@ body {
     background-size: contain;
 }
 
-.intro:after {
-    /*content: '';*/
+.sponsorImageBG:after {
     display: block;
     position: absolute;
-    /* width: 100%; */
     height: 500px;
     right: -100%;
     left: 0;
@@ -118,7 +96,7 @@ body {
     transition: all .52s ease-in-out;
 }
 
-.meta {
+.sponsorTier {
     max-width: 300px;
     width: 100%;
     margin: 0% auto 0;
@@ -132,9 +110,8 @@ body {
     transition: all .52s ease-in-out;
 }
 
-.meta__inner {
+.sponsorTier__inner {
     padding: .25rem 1rem;
-    /*line-height: 1.5rem;*/
     position: relative;
     background: #fff;
     z-index: 15;
@@ -142,7 +119,7 @@ body {
     border-top: none;
 }
 
-.meta:after {
+.sponsorTier:after {
     content: '';
     display: block;
     position: absolute;
@@ -173,11 +150,11 @@ p.innerText {
     text-align: center;
 }
 
-.container:hover .meta {
+.container:hover .sponsorTier {
     transform: translateY(5px);
 }
 
-.container:hover .intro {
+.container:hover .sponsorImageBG {
     transform: translateY(-5px);
 }
 
@@ -190,27 +167,15 @@ p.innerText {
         margin-top: 20px;
     }
 
-    .intro {
+    .sponsorImageBG {
         height: 80%;
     }
 
-    .hacks {
+    .tierText {
         text-align: center;
         font-size: 3rem;
     }
 }
-
-/*.link {*/
-/*    box-shadow: inset 0 0 0 0 #54b3d6;*/
-/*    color: #1b53ce;*/
-/*    padding: 4px .40rem;*/
-/*    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;*/
-/*}*/
-/*.link:hover {*/
-/*    box-shadow: inset 200px 0 0 0 #54b3d6;*/
-/*    color: white;*/
-/*    cursor: pointer;*/
-/*}*/
 
 
 

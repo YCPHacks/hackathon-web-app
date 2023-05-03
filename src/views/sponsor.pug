@@ -8,15 +8,14 @@ block main
     .ycpHeader.text-center.mt-5 Sponsors
     h5.text-center.text-white Thank you to our 2022 YCPHacks sponsors!
 
-
-    .hacks.text-center.mt-5 Gold Tier
+    .tierText.text-center.mt-5 Gold Tier
     hr
     .row.row-cols-1.row-cols-md-2.g-4.m-0.justify-content-center.mb-5
         .col
             .container
-                section.intro(title='bd')
-                .meta
-                    .meta__inner
+                section.sponsorImageBG(title='bd')
+                .sponsorTier
+                    .sponsorTier__inner
                         h3 BD
                         p.innerText
                             | BD is one of the largest global medical technology companies in the world and is advancing
@@ -26,14 +25,14 @@ block main
 
     .mt-5
 
-    .hacks.text-center.mt-5 Silver Tier
+    .tierText.text-center.mt-5 Silver Tier
     hr
     .row.row-cols-1.row-cols-md-2.g-4.m-0.justify-content-center
         .col
             .container
-                section.intro(title='penn_waste')
-                .meta
-                    .meta__inner
+                section.sponsorImageBG(title='penn_waste')
+                .sponsorTier
+                    .sponsorTier__inner
                         h3 Penn Waste
                         p.innerText
                             | A locally-operated and managed company, Penn Waste is committed to improving the communities
@@ -42,9 +41,9 @@ block main
                             a.link.text-decoration-none(href='https://www.pennwaste.com/') Read more
         .col
             .container
-                section.intro(title='jdb_engineering')
-                .meta
-                    .meta__inner
+                section.sponsorImageBG(title='jdb_engineering')
+                .sponsorTier
+                    .sponsorTier__inner
                         h3 JDB Engineering
                         p.innerText
                             | We provide integrated MEP engineering dedicated to mitigating the inherent financial and operational risks,
@@ -52,16 +51,16 @@ block main
                             br
                             a.link.text-decoration-none(href='https://jdbengineering.com/') Read more
 
-    .hacks.text-center.mt-5 Bronze Tier
+    .tierText.text-center.mt-5 Bronze Tier
     hr
     .row.row-cols-1.row-cols-md-2.g-4.m-0.justify-content-center
         .col
             .mobileContainer
 
             .container
-                section.intro(title='dataforma')
-                .meta
-                    .meta__inner
+                section.sponsorImageBG(title='dataforma')
+                .sponsorTier
+                    .sponsorTier__inner
                         h3 Dataforma
                         p.innerText
                             | Dataforma is now a full-service web-based business management system,
@@ -70,16 +69,16 @@ block main
                             a.link.text-decoration-none(href='https://www.dataforma.com/') Read more
         .col
             .container
-                section.intro(title='cs_davidson')
-                .meta
-                    .meta__inner
+                section.sponsorImageBG(title='cs_davidson')
+                .sponsorTier
+                    .sponsorTier__inner
                         h3 CS Davidson
                         p.innerText
                             | We provide excellence in engineering and customer service to municipalities
                             | and a wide range of private clients, helping them preserve, manage, and construct a better world.
                             br
                             a.link.text-decoration-none(href='https://csdavidson.com/') Read more
-    .hacks.mt-5
+    .tierText.mt-5
     .d-flex.justify-content-center
         .bottom.text-center.backgroundBlend
             .display-5.text-white Want to sponsor?
@@ -88,4 +87,3 @@ block main
                 hr
                 a.text-decoration-none.link-light(href='https://ycphacks.io/YCP_HACKS_SPONOSRSHIP_BROCHURE_2022_FINAL_FILE.pdf') Prospectus
                 hr
-
