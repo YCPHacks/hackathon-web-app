@@ -117,6 +117,13 @@ block main
                 +link1("When will this be? 📅", "XXX", 4)
                 +link1("Why? 😯", "Learn new things, meet new people, and tons of free food and swag.", 5)
                 +link1("Will you reimburse travel? 💰", "If we get enough sponsors this season, we may offer it closer to the event date. At this time we cannot confirm it though. Apply and we'll email our applicants with more information as it becomes available.", 6)
+                .accordion-item
+                    h2.accordion-header
+                        button.accordion-button.collapsed(type='button', data-bs-toggle='collapse', data-bs-target='#14', aria-expanded='false') You didn't answer my question!
+                    #14.accordion-collapse.collapse(data-bs-parent='#accordionExample1')
+                        .accordion-body
+                            |  Send it to us at&nbsp
+                            a.primary-link(href='mailto:info@ycphacks.io') info@ycphacks.io!
         .col
             #accordionExample1.accordion
                 +link2("I don't have a team so.... 🤷", "Well you're in luck! We have tons of team building activities if you don't have a team to come with you. You can also work alone if you'd like.", 7)
@@ -134,13 +141,7 @@ block main
                         .accordion-body
                             |  You can find the MLH code of conduct&nbsp
                             a.primary-link(href='https://static.mlh.io/docs/mlh-code-of-conduct.pdf') here!
-                .accordion-item
-                    h2.accordion-header
-                        button.accordion-button.collapsed(type='button', data-bs-toggle='collapse', data-bs-target='#14', aria-expanded='false') You didn't answer my question!
-                    #14.accordion-collapse.collapse(data-bs-parent='#accordionExample1')
-                        .accordion-body
-                            |  Send it to us at&nbsp
-                            a.primary-link(href='mailto:info@ycphacks.io') info@ycphacks.io!
+
 
     // -- Youtube Recap Videos
     h1.display-5.text-center.mt-5  Recaps
