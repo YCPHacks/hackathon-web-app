@@ -4,7 +4,6 @@ block main
         if (userRoles.includes('Attendee'))
 
 
-
         else
             // -- Event Application
             form.needs-validation.regContainer.pb-3(method='POST', action= 'http://localhost:3000/dashboard/apply', novalidate="")
@@ -198,7 +197,7 @@ block main
                                 label.form-check-label(for='defaultCheck14')
                                     | My school does not offer majors / primary areas of study
                             .form-check
-                                input#defaultCheck15.form-check-input(type='checkbox', value='Prefer not to answer', name='major')
+                                input#defaultCheck15.form-check-input(type='checkbox', value='Prefer not to answer', name='major', checked)
                                 label.form-check-label(for='defaultCheck15')
                                     | Prefer not to answer
                                 .invalid-feedback
