@@ -6,15 +6,18 @@ block main
 
     if(userRoles.includes('Organizer'))
         .display-5.m-2 Event Applications
+        hr
 
         .container-md.text-center.p-2.border
             a(href='/dashboard/event_applications/summary').btn.btn-primary Summary
 
+        // -- Event Application Search
         .container-md.text-center.p-2.my-3.border
             form.d-flex(role='search')
                 input.form-control.me-2#myInput(type='search', placeholder='Search Event Applications', aria-label='Search Event Applications', onkeyup='searchTable()')
                 button.btn.btn-outline-success.mx-1(onclick=`tableToCSV()`) Download CSV
 
+        // -- Event Applications Table
         .container-sm.overflow-x-scroll.mt-3.p-3
             table.table.table-striped.table-bordered.my-4#myTable
                 thead
