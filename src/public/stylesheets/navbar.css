@@ -1,8 +1,4 @@
 html, body {
-    /*background-color: #efebeb;*/
-    /*background-image: linear-gradient(90deg, #8eb5da 0%, #1bb144 100%);*/
-
-    /*need to chnage for dashboard*/
     background-image: url("../images/bg2.png");
     background-repeat: no-repeat;
     height: 100vh;
@@ -16,7 +12,7 @@ html, body {
     z-index: 0;
 }
 
-.insides{
+.backgroundBlend {
     background: #323362;
 }
 
@@ -39,18 +35,12 @@ html, body {
     color: black;
 }
 
-/*.navbar-nav {*/
-/*    right: 130px;*/
-/*    position: relative;*/
-/*}*/
-
-/* ----- FOR MLH FLAG (theres probably a better way how to do this) ----- */
+/* ----- FOR MLH FLAG (theres probably a better way to do this) ----- */
 @media (min-width: 992px) {
     .dropdown-menu-lg-start[data-bs-popper] {
         left: -60px;
     }
 }
-
 
 hr {
     border-width: 0 0 1px;
@@ -79,8 +69,6 @@ hr {
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
-
-/*-----------------------*/
 
 /* ------COOL NAV REPLACEMENT------ */
 a.replaceText {

@@ -15,8 +15,8 @@ block main
     .intro.d-flex.flex-column
         .text-center.d-flex.flex-column.p-4
             .ycpHeader YCP Hacks
-            h2.date.insides Fall 2023
-            h3.text-white.insides Willman Business Center
+            h2.date.backgroundBlend Fall 2023
+            h3.text-white.backgroundBlend Willman Business Center
         a.introButtons.m-1(href='/dashboard') Register Now!
         p
             // TODO: discord link
@@ -28,7 +28,8 @@ block main
 
     hr#jump
 
-    .insides.text-container.m-5
+    // -- Hackathon Description
+    .backgroundBlend.text-container.m-5
         .row.m-0.d-flex.align-items-center
             .col-md-8
                 .date.text-white
@@ -158,35 +159,35 @@ block main
         .carousel-inner
             .carousel-item.active
                 .carousel-item-container
-                    .dixie
+                    .sponsorContainer
                         a.linkSponsor(href='https://www.standoutstickers.com/?utm_campaign=events-league-organizers-spring2022&utm_medium=email&utm_source=customerio-zoho_creator_-_standout_sticker_intro')
                             img.img-fluid1.platinum.sponsorImage(src='/static/images/sponsors/stand-out-stickers-logo.png', alt='...')
-                    .dixie
+                    .sponsorContainer
                         a.linkSponsor(href='https://www.bd.com/en-us')
                             img.img-fluid1.platinum.sponsorImage(src='/static/images/sponsors/bd_logo.png', alt='BD')
-                    .dixie
+                    .sponsorContainer
                         a.linkSponsor(href='https://mlh.io/seasons/2023/events')
                             img.img-fluid1.platinum.sponsorImage(src='/static/images/sponsors/mlh-logo-color.svg', alt='Dataforma')
             .carousel-item
                 .carousel-item-container
-                    .dixie
+                    .sponsorContainer
                         a.linkSponsor(href='https://www.ycp.edu/about-us/offices-and-departments/student-development-and-campus-life/student-activities-and-orientation/esports/')
                             img.img-fluid1.gold.sponsorImage(src='/static/images/sponsors/eSports.png', alt='eSports YCP')
-                    .dixie
+                    .sponsorContainer
                         a.linkSponsor(href='https://www.dataforma.com/')
                             img.img-fluid1.gold.sponsorImage(src='/static/images/sponsors/dataforma.png', alt='Dataforma')
-                    .dixie
+                    .sponsorContainer
                         a.linkSponsor(href='https://www.wolfram.com/wolfram-one/')
                             img.img-fluid1.gold.sponsorImage(src='/static/images/sponsors/wolframLang.png', alt='Wolfram Language')
             .carousel-item
                 .carousel-item-container
-                    .dixie
+                    .sponsorContainer
                         a.linkSponsor(href='https://www.pennwaste.com/')
                             img.img-fluid1.sponsorImage.silver(src='/static/images/sponsors/pennWaste.png', alt='Penn Waste')
-                    .dixie
+                    .sponsorContainer
                         a.linkSponsor(href='https://www.ycp.edu/academics/graham-school-of-business/')
                             img.img-fluid1.sponsorImage.silver(src='/static/images/sponsors/grahamSchool.png', alt='Graham School of Business')
-                    .dixie
+                    .sponsorContainer
                         a.linkSponsor(href='https://mrgcorp.com/')
                             img.img-fluid1.sponsorImage.silver(src='/static/images/sponsors/mrg-labs-logo.png', alt='MRG Labs')
         button.carousel-control-prev(type='button', data-bs-target='#carouselExampleAutoplaying', data-bs-slide='prev')
@@ -198,7 +199,7 @@ block main
 
     // -- Some more sponsor information
     .text-center
-        #sponsorStuff.p.insides.my-4
+        #sponsorStuff.p.backgroundBlend.my-4
             | Want to sponsor?&nbsp
             a.link.text-decoration-none(href='mailto:INFO@YCPHacks.io') Email us&nbsp
                 i.fa-solid.fa-envelope
@@ -233,7 +234,6 @@ block main
                 .memberContainer
                     .memberTitle Josh Kopelcheck
                     .memberLabel Backend
-
 
             //TODO: add back later
             //.planet
