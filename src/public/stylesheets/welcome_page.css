@@ -440,10 +440,9 @@ td, tr {
         background-position: -600px;
     }
 }
-
+*/
 @media (max-width: 1400px) {
     #spriteContainer, .planet, .alien {
         display: none;
     }
 }
-*/
