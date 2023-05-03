@@ -14,11 +14,13 @@ html(lang='en')
             link(rel='stylesheet', type='text/css', href='/static/stylesheets/navbar.css')
     body
 
-        block nav
-            include ../includes/navbar
+        nav
+            block nav
+                include ../includes/navbar
         main
             block main
                 p Default content from layout
 
-        block footer
-            include ../includes/footer
+        footer
+            block footer
+                include ../includes/footer
