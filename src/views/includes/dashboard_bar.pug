@@ -15,7 +15,7 @@ block head
         link(rel='stylesheet', href='/static/stylesheets/dashboard.css')
 
 block nav
-    // TODO: changing active tab link
+    
     if (userRoles.includes('Organizer'))
         ul.nav.nav-tabs.justify-content-center
             li.nav-item
@@ -26,21 +26,13 @@ block nav
                 a.nav-link(href='/dashboard/check_in') Check In
             li.nav-item
                 a.nav-link(href='/dashboard/event_applications') Applications
-            //li.nav-item
-            //    a.nav-link(href='/dashboard/event_applications/summary') Information
-            //li.nav-item
-            //    a.nav-link(href='#') Prizes
-            //li.nav-item
-            //    a.nav-link(href='#') Projects
-            //li.nav-item
-            //    a.nav-link(href='#') Admin
             li.nav-item
                 a.nav-link(href='/') Back to Main Site
-
             if(isAuthenticated)
                 li.nav-item
                     a.nav-link(href='/logout') Logout
 
+    // -- If user is Attendee
     else if(userRoles.includes('Attendee'))
         ul.nav.nav-tabs.justify-content-center
             li.nav-item
@@ -54,15 +46,12 @@ block nav
                     a.nav-link(href='/logout') Logout
 
     else
-        // if user does not have a role
+        // -- If user has no role
         ul.nav.nav-tabs.justify-content-center
-
             li.nav-item
                 a.nav-link(aria-current='page', href='/dashboard') Dashboard Home
-
             li.nav-item
                 a.nav-link(href='/dashboard/apply') Apply
-
             li.nav-item
                 a.nav-link(href='/') Back to Main Site
             if(isAuthenticated)
