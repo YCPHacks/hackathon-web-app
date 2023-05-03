@@ -4,16 +4,14 @@ block main
     // ADMINISTRATOR VIEW
     h1.m-2 Hardware Inventory
     hr
+
     .d-flex.justify-content-around
         button.btn.btn-success.m-1(type='button', data-bs-toggle='modal', data-bs-target='#newHardware')
             | Create New Hardware Item
-
         a.btn.btn-secondary.m-1(href='/dashboard/hardware_items/available')
             | View All Available Items
 
-        //button.btn.btn-secondary.m-1(type='button', data-bs-toggle='modal', data-bs-target='#viewHardware')
-        //    | View All Checked-Out Items
-
+    // -- Create Hardware Modal
     #newHardware.modal.fade(data-bs-backdrop='static', data-bs-keyboard='false', tabindex='-1', aria-labelledby='staticBackdropLabel', aria-hidden='true')
         .modal-dialog
             .modal-content
@@ -22,16 +20,19 @@ block main
                     button.btn-close(type='button', data-bs-dismiss='modal', aria-label='Close')
                 .modal-body
                     form(method='POST' action='/dashboard/hardware_items')
+                        // -- Hardware Name
                         .form-floating.mb-3
                             input#floatingName.form-control(type='text', placeholder='Name' name='name')
                             label(for='floatingName') Name
+                        // -- Link
                         .form-floating.mb-3
                             input#floatingLink.form-control(type='text', placeholder='Link' name='link')
                             label(for='floatingLink') Link
+                        // -- Count
                         .form-floating.mb-3
                             input#floatingCount.form-control(type='text', placeholder='Count' name='count')
                             label(for='floatingCount') Count
-                        // Category
+                        // -- Category
                         select.form-select.mb-3(aria-label='Select Category' name='category')
                             option(selected disabled) Select Category
                             option(value='building parts') building parts
@@ -52,23 +53,24 @@ block main
                             option(value='wheels') wheels
                             option(value='wires') wires
                             option(value='other') other
-                        //.form-floating.mb-3
+                        // -- Status
                         select.form-select.mb-3(aria-label='Select Status' name='status')
                             option(selected='' disabled='') Select Status
                             option(value='available') Available
                             option(value='unavailable') Unavailable
+                        // -- Location
                         .form-floating.mb-3
                             input#floatingLocation.form-control(type='text', placeholder='Location' name='location')
                             label(for='floatingLocation') Location
                         button.btn.btn-secondary(type='button', data-bs-dismiss='modal') Close
                         button.btn.btn-primary(type='submit') Submit
-
+    // -- Hardware Search
     .container-md.text-center.p-2.my-3.border
         form.d-flex(role='search')
             input.form-control.me-2#myInput(type='search', placeholder='Search Hardware', aria-label='Search Hardware', onkeyup='searchHardware()')
-            //button.btn.btn-outline-success.mx-1(type='submit') Search
             button.btn.btn-outline-success.mx-1(type='submit', onclick=`tableToCSV()`) Download CSV
 
+    // -- Hardware Table
     .container-sm.overflow-x-scroll.mt-3.p-3
         table.table.table-striped.table-bordered.my-4#myTable
             thead
@@ -87,13 +89,8 @@ block main
                                 td= hardware[2]
                                 td= hardware[3]
                                 td= hardware[4]
-                                // each value of item
-                                //     td=value
-                                // td
                                 //     .d-grid.gap-2.text-nowrap.justify-content-evenly
                                 //         a.btn.btn-secondary(href='') Message on Discord
                                 //         button.btn.btn-danger(type='button') Return Item
                                 //    .d-grid.gap-2.text-nowrap.justify-content-evenly
                                 //        button.btn.btn-danger(type='button') Return Item
-
-    //// PARTICIPANT VIEW
