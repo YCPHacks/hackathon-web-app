@@ -15,24 +15,23 @@ block main
     .intro.d-flex.flex-column
         .text-center.d-flex.flex-column.p-4
             .ycpHeader YCP Hacks
-            h2.hacks.insides Fall 2023
+            h2.date.insides Fall 2023
             h3.text-white.insides Willman Business Center
         a.introButtons.m-1(href='/dashboard') Register Now!
         p
-            // TODO: possible change
+            // TODO: discord link
             a.introButtons.m-1(href='/') Discord
-            // TODO: sponsor page
             a.introButtons.m-1(href='/sponsor') Sponsor Us
-        // TODO: implement smooth scrolling
+        // TODO: future - implement smooth scrolling
         a(href='#jump' tabindex='-1' aria-label='jump to content')
-            i.fa-solid.fa-chevron-down.scrollDown(style='color: white;' )
+            i.fa-solid.fa-chevron-down.scrollDown(style='color: white;')
 
     hr#jump
 
     .insides.text-container.m-5
         .row.m-0.d-flex.align-items-center
             .col-md-8
-                .hacks.text-white
+                .date.text-white
                     u what is hackathon?
                 p
                     | Conveniently nestled in the middle of rural Pennsylvania, YCP Hacks is a
@@ -48,7 +47,7 @@ block main
                     | innovation, and entrepreneurship in York and beyond, and we just can't wait to see
                     | what you do next.
             .col-md-4
-                img.img2(src='/static/images/Presentation.png' alt='Presentation')
+                img.classImage(src='/static/images/Presentation.png' alt='Presentation')
 
     .margin.p-2
         h1.display-5.mt-5 Schedule
@@ -90,18 +89,22 @@ block main
                                         td(style="width: 5px;")=value
                 #sun-tab-pane.tab-pane.fade(role='tabpanel', aria-labelledby='contact-tab', tabindex='0') ...
 
+    // -- First FAQ Column
     mixin link1(name,text, id)
         .accordion-item
             h2.accordion-header
                 button.accordion-button.collapsed&attributes({'data-bs-target': '#' + id})(type='button', data-bs-toggle='collapse')= name
             .accordion-collapse.collapse&attributes({'id': id})(data-bs-parent='#accordionExample')
                 .accordion-body= text
+
+    // -- Second FAQ Column
     mixin link2(name,text, id)
         .accordion-item
             h2.accordion-header
                 button.accordion-button.collapsed&attributes({'data-bs-target': '#' + id})(type='button', data-bs-toggle='collapse')= name
             .accordion-collapse.collapse&attributes({'id': id})(data-bs-parent='#accordionExample1')
                 .accordion-body= text
+
     h1.display-5.mt-5 FAQ
     .elementSize.row.row-cols-md-2.mx-4.row-cols-sm-1
         .col
@@ -142,13 +145,13 @@ block main
         //                    |  Send it to us at&nbsp
         //                    a.primary-link(href='mailto:info@ycphacks.io') info@ycphacks.io!
 
-    // Youtube Recap Videos
+    // -- Youtube Recap Videos
     h1.display-5.text-center.mt-5  Recaps
     .youtube.d-flex.justify-content-center.mx-3
         iframe.videos.m-1(src='https://www.youtube.com/embed/Ru9zvWGSH8U', allow='fullscreen' aria-label='students')
         iframe.videos.m-1(src='https://www.youtube.com/embed/k5A2QTasITs', allow='fullscreen' aria-label='2017-recap')
 
-    // Sponsor Carousel
+    // -- Sponsor Carousel
     h1.display-5.text-center.mt-5.sponsorSection Our Sponsors!
     #carouselExampleAutoplaying.carousel.carousel-dark.slide(data-bs-ride='carousel')
 
@@ -196,7 +199,6 @@ block main
     // Some more sponsor information
     .text-center
         #sponsorStuff.p.insides.my-4
-            //| Want to sponsor? Email us at INFO@YCPHacks.io
             | Want to sponsor?&nbsp
             a.link.text-decoration-none(href='mailto:INFO@YCPHacks.io') Email us&nbsp
                 i.fa-solid.fa-envelope

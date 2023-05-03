@@ -1,19 +1,5 @@
-/*html, body {*/
-/*    !*background: linear-gradient(90deg, #8eb5da 0%, #1bb144 100%);*!*/
-/*    font-family: Sora;*/
-/*    background-image: url("../images/bg2.png");*/
-/*    background-repeat: no-repeat;*/
-/*    font-weight: 500;*/
-/*    font-size: 1.2em;*/
-/*    position: relative;*/
-/*    text-align: center;*/
-/*    height: 100vh;*/
-/*    overflow-x: hidden;*/
-/*    color: white;*/
-/*    z-index: 0;*/
-
-/*}*/
-.planet{
+/* NOT BEING USED */
+.planet {
     width: 105%;
     position: absolute;
     display: grid;
@@ -26,14 +12,17 @@
     align-content: center;
 }
 
-.alien{
+/* ------FLOATING ARROW TO SKIP DOWN PAGE------ */
+.scrollDown {
+    animation: float 2s ease-in-out infinite;
+}
+
+/* ------ALIEN IN UFO------ */
+.alien {
     position: absolute;
     top: 10%;
     right: 10%;
-    animation:  float 6s ease-in-out infinite;
-}
-.scrollDown{
-    animation: float 2s ease-in-out infinite;
+    animation: float 6s ease-in-out infinite;
 }
 
 @keyframes float {
@@ -48,17 +37,13 @@
     }
 }
 
-main{
-    position: relative;
-    z-index: 0;
-    stroke: #52b6c8;
-}
-.svg{
+/* ------SVG LINES------ */
+.svg {
     z-index: -1;
     left: 0;
     position: fixed;
-
 }
+
 .path {
     stroke-dasharray: 100;
     stroke-dashoffset: 1000;
@@ -66,16 +51,88 @@ main{
     stroke: #3f6087;
 }
 
-@keyframes dash {
-    from {
-        stroke-dashoffset: 1000;
-    }
-    to {
-        stroke-dashoffset: 0;
-    }
+/* ------First Section------ */
+.intro {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.ycpHeader {
+    font-family: 'MuseoModerno', serif;
+    color: #ffffff;
+    font-size: 10vw;
+    letter-spacing: 1.5pt;
+    margin-bottom: 0px;
+}
+
+.date {
+    font-size: 1.5em;
+    font-weight: 700;
+    letter-spacing: 2pt;
+    margin-top: 0px;
+    margin-bottom: 3px;
+    color: white;
+}
+
+/* ------Intro Buttons------ */
+.introButtons {
+    align-items: center;
+    appearance: none;
+    background-color: #FCFCFD;
+    border-radius: 4px;
+    border-width: 0;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #36395A;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "JetBrains Mono", monospace;
+    height: 48px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s, transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow, transform;
+    font-size: 16px;
+}
+
+.introButtons:focus {
+    box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+.introButtons:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    transform: translateY(-2px);
+}
+
+.introButtons:active {
+    box-shadow: #D6D6E7 0 3px 7px inset;
+    transform: translateY(2px);
+}
+
+/* ------IMAGE WITH HAKE AND CLASS------ */
+.classImage {
+    width: 100%;
+    align-content: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+
 /* ------SPONSOR CAROUSEL------ */
+/* Comment these out and add respective classes if you want tier color */
 /*.platinum {*/
 /*    animation: platinum 2.0s infinite;*/
 /*}*/
@@ -116,7 +173,7 @@ main{
 /*    }*/
 /*}*/
 
-/* dont know if i want to keep this*/
+/* This is the hoverable shadow in the sponsor carousel */
 [type=button]:not(:disabled):hover, [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled):hover {
     cursor: pointer;
     background: #ffffff63;
@@ -198,11 +255,6 @@ td, tr {
     color: black;
 }
 
-.nav-tabs {
-    /*background: #84c284;*/
-
-}
-
 /* ------FAQ Section------ */
 .accordion {
     --bs-accordion-bg: #cfcfcf;
@@ -240,7 +292,6 @@ td, tr {
 .memberPhoto:hover .memberContainer {
     background-color: rgba(16, 23, 41, 0);
 }
-
 
 .memberPhoto .memberTitle {
     position: absolute;
@@ -311,108 +362,8 @@ td, tr {
     }
 }
 
-/* ------First Section------ */
-.intro {
-    height: 100vh;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
-.ycpHeader {
-    font-family: 'MuseoModerno', serif;
-    color: #ffffff;
-    /*text-shadow: 5px 5px rgba(255, 255, 255, 0.6);*/
-    font-size: 10vw;
-    letter-spacing: 1.5pt;
-    margin-bottom: 0px;
-}
-
-@media (max-width: 500px) {
-    .ycpHeader {
-        text-shadow: none;
-    }
-}
-
-.hacks {
-    font-size: 1.5em;
-    font-weight: 700;
-    letter-spacing: 2pt;
-    margin-top: 0px;
-    margin-bottom: 3px;
-    color: white;
-}
-
-.location {
-    font-size: 1em;
-    font-weight: 600;
-    letter-spacing: -0.3pt;
-}
-
-/* ------Intro Buttons------ */
-.introButtons {
-    align-items: center;
-    appearance: none;
-    background-color: #FCFCFD;
-    border-radius: 4px;
-    border-width: 0;
-    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
-    box-sizing: border-box;
-    color: #36395A;
-    cursor: pointer;
-    display: inline-flex;
-    font-family: "JetBrains Mono", monospace;
-    height: 48px;
-    justify-content: center;
-    line-height: 1;
-    list-style: none;
-    overflow: hidden;
-    padding-left: 16px;
-    padding-right: 16px;
-    position: relative;
-    text-align: left;
-    text-decoration: none;
-    transition: box-shadow .15s, transform .15s;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    white-space: nowrap;
-    will-change: box-shadow, transform;
-    font-size: 16px;
-}
-
-.introButtons:focus {
-    box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
-}
-
-.introButtons:hover {
-    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
-    transform: translateY(-2px);
-}
-
-.introButtons:active {
-    box-shadow: #D6D6E7 0 3px 7px inset;
-    transform: translateY(2px);
-}
-
-/*hr {*/
-/*    border-width: 0 0 1px;*/
-/*    color: #000000;*/
-/*    border-image: linear-gradient(90deg, rgba(135, 206, 235, 0), #000000 50%, rgba(135, 206, 235, 0) 100%) 0 0 100%;*/
-/*    border-style: solid;*/
-/*}*/
-
-.img2 {
-    width: 100%;
-    align-content: center;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
-
-.icon {
-    font-size: 20px;
-}
-
+/* ------PROSPECTUS BUTTON------ */
 .prospectus {
     padding: 13px 26px;
     font-size: 12px;
@@ -425,7 +376,7 @@ td, tr {
     background-color: rgba(0, 0, 0, 0.66);
 }
 
-
+/* ------GRADIENT BUTTON ON HOVER------ */
 .link {
     /* RESET */
     color: white;
@@ -463,6 +414,8 @@ td, tr {
     transition: transform .25s ease-out;
 }
 
+/* ------ALIEN SPRITE------ */
+/*
 #spriteContainer {
     z-index: -1;
     width: 300px;
@@ -481,10 +434,9 @@ td, tr {
     }
 }
 
-
 @media (max-width: 1400px) {
-    #spriteContainer, .planet, .alien
-    {
+    #spriteContainer, .planet, .alien {
         display: none;
     }
 }
+*/
