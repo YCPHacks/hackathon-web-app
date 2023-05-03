@@ -4,8 +4,9 @@ block main
         if (userRoles.includes('Attendee'))
 
 
-            // --       
+
         else
+            // -- Event Application
             form.needs-validation.regContainer.pb-3(method='POST', action= 'http://localhost:3000/dashboard/apply', novalidate="")
                 .display-5.p-2.m-3 Required Contact Information
                     hr
@@ -22,12 +23,8 @@ block main
                 // TODO: make phone type
                 .col-lg-8.m-3
                     label.form-label(for='phone') Phone:
-                    input#phone.form-control(type='value', required)
+                    input#phone.form-control(type='tel', pattern='[0-9]{3}-[0-9]{3}-[0-9]{4}', required)
                     .invalid-feedback Please enter your phone number
-
-                //.col-lg-8.m-3
-                    label.form-label(for='age') ID
-                    //input.form-control(name='uid', value='bab9c8a1-cf52-11ed-b50e-064d933812f8')
 
                 .col-lg-8.m-3
                     label.form-label(for='age') Age
