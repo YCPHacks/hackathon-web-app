@@ -1,5 +1,5 @@
 doctype html
-html
+html(lang='en')
     block head
         title  YCP Hacks
         meta(name='viewport', content='width=device-width, initial-scale=1')
@@ -16,10 +16,9 @@ html
 
         block nav
             include ../includes/navbar
-
-        block main
-            p Default content from layout
-
+        main
+            block main
+                p Default content from layout
 
         block footer
             include ../includes/footer
