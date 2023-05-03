@@ -67,7 +67,7 @@ block main
         form.d-flex(role='search')
             input.form-control.me-2#myInput(type='search', placeholder='Search Hardware', aria-label='Search Hardware', onkeyup='searchHardware()')
             //button.btn.btn-outline-success.mx-1(type='submit') Search
-            button.btn.btn-outline-success.mx-1(type='submit') Download CSV
+            button.btn.btn-outline-success.mx-1(type='submit', onclick=`tableToCSV()`) Download CSV
 
     .container-sm.overflow-x-scroll.mt-3.p-3
         table.table.table-striped.table-bordered.my-4#myTable
