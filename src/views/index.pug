@@ -129,22 +129,22 @@ block main
             //+link("Are there any rules?", "You can find the MLH code of conduct" + a.primary-link(href='https://static.mlh.io/docs/mlh-code-of-conduct.pdf') here!, 13)
             //+link("", "", 10)
             .accordion-item
-                    h2#headingFourteen.accordion-header
-                        button.accordion-button.collapsed(type='button', data-bs-toggle='collapse', data-bs-target='#collapseFourteen', aria-expanded='false', aria-controls='collapseFourteen')
-                            .icon 📜
-                            | Are there any rules?
-                    #collapseFourteen.accordion-collapse.collapse(aria-labelledby='headingFourteen', data-bs-parent='#accordionExample1')
-                        .accordion-body
-                            |  You can find the MLH code of conduct&nbsp
-                            a.primary-link(href='https://static.mlh.io/docs/mlh-code-of-conduct.pdf') here!
-                .accordion-item
-                    h2#headingFifteen.accordion-header
-                        button.accordion-button.collapsed(type='button', data-bs-toggle='collapse', data-bs-target='#collapseFifteen', aria-expanded='false', aria-controls='collapseFifteen')
-                            | You didn't answer my question! ️
-                    #collapseFifteen.accordion-collapse.collapse(aria-labelledby='headingFifteen', data-bs-parent='#accordionExample1')
-                        .accordion-body
-                            |  Send it to us at&nbsp
-                            a.primary-link(href='mailto:info@ycphacks.io') info@ycphacks.io!
+                h2#headingFourteen.accordion-header
+                    button.accordion-button.collapsed(type='button', data-bs-toggle='collapse', data-bs-target='#collapseFourteen', aria-expanded='false', aria-controls='collapseFourteen')
+                        .icon 📜
+                        | Are there any rules?
+                #collapseFourteen.accordion-collapse.collapse(aria-labelledby='headingFourteen', data-bs-parent='#accordionExample1')
+                    .accordion-body
+                        |  You can find the MLH code of conduct&nbsp
+                        a.primary-link(href='https://static.mlh.io/docs/mlh-code-of-conduct.pdf') here!
+            .accordion-item
+                h2#headingFifteen.accordion-header
+                    button.accordion-button.collapsed(type='button', data-bs-toggle='collapse', data-bs-target='#collapseFifteen', aria-expanded='false', aria-controls='collapseFifteen')
+                        | You didn't answer my question! ️
+                #collapseFifteen.accordion-collapse.collapse(aria-labelledby='headingFifteen', data-bs-parent='#accordionExample1')
+                    .accordion-body
+                        |  Send it to us at&nbsp
+                        a.primary-link(href='mailto:info@ycphacks.io') info@ycphacks.io!
 
     // -- Youtube Recap Videos
     h1.display-5.text-center.mt-5  Recaps
