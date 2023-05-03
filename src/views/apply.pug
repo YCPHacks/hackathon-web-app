@@ -86,20 +86,30 @@ block main
                         option(selected='', disabled='', value='') Select
                         option(value='Yes') Yes
                         option(value='No') No
-                //.col-lg-8.m-3
-                //    p Do you have any food allergies or dietary restrictions we should know about?
-                //    .form-check(onclick="show()")
-                //        input#validationFormCheck2.form-check-input(type='radio', required='', name='food_restrict')
-                //        label.form-check-label(for='validationFormCheck2') Yes
-                //    .form-check(onclick="hide()")
-                //        input#validationFormCheck3.form-check-input(type='radio', required='', name='food_restrict')
-                //        label.form-check-label(for='validationFormCheck3') No
-                //        .invalid-feedback Please select one
-                //
-                //    #tutorial(style="display: none;")
-                //        label.form-label(for='allergyInput') Please list your dietary restrictions and allergies.
-                //        textarea#allergyInput.form-control(rows='3', required='false')
-                //        .invalid-feedback Please list restrictions here
+
+                .col-lg-8.m-3
+                    p Do you have any food allergies or dietary restrictions we should know about?
+
+                    .form-check(onclick="show()")
+                        label.form-check-label(for='validationFormCheck2')
+                            input#other(type='checkbox', name='interest', value='other')
+                            | Yes
+                        input#otherValue(type='text', name='other', aria-label='Other interest')
+
+
+                    .form-check(onclick="show()")
+                        input#validationFormCheck2.form-check-input(type='radio', required='', name='food_restrict')
+                        label.form-check-label(for='validationFormCheck2') Yes
+                    .form-check(onclick="hide()")
+                        input#validationFormCheck3.form-check-input(type='radio', required='', name='food_restrict')
+                        label.form-check-label(for='validationFormCheck3') No
+                        .invalid-feedback Please select one
+
+
+                    #tutorial(style="display: none;")
+                        label.form-label(for='allergyInput') Please list your dietary restrictions and allergies.
+                        textarea#allergyInput.form-control(rows='3', required='false')
+                        .invalid-feedback Please list restrictions here
 
                 .col-lg-8.m-3
                     label.form-label(for='tshirt') T-Shirt Size
