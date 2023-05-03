@@ -198,9 +198,9 @@ block main
                                 | My school does not offer majors / primary areas of study
                         .form-check
                             label
-                                input#other(type='checkbox', name='interest', value='other')
+                                input#other(type='checkbox', name='interest', value='other', onclick=`clicky()`)
                                 |             Other
-                            input#otherValue(type='text', name='other', aria-label='Other interest')
+                            input#otherValue(type='text', name='other', aria-label='Other interest', style='visibility:hidden')
 
                         .form-check
                             input#defaultCheck15.form-check-input(type='checkbox', value='Prefer not to answer', name='major', checked)
