@@ -126,23 +126,21 @@ block main
                 +link2("What should I bring? 🎒", "ID, Clothing, sleeping bag, and any necessary tech (and chargers). And deodorant. Please.", 11)
                 +link2("Do I keep my Intellectual Property? 🧠", "Yes! Participants retain 100% of the intellectual property that they create during the event.", 12)
 
-            //+link("Are there any rules?", "You can find the MLH code of conduct" + a.primary-link(href='https://static.mlh.io/docs/mlh-code-of-conduct.pdf') here!, 13)
-            //+link("", "", 10)
 
-        .accordion-item
-            h2.accordion-header
-                button.accordion-button.collapsed(type='button', data-bs-toggle='collapse', data-bs-target='#13', aria-expanded='false') Are there any rules?
-            #13.accordion-collapse.collapse(data-bs-parent='#accordionExample1')
-                .accordion-body
-                    |  You can find the MLH code of conduct&nbsp
-                    a.primary-link(href='https://static.mlh.io/docs/mlh-code-of-conduct.pdf') here!
-        .accordion-item
-            h2.accordion-header
-                button.accordion-button.collapsed(type='button', data-bs-toggle='collapse', data-bs-target='#14', aria-expanded='false') You didn't answer my question!
-            #14.accordion-collapse.collapse(data-bs-parent='#accordionExample1')
-                .accordion-body
-                    |  Send it to us at&nbsp
-                    a.primary-link(href='mailto:info@ycphacks.io') info@ycphacks.io!
+                .accordion-item
+                    h2.accordion-header
+                        button.accordion-button.collapsed(type='button', data-bs-toggle='collapse', data-bs-target='#13', aria-expanded='false') Are there any rules?
+                    #13.accordion-collapse.collapse(data-bs-parent='#accordionExample1')
+                        .accordion-body
+                            |  You can find the MLH code of conduct&nbsp
+                            a.primary-link(href='https://static.mlh.io/docs/mlh-code-of-conduct.pdf') here!
+                .accordion-item
+                    h2.accordion-header
+                        button.accordion-button.collapsed(type='button', data-bs-toggle='collapse', data-bs-target='#14', aria-expanded='false') You didn't answer my question!
+                    #14.accordion-collapse.collapse(data-bs-parent='#accordionExample1')
+                        .accordion-body
+                            |  Send it to us at&nbsp
+                            a.primary-link(href='mailto:info@ycphacks.io') info@ycphacks.io!
 
     // -- Youtube Recap Videos
     h1.display-5.text-center.mt-5  Recaps
