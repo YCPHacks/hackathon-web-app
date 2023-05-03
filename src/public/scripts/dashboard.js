@@ -16,7 +16,6 @@ async function verify() {
     })
 }
 
-
 const otherCheckbox = document.querySelector('#other');
 const otherText = document.querySelector('#otherValue');
 otherText.style.visibility = 'hidden';
