@@ -8,37 +8,11 @@ block main
         .display-5.m-2 Event Applications
 
         .container-md.text-center.p-2.border
-
-            // each event_application of event_applications
-            //
-            //     if(event_application[4] === 'pending')
-            //         button.btn(type='button')= event_application[4]
-            //             span.badge.text-bg-primary.m-1 wu
-            //button.btn All
-            //    span.badge.text-bg-secondary.m-1= county.length
-
-            // each item of county
-            //
-            //     button.btn(type='button')= item.status
-            //
-            //         if (item.status === "accepted")
-            //             span.badge.text-bg-primary.m-1= item.count
-            //
-            //         else if (item.status === 'undecided')
-            //             span.badge.text-bg-warning.m-1= item.count
-            //
-            //         else if (item.status === 'declined')
-            //             span.badge.text-danger-emphasis.m-1= item.count
-
-            // TODO: check if this is the right path
             a(href='/dashboard/event_applications/summary').btn.btn-primary Summary
-            //a(href='/dashboard/event_applications/event_applicationID').btn.btn-primary See indiv
 
         .container-md.text-center.p-2.my-3.border
-
             form.d-flex(role='search')
                 input.form-control.me-2#myInput(type='search', placeholder='Search Event Applications', aria-label='Search Event Applications', onkeyup='searchTable()')
-                //button.btn.btn-outline-success.mx-1(type='submit') Search
                 button.btn.btn-outline-success.mx-1(onclick=`tableToCSV()`) Download CSV
 
         .container-sm.overflow-x-scroll.mt-3.p-3
@@ -46,8 +20,6 @@ block main
                 thead
                     tr
                         th user_id
-                        //th created_at
-                        //th updated_at
                         th Email
                         th Status
                         th Age
@@ -72,8 +44,6 @@ block main
                             td
                                 a(href= '/dashboard/event_applications/' + event_application[0])= event_application[0]
                             td= event_application[1]
-                            //td= event_application[2]
-                            //td= event_application[3]
                             td= event_application[4]
                             td= event_application[5]
                             td= event_application[6]
