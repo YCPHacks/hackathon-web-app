@@ -2,7 +2,7 @@ extends includes/dashboard_bar
 
 block main
     // ADMINISTRATOR VIEW
-    h1.m-2 Hardware Inventory
+    .display-5.m-2 Hardware Inventory
     hr
 
     .d-flex.justify-content-around
@@ -30,7 +30,7 @@ block main
                             label(for='floatingLink') Link
                         // -- Count
                         .form-floating.mb-3
-                            input#floatingCount.form-control(type='text', placeholder='Count' name='count')
+                            input#floatingCount.form-control(type='number', placeholder='Count' name='count')
                             label(for='floatingCount') Count
                         // -- Category
                         select.form-select.mb-3(aria-label='Select Category' name='category')
