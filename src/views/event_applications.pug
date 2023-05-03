@@ -39,7 +39,7 @@ block main
             form.d-flex(role='search')
                 input.form-control.me-2#myInput(type='search', placeholder='Search Event Applications', aria-label='Search Event Applications', onkeyup='searchTable()')
                 //button.btn.btn-outline-success.mx-1(type='submit') Search
-                button.btn.btn-outline-success.mx-1(type='submit') Download CSV
+                button.btn.btn-outline-success.mx-1(onclick=`tableToCSV()`) Download CSV
 
         .container-sm.overflow-x-scroll.mt-3.p-3
             table.table.table-striped.table-bordered.my-4#myTable
