@@ -183,14 +183,24 @@ function downloadCSVFile(csv_data) {
 
 // -- Get checked hardware items out of list
 function getChecked(){
-    const hardwareID = [];
+    // const hardwareID = [];
+
     var items=document.getElementsByName('hardwareItems');
+
+    let formData = new FormData(formElem);
+
 
     for(var i=0; i<items.length; i++){
 
         if(items[i].type === 'checkbox' && items[i].checked === true){
-            hardwareID.push(items[i].value)
+            // hardwareID.push(items[i].value)
+            formData.append(items[i].value, "delete")
         }
     }
-    console.log(hardwareID)
+
+    for(let [name, value] of formData) {
+        console.log(`${name} = ${value}`); // key1 = value1, then key2 = value2
+    }
+
+    // console.log(hardwareID)
 }

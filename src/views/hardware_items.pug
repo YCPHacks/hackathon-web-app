@@ -30,7 +30,7 @@ block main
                             label(for='floatingLink') Link
                         // -- Count
                         .form-floating.mb-3
-                            input#floatingCount.form-control(type='number', placeholder='Count' name='count')
+                            input#floatingCount.form-control(type='number', placeholder='Count' name='count', min='0', max='50')
                             label(for='floatingCount') Count
                         // -- Category
                         select.form-select.mb-3(aria-label='Select Category' name='category')
@@ -95,4 +95,7 @@ block main
                                 //     .d-grid.gap-2.text-nowrap.justify-content-evenly
                                 //         a.btn.btn-secondary(href='') Message on Discord
                                 //         button.btn.btn-danger(type='button') Return Item
+
+        form#formElem
+
         button.btn.btn-danger(onclick=`getChecked()`) Delete
