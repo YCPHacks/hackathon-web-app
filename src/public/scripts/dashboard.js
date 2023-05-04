@@ -194,7 +194,7 @@ function getChecked(){
 
         if(items[i].type === 'checkbox' && items[i].checked === true){
             // hardwareID.push(items[i].value)
-            formData.append(items[i].value, "delete")
+            formData.set(items[i].value, "delete")
         }
     }
 
