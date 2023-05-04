@@ -180,3 +180,16 @@ function downloadCSVFile(csv_data) {
     temp_link.click();
     document.body.removeChild(temp_link);
 }
+
+function getChecked(){
+    const hardwareID = [];
+    var items=document.getElementsByName('hardwareItems');
+
+    for(var i=0; i<items.length; i++){
+
+        if(items[i].type === 'checkbox' && items[i].checked === true){
+            hardwareID.push(items[i].value)
+        }
+    }
+    console.log(hardwareID)
+}

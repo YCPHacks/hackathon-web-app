@@ -84,11 +84,14 @@ block main
                     tr
                         each hardware of hardware_items
                             tr
-                                td= hardware[0]
+                                th(scope='row')
+                                    input#checkboxNoLabel.form-check-input(type='checkbox', value=event_application[0], name='hardwareItems')
                                 td= hardware[1]
                                 td= hardware[2]
                                 td= hardware[3]
                                 td= hardware[4]
+                                td= hardware[5]
                                 //     .d-grid.gap-2.text-nowrap.justify-content-evenly
                                 //         a.btn.btn-secondary(href='') Message on Discord
                                 //         button.btn.btn-danger(type='button') Return Item
+        button.btn.btn-danger(onclick=`getChecked()`) Delete
