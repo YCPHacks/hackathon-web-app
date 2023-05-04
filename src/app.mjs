@@ -6,6 +6,9 @@ import { router } from './routes/index.mjs';
 
 const app = express();
 
+app.set('view engine', 'pug');
+app.set('views', './src/views');
+
 app.use(express.urlencoded({ extended: false }));
 
 app.use(auth({
@@ -17,6 +20,8 @@ app.use(auth({
   authRequired: false,
   idpLogout: true
 }));
+
+app.use('/static', express.static(path.join(__dirname, 'public')));
 
 app.use('/', router);
 
