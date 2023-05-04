@@ -40,7 +40,7 @@ block main
                     .col-lg-8.m-3
                         label.form-label(for='country') Country
                         select#country.form-select(required, name='country')
-                            option(selected, value=data[0][8]) Select
+                            option(selected, value=data[0][8])=data[0][8]
                             option(value='United States of America') United States of America
 
                     .col-lg-8.m-3
@@ -58,7 +58,7 @@ block main
                     .col-lg-8.m-3
                         label.form-label(for='school') What school do you currently attend? If you're no longer a student, what school / university did you most recently graduate from?
                         select#school.form-select(required, name='school')
-                            option(selected, disabled, value=data[0][9]) Select
+                            option(selected, disabled, value=data[0][9])=data[0][9]
                             option(value='York College of Pennsylvania') York College of Pennsylvania
                         .invalid-feedback
                             | Please select school
@@ -66,7 +66,7 @@ block main
                     .col-lg-8.m-3
                         label.form-label(for='typeSchool') In what type of educational institution are you currently enrolled in?
                         select#typeSchool.form-select(required, name='edu_lvl')
-                            option(selected='', disabled='', value=data[0][10]) Select
+                            option(selected='', disabled='', value=data[0][10])=data[0][10]
                             option(value='Less than Secondary / High School') Less than Secondary / High School
                             option(value='Secondary / High School') Secondary / High School
                             option(value='Undergraduate University (2 year - community college or similar)') Undergraduate University (2 year - community college or similar)
@@ -85,7 +85,7 @@ block main
                     .col-lg-8.m-3
                         label.form-label(for='food') Food Restrictions
                         select#food.form-select(required, name='food_restrict')
-                            option(selected='', disabled='', value=data[0][19]) Select
+                            option(selected='', disabled='', value=data[0][19])=data[0][19]
                             option(value='Yes') Yes
                             option(value='No') No
 
@@ -109,7 +109,7 @@ block main
                     .col-lg-8.m-3
                         label.form-label(for='tshirt') T-Shirt Size
                         select#tshirt.form-select(name='t_shirt_size', required)
-                            option(selected, value=data[0][18], disabled) Select
+                            option(selected, value=data[0][18], disabled)=data[0][18]
                             option(value='S') SM
                             option(value='M') MD
                             option(value='L') LG
@@ -131,7 +131,7 @@ block main
                     .col-lg-8.m-3
                         label.form-label(for='pronoun') What pronouns do you go by?
                         select#pronoun.form-select(name='pronoun', required)
-                            option(selected='', value=data[0][14], disabled='') Select
+                            option(selected='', value=data[0][14], disabled='')=data[0][14]
                             option(value='he/him') he/him
                             option(value='she/her') she/her
                             option(value='they/them') they/them
@@ -212,7 +212,7 @@ block main
                     .col-lg-8.m-3
                         label.form-label(for='identify') Do you identify as part of an underrepresented group in the technology industry?
                             select#identify.form-select(aria-label='Default select example', name='underrep_group', required, value=data[0][12])
-                                option(selected='', disabled) Select
+                                option(selected='', value=data[0][12], disabled)=data[0][12]
                                 option(value='Yes') Yes
                                 option(value='No') No
                                 option(value='Unsure') Unsure
@@ -223,7 +223,7 @@ block main
                     .col-lg-8.m-3
                         label.form-label(for='describe') Which of the following best describes you?
                             select#describe.form-select(aria-label='Default select example', name='race', required, value=data[0][15])
-                                option(selected, value='', disabled) Select
+                                option(selected, value=data[0][15], disabled)=data[0][15]
                                 option(value='Asian Indian') Asian Indian
                                 option(value='Black or African') Black or African
                                 option(value='Chinese') Chinese
@@ -247,7 +247,7 @@ block main
                     .col-lg-8.m-3
                         label.form-label(for='preference') Do you consider yourself to be any of the following?
                             select#preference.form-select(aria-label='Default select example', name='sexual_orient', required, value=data[0][16])
-                                option(selected, value='', disabled) Select
+                                option(selected, value=data[0][16], disabled)=data[0][16]
                                 option(value='Heterosexual or straight') Heterosexual or straight
                                 option(value='Gay or lesbian') Gay or lesbian
                                 option(value='Bisexual') Bisexual
@@ -258,7 +258,7 @@ block main
                     .col-lg-8.m-3
                         label.form-label(for='level') What is the highest level of formal education that you have completed?
                             select#level.form-select(aria-label='Default select example', required, name='edu_completed', value=data[0][11])
-                                option(selected, value='', disabled) Select
+                                option(selected, value=data[0][11], disabled)=data[0][11]
                                 option(value='Less than Secondary / High School') Less than Secondary / High School
                                 option(value='Undergraduate University (2 year - community college or similar)') Undergraduate University (2 year - community college or similar)
                                 option(value='Undergraduate University (3+ year)') Undergraduate University (3+ year)
