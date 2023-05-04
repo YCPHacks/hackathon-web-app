@@ -3,6 +3,7 @@ extends includes/dashboard_bar
 block main
 
     .display-5.m-2 Home
+    hr
 
     if(userRoles.includes('Organizer'))
         .bd-example-cols.m-3
@@ -45,7 +46,7 @@ block main
 
     else if (userRoles.includes('Attendee'))
         .row.row-cols-1.row-cols-md-3.g-0.m-3.text-center.justify-content-center
-            // -- If no application
+            // -- Submitted Application
             .col
                 .card.m-1
                     .card-body
@@ -57,9 +58,8 @@ block main
                                 If there is anything you would like to change in your application, head to the My Application tab and change what you want!
                             p.
                                 We will send a notification whenever there have been updates to your application! :)
-        // -- No account
-    else
 
+    else
         .row.row-cols-1.row-cols-md-1.g-0.m-3.text-center.justify-content-center
             // -- If no application
             .col-md-6
@@ -74,7 +74,6 @@ block main
                         a.btn.btn-primary(href='/dashboard/apply') Apply Now!
 
     //else if (userRoles.includes('Attendee'))
-    //    .display-5.m-2 Home
     //    .row.row-cols-1.row-cols-md-3.g-0.m-3.text-center
             // -- Submitted
 
@@ -102,8 +101,8 @@ block main
             //            a.btn.btn-success(href='#') RSVP
             //            a.btn.btn-danger(href='#') Sorry, I can't participate
 
-            // - RSVP-ed
 
+            // - RSVP-ed
             //.col
             //    .card.m-1
             //        .card-body
