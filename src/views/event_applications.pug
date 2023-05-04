@@ -20,72 +20,51 @@ block main
         // -- Event Applications Table
         .container-sm.overflow-x-scroll.mt-3.p-3
 
-            table(border='1', cellspacing='0', cellpadding='10')
-                tr
-                    th Name
-                    th age
-                    th place
-                tr
-                    td Laxman
-                    td 19
-                    td Hyderabad
-                tr
-                    td Dhoni
-                    td 22
-                    td Ranchi
-                tr
-                    td Kohli
-                    td 25
-                    td Delhi
-            button(type='button', onclick='tableToCSV()')
-                | download CSV
+            table.table.table-striped.table-bordered.my-4#myTable
+                thead
+                    tr
+                        th user_id
+                        th Email
+                        th Status
+                        th Age
+                        th Country
+                        th School
+                        th Major
+                        th Education Level
+                        th Underrepresented Group
+                        th Gender
+                        th Pronouns
+                        th Race
+                        th Sexual Orientation
+                        th Highest education Level
+                        th T-Shirt Size
+                        th Allergies
+                        th Github
+                        th Linkedin
 
+                tbody
+                    each event_application of event_applications
+                        tr
+                            th(scope='row')
+                                input.form-check-input(type='checkbox', value=event_application[0], name='eventApplication')
 
-            //table.table.table-striped.table-bordered.my-4#myTable
-            //    thead
-            //        tr
-            //            th user_id
-            //            th Email
-            //            th Status
-            //            th Age
-            //            th Country
-            //            th School
-            //            th Major
-            //            th Education Level
-            //            th Underrepresented Group
-            //            th Gender
-            //            th Pronouns
-            //            th Race
-            //            th Sexual Orientation
-            //            th Highest education Level
-            //            th T-Shirt Size
-            //            th Allergies
-            //            th Github
-            //            th Linkedin
-            //
-            //    tbody
-            //        each event_application of event_applications
-            //            tr
-            //                th(scope='row')
-            //                    input.form-check-input(type='checkbox', value=event_application[0], name='eventApplication')
-            //
-            //                td
-            //                    a(href= '/dashboard/event_applications/' + event_application[0])= event_application[0]
-            //
-            //                td= event_application[2]
-            //                td= event_application[6]
-            //                td= event_application[7]
-            //                td= event_application[8]
-            //                td= event_application[9]
-            //                td= event_application[10]
-            //                td= event_application[11]
-            //                td= event_application[12]
-            //                td= event_application[13]
-            //                td= event_application[14]
-            //                td= event_application[15]
-            //                td= event_application[16]
-            //                td= event_application[17]
-            //                td= event_application[18]
-            //                td= event_application[19]
-            //                td= event_application[20]
-            //                td= event_application[21]
+                            td
+                                a(href= '/dashboard/event_applications/' + event_application[0])= event_application[0]
+
+                            td= event_application[2]
+                            td= event_application[6]
+                            td= event_application[7]
+                            td= event_application[8]
+                            td= event_application[9]
+                            td= event_application[10]
+                            td= event_application[11]
+                            td= event_application[12]
+                            td= event_application[13]
+                            td= event_application[14]
+                            td= event_application[15]
+                            td= event_application[16]
+                            td= event_application[17]
+                            td= event_application[18]
+                            td= event_application[19]
+                            td= event_application[20]
+                            td= event_application[21]
