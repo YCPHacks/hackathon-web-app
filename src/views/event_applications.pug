@@ -44,6 +44,9 @@ block main
                 tbody
                     each event_application of event_applications
                         tr
+                            th(scope='row')
+                                input.form-check-input(type='checkbox', value=event_application[0], name='eventApplication')
+
                             td
                                 a(href= '/dashboard/event_applications/' + event_application[0])= event_application[0]
 
