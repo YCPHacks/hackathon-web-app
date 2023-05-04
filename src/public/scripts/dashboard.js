@@ -32,7 +32,6 @@ function clicky() {
 }
 
 
-
 function edit() {
     alert('Editing applicant form.')
 
@@ -122,7 +121,6 @@ async function searchHardware() {
 }
 
 function tableToCSV() {
-
     // Variable to store the final csv data
     var csv_data = [];
 
@@ -182,25 +180,19 @@ function downloadCSVFile(csv_data) {
 }
 
 // -- Get checked hardware items out of list
-function getChecked(){
-    // const hardwareID = [];
+function getChecked() {
 
-    var items=document.getElementsByName('hardwareItems');
-
+    var items = document.getElementsByName('hardwareItems');
     let formData = new FormData(formElem);
 
+    for (var i = 0; i < items.length; i++) {
 
-    for(var i=0; i<items.length; i++){
-
-        if(items[i].type === 'checkbox' && items[i].checked === true){
-            // hardwareID.push(items[i].value)
+        if (items[i].type === 'checkbox' && items[i].checked === true) {
             formData.set(items[i].value, "delete")
         }
     }
 
-    for(let [name, value] of formData) {
+    for (let [name, value] of formData) {
         console.log(`${name} = ${value}`); // key1 = value1, then key2 = value2
     }
-
-    // console.log(hardwareID)
 }
