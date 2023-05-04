@@ -18,6 +18,6 @@ app.use(auth({
   idpLogout: true
 }));
 
-app.use('/', router);
+app.use('/', events);
 
 export { app };
