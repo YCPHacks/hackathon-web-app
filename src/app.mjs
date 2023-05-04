@@ -26,7 +26,7 @@ app.use('/static', express.static('./src/public'));
 app.use((req, res, next) => {
   res.locals.isAuthenticated = req.oidc.isAuthenticated();
   res.locals.user = req.oidc.user ?? {};
-  res.locals.userRoles = req.oidc.user?.[`${process.env.NAMESPACE}/roles`];
+  res.locals.userRoles = req.oidc.user?.ycp_hacks_user_roles;
 
   next();
 });
