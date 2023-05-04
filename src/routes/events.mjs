@@ -7,7 +7,7 @@ import {
 const events = express.Router();
 
 events.get('/:event/application', async (req, res) => {
-  const data = await readEventApplication(
+  res.locals.data = await readEventApplication(
       req.oidc.accessToken.access_token,
       req.params.event);
 
