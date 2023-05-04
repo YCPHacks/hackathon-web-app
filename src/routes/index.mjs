@@ -11,9 +11,6 @@ const { requiresAuth } = pkg;
 
 import { dashboard } from './dashboard.mjs';
 
-// import { router as event_applications } from './event_applications.mjs';
-// import { router as hardware_items } from './hardware_items.mjs';
-
 const router = express.Router();
 
 router.get('/', (req, res) => {
