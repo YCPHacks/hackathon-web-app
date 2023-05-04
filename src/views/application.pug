@@ -45,8 +45,8 @@ block main
 
                     .col-lg-8.m-3
                         label.form-label(for='gender') What gender do you identify as?
-                        select#gender.form-select(required, name='gender')
-                            option(selected, disabled, value='') Select
+                        select#gender.form-select(required, name='gender' value=data[0][13])
+                            option(selected, disabled, value=data[0][13])=data[0][13]
                             option(value='Man') Man
                             option(value='Woman') Woman
                             option(value='Non-Binary') Non-Binary
