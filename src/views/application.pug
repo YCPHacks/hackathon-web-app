@@ -2,13 +2,12 @@ extends includes/dashboard_bar
 
 block main
 
-
         if (userRoles.includes('Attendee'))
 
-            if(data[0][6] === 'pending')
+            if(data.application[5] === 'pending')
                 p the users application status is pending
 
-                form.needs-validation.regContainer.pb-3(method='POST', action= 'http://localhost:3000/dashboard/apply', novalidate="")
+                form.needs-validation.regContainer.pb-3(method='POST', action=`/dashboard/events/${metadata.event}/application`, novalidate="")
                     .display-5.p-2.m-3 Required Contact Information
                         hr
 
@@ -39,20 +38,20 @@ block main
 
                     .col-lg-8.m-3
                         label.form-label(for='age') Age
-                        input.form-control#age(type='number', name='age', min='13', max='99', value= data[0][7], required)
+                        input.form-control#age(type='number', name='age', min='13', max='99', value= data.application[7], required)
                         .invalid-feedback
                             | Please select a valid age
 
                     .col-lg-8.m-3
                         label.form-label(for='country') Country
                         select#country.form-select(required, name='country')
-                            option(selected, value=data[0][8])=data[0][8]
+                            option(selected, value=data.application[8])=data.application[8]
                             option(value='United States of America') United States of America
 
                     .col-lg-8.m-3
                         label.form-label(for='gender') What gender do you identify as?
-                        select#gender.form-select(required, name='gender' value=data[0][13])
-                            option(selected, disabled, value=data[0][13])=data[0][13]
+                        select#gender.form-select(required, name='gender' value=data.application[13])
+                            option(selected, disabled, value=data.application[13])=data.application[13]
                             option(value='Man') Man
                             option(value='Woman') Woman
                             option(value='Non-Binary') Non-Binary
@@ -64,7 +63,7 @@ block main
                     .col-lg-8.m-3
                         label.form-label(for='school') What school do you currently attend? If you're no longer a student, what school / university did you most recently graduate from?
                         select#school.form-select(required, name='school')
-                            option(selected, disabled, value=data[0][9])=data[0][9]
+                            option(selected, disabled, value=data.application[9])=data.application[9]
                             option(value='York College of Pennsylvania') York College of Pennsylvania
                         .invalid-feedback
                             | Please select school
@@ -72,7 +71,7 @@ block main
                     .col-lg-8.m-3
                         label.form-label(for='typeSchool') In what type of educational institution are you currently enrolled in?
                         select#typeSchool.form-select(required, name='edu_lvl')
-                            option(selected='', disabled='', value=data[0][10])=data[0][10]
+                            option(selected='', disabled='', value=data.application[10])=data.application[10]
                             option(value='Less than Secondary / High School') Less than Secondary / High School
                             option(value='Secondary / High School') Secondary / High School
                             option(value='Undergraduate University (2 year - community college or similar)') Undergraduate University (2 year - community college or similar)
@@ -91,7 +90,7 @@ block main
                     .col-lg-8.m-3
                         label.form-label(for='food') Food Restrictions
                         select#food.form-select(required, name='food_restrict')
-                            option(selected='', disabled='', value=data[0][19])=data[0][19]
+                            option(selected='', disabled='', value=data.application[19])=data.application[19]
                             option(value='Yes') Yes
                             option(value='No') No
 
@@ -115,7 +114,7 @@ block main
                     .col-lg-8.m-3
                         label.form-label(for='tshirt') T-Shirt Size
                         select#tshirt.form-select(name='t_shirt_size', required)
-                            option(selected, value=data[0][18], disabled)=data[0][18]
+                            option(selected, value=data.application[18], disabled)=data.application[18]
                             option(value='S') SM
                             option(value='M') MD
                             option(value='L') LG
@@ -137,7 +136,7 @@ block main
                     .col-lg-8.m-3
                         label.form-label(for='pronoun') What pronouns do you go by?
                         select#pronoun.form-select(name='pronoun', required)
-                            option(selected='', value=data[0][14], disabled='')=data[0][14]
+                            option(selected='', value=data.application[14], disabled='')=data.application[14]
                             option(value='he/him') he/him
                             option(value='she/her') she/her
                             option(value='they/them') they/them
@@ -217,8 +216,8 @@ block main
 
                     .col-lg-8.m-3
                         label.form-label(for='identify') Do you identify as part of an underrepresented group in the technology industry?
-                            select#identify.form-select(aria-label='Default select example', name='underrep_group', required, value=data[0][12])
-                                option(selected='', value=data[0][12], disabled)=data[0][12]
+                            select#identify.form-select(aria-label='Default select example', name='underrep_group', required, value=data.application[12])
+                                option(selected='', value=data.application[12], disabled)=data.application[12]
                                 option(value='Yes') Yes
                                 option(value='No') No
                                 option(value='Unsure') Unsure
@@ -228,8 +227,8 @@ block main
 
                     .col-lg-8.m-3
                         label.form-label(for='describe') Which of the following best describes you?
-                            select#describe.form-select(aria-label='Default select example', name='race', required, value=data[0][15])
-                                option(selected, value=data[0][15], disabled)=data[0][15]
+                            select#describe.form-select(aria-label='Default select example', name='race', required, value=data.application[15])
+                                option(selected, value=data.application[15], disabled)=data.application[15]
                                 option(value='Asian Indian') Asian Indian
                                 option(value='Black or African') Black or African
                                 option(value='Chinese') Chinese
@@ -252,8 +251,8 @@ block main
                                 | Please select one
                     .col-lg-8.m-3
                         label.form-label(for='preference') Do you consider yourself to be any of the following?
-                            select#preference.form-select(aria-label='Default select example', name='sexual_orient', required, value=data[0][16])
-                                option(selected, value=data[0][16], disabled)=data[0][16]
+                            select#preference.form-select(aria-label='Default select example', name='sexual_orient', required, value=data.application[16])
+                                option(selected, value=data.application[16], disabled)=data.application[16]
                                 option(value='Heterosexual or straight') Heterosexual or straight
                                 option(value='Gay or lesbian') Gay or lesbian
                                 option(value='Bisexual') Bisexual
@@ -263,8 +262,8 @@ block main
                                 | Please select one
                     .col-lg-8.m-3
                         label.form-label(for='level') What is the highest level of formal education that you have completed?
-                            select#level.form-select(aria-label='Default select example', required, name='edu_completed', value=data[0][11])
-                                option(selected, value=data[0][11], disabled)=data[0][11]
+                            select#level.form-select(aria-label='Default select example', required, name='edu_completed', value=data.application[11])
+                                option(selected, value=data.application[11], disabled)=data.application[11]
                                 option(value='Less than Secondary / High School') Less than Secondary / High School
                                 option(value='Undergraduate University (2 year - community college or similar)') Undergraduate University (2 year - community college or similar)
                                 option(value='Undergraduate University (3+ year)') Undergraduate University (3+ year)
@@ -284,12 +283,12 @@ block main
                     //    input#fileinput.form-control(onchange="validateSize(this)" type='file' accept='.pdf' required='')
                     .col-lg-8.m-3
                         label.form-label(for='github') Github
-                        input#github(type="url" class='form-control' placeholder='Github' pattern=".*\.github.com\..*", name='github', required, value=data[0][21])
+                        input#github(type="url" class='form-control' placeholder='Github' pattern=".*\.github.com\..*", name='github', required, value=data.application[21])
                         .invalid-feedback
                             | Ensure this is a Github link
                     .col-lg-8.m-3
                         label.form-label(for='linkedin') LinkedIn
-                        input#linkedin(type="url" class='form-control' placeholder='LinkedIn' pattern=".*\.linkedin.com\..*", name='linkedin', required, value=data[0][21])
+                        input#linkedin(type="url" class='form-control' placeholder='LinkedIn' pattern=".*\.linkedin.com\..*", name='linkedin', required, value=data.application[21])
                         .invalid-feedback
                             | Ensure this is a Linkedin link
 
