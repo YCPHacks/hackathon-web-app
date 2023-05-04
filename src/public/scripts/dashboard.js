@@ -181,6 +181,7 @@ function downloadCSVFile(csv_data) {
     document.body.removeChild(temp_link);
 }
 
+// -- Get checked hardware items out of list
 function getChecked(){
     const hardwareID = [];
     var items=document.getElementsByName('hardwareItems');
