@@ -68,7 +68,7 @@ block main
     .container-md.text-center.p-2.my-3.border
         form.d-flex(role='search')
             input.form-control.me-2#myInput(type='search', placeholder='Search Hardware', aria-label='Search Hardware', onkeyup='searchHardware()')
-            button.btn.btn-outline-success.mx-1(type='submit', onclick=`tableToCSV()`) Download CSV
+            button.btn.btn-outline-success.mx-1(onclick=`tableToCSV()`) Download CSV
 
     // -- Hardware Table
     .container-sm.overflow-x-scroll.mt-3.p-3
@@ -88,7 +88,8 @@ block main
                                 th(scope='row')
                                     input#checkboxNoLabel.form-check-input(type='checkbox', value=hardware[0], name='hardwareItems')
                                 td= hardware[1]
-                                td= hardware[2]
+                                td
+                                    a(href='#')= hardware[2]
                                 td= hardware[3]
                                 td= hardware[4]
                                 td= hardware[5]

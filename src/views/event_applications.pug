@@ -15,10 +15,11 @@ block main
         .container-md.text-center.p-2.my-3.border
             form.d-flex(role='search')
                 input.form-control.me-2#myInput(type='search', placeholder='Search Event Applications', aria-label='Search Event Applications', onkeyup='searchTable()')
-                button.btn.btn-outline-success.mx-1(onclick=`tableToCSV()`) Download CSV
+                button.btn.btn-outline-success.mx-1(type='button' onclick=`tableToCSV()`) Download CSV
 
         // -- Event Applications Table
         .container-sm.overflow-x-scroll.mt-3.p-3
+
             table.table.table-striped.table-bordered.my-4#myTable
                 thead
                     tr
@@ -44,11 +45,13 @@ block main
                 tbody
                     each event_application of event_applications
                         tr
+                            th(scope='row')
+                                input.form-check-input(type='checkbox', value=event_application[0], name='eventApplication')
+
                             td
                                 a(href= '/dashboard/event_applications/' + event_application[0])= event_application[0]
-                            td= event_application[1]
-                            td= event_application[4]
-                            td= event_application[5]
+
+                            td= event_application[2]
                             td= event_application[6]
                             td= event_application[7]
                             td= event_application[8]
@@ -63,3 +66,5 @@ block main
                             td= event_application[17]
                             td= event_application[18]
                             td= event_application[19]
+                            td= event_application[20]
+                            td= event_application[21]
