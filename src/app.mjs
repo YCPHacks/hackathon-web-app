@@ -2,7 +2,7 @@ import express from 'express';
 import 'express-async-errors';
 import { auth } from 'express-openid-connect';
 
-import { events } from './routes/events.mjs';
+import { router } from './routes/index.mjs';
 
 const app = express();
 
@@ -18,6 +18,6 @@ app.use(auth({
   idpLogout: true
 }));
 
-app.use('/', events);
+app.use('/', router);
 
 export { app };
