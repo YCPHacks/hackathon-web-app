@@ -2,7 +2,7 @@ import express from 'express';
 import 'express-async-errors';
 import { auth } from 'express-openid-connect';
 
-import { router } from './routes/events.mjs';
+import { events } from './routes/events.mjs';
 
 const app = express();
 
