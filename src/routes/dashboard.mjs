@@ -20,6 +20,6 @@ dashboard.route('/check_in')
     res.status(200).render('check_in');
   });
 
-dashboard.route('/events', events);
+dashboard.use('/events', events);
 
 export { dashboard };
