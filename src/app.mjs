@@ -21,7 +21,7 @@ app.use(auth({
   idpLogout: true
 }));
 
-app.use('/static', express.static(path.join(__dirname, 'public')));
+app.use('/static', express.static('./src/public'));
 
 app.use('/', router);
 
