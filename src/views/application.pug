@@ -6,7 +6,311 @@ block main
         if (userRoles.includes('Attendee'))
 
             if(data[0][6] === 'pending')
-                p the status is pending
+                p the users application status is pending
+
+                form.needs-validation.regContainer.pb-3(method='POST', action= 'http://localhost:3000/dashboard/apply', novalidate="")
+                    .display-5.p-2.m-3 Required Contact Information
+                        hr
+
+                    .col-lg-8.m-3
+                        label.form-label(for='firstName') First Name:
+                        input#firstName.form-control(type='value', required)
+                        .invalid-feedback
+                            | Please enter your first name
+
+                    .col-lg-8.m-3
+                        label.form-label(for='lastName') Last Name:
+                        input#lastName.form-control(type='value', required)
+                        .invalid-feedback
+                            | Please enter your last name
+
+                    // TODO: make phone type
+                    .col-lg-8.m-3
+                        label.form-label(for='phone') Phone:
+                        input#phone.form-control(type='tel', pattern='[0-9]{3}-[0-9]{3}-[0-9]{4}', required)
+                        .invalid-feedback
+                            | Please enter your phone number
+
+                    .col-lg-8.m-3
+                        label.form-label(for='age') Age
+                        input.form-control#age(type='number', name='age', min='13', max='99', value= data[0][7], required)
+                        .invalid-feedback
+                            | Please select a valid age
+
+                    .col-lg-8.m-3
+                        label.form-label(for='country') Country
+                        select#country.form-select(required, name='country')
+                            option(selected, value=data[0][8]) Select
+                            option(value='United States of America') United States of America
+
+                    .col-lg-8.m-3
+                        label.form-label(for='gender') What gender do you identify as?
+                        select#gender.form-select(required, name='gender')
+                            option(selected, disabled, value='') Select
+                            option(value='Man') Man
+                            option(value='Woman') Woman
+                            option(value='Non-Binary') Non-Binary
+                            option(value='Prefer Not to Answer') Prefer Not to Answer
+                            option(value='Other') Other
+                        .invalid-feedback
+                            | Please select your gender
+
+                    .col-lg-8.m-3
+                        label.form-label(for='school') What school do you currently attend? If you're no longer a student, what school / university did you most recently graduate from?
+                        select#school.form-select(required, name='school')
+                            option(selected, disabled, value=data[0][9]) Select
+                            option(value='York College of Pennsylvania') York College of Pennsylvania
+                        .invalid-feedback
+                            | Please select school
+
+                    .col-lg-8.m-3
+                        label.form-label(for='typeSchool') In what type of educational institution are you currently enrolled in?
+                        select#typeSchool.form-select(required, name='edu_lvl')
+                            option(selected='', disabled='', value=data[0][10]) Select
+                            option(value='Less than Secondary / High School') Less than Secondary / High School
+                            option(value='Secondary / High School') Secondary / High School
+                            option(value='Undergraduate University (2 year - community college or similar)') Undergraduate University (2 year - community college or similar)
+                            option(value='Undergraduate University (3+ year)') Undergraduate University (3+ year)
+                            option(value='Graduate University (Masters, Professional, Doctoral, etc)') Graduate University (Masters, Professional, Doctoral, etc)
+                            option(value='Code School / Bootcamp') Code School / Bootcamp
+                            option(value='Other Vocational / Trade Program or Apprenticeship') Other Vocational / Trade Program or Apprenticeship
+                            option(value='Other') Other
+                            option(value='I’m not currently a student') I’m not currently a student
+                            option(value='Prefer not to answer') Prefer not to answer
+                        .invalid-feedback
+                            | Please select education level
+
+                    // TODO: will have to fix for free response
+                        // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox#html
+                    .col-lg-8.m-3
+                        label.form-label(for='food') Food Restrictions
+                        select#food.form-select(required, name='food_restrict')
+                            option(selected='', disabled='', value=data[0][19]) Select
+                            option(value='Yes') Yes
+                            option(value='No') No
+
+                    //.col-lg-8.m-3
+                    //    p Do you have any food allergies or dietary restrictions we should know about?
+                    //    .form-check(onclick="show()")
+                    //        input#validationFormCheck2.form-check-input(type='radio', required='', name='food_restrict')
+                    //        label.form-check-label(for='validationFormCheck2') Yes
+                    //
+                    //    .form-check(onclick="hide()")
+                    //        input#validationFormCheck3.form-check-input(type='radio', required='', name='food_restrict')
+                    //        label.form-check-label(for='validationFormCheck3') No
+                    //        .invalid-feedback Please select one
+
+
+                        #tutorial(style="display: none;")
+                            label.form-label(for='allergyInput') Please list your dietary restrictions and allergies.
+                            textarea#allergyInput.form-control(rows='3', required='false')
+                            .invalid-feedback Please list restrictions here
+
+                    .col-lg-8.m-3
+                        label.form-label(for='tshirt') T-Shirt Size
+                        select#tshirt.form-select(name='t_shirt_size', required)
+                            option(selected, value=data[0][18], disabled) Select
+                            option(value='S') SM
+                            option(value='M') MD
+                            option(value='L') LG
+                            option(value='XL') XL
+                            option(value='XXL') XXL
+                        .invalid-feedback
+                            | Please select T-Shirt Size
+
+                    //.col-lg-8.m-3
+                    //    label.form-label(for='major') Major
+                    //    select#major.form-select(name='major')
+                    //        option(selected='', disabled='') Select
+                    //        option(value='Computer science, computer engineering, or software engineering') Computer science, computer engineering, or software engineering
+                            //option(value='M') MD
+
+                    .display-5.p-2.m-3 Demographic Information
+                        hr
+
+                    .col-lg-8.m-3
+                        label.form-label(for='pronoun') What pronouns do you go by?
+                        select#pronoun.form-select(name='pronoun', required)
+                            option(selected='', value=data[0][14], disabled='') Select
+                            option(value='he/him') he/him
+                            option(value='she/her') she/her
+                            option(value='they/them') they/them
+                            //option(value='ze/zir') ze/zir
+                            option(value='Other') Other
+                            option(value='Prefer Not to Answer') Prefer Not to Answer
+                        .invalid-feedback
+                            | Please select a pronoun or prefer not to answer
+
+                    .col-lg-8.m-3
+                        span What is your major / primary area of study? If you already graduated, what was your major / primary area of study? Select all that apply.
+                        .container
+                            fieldset(required)
+                                .form-check
+                                    input#defaultCheck1.form-check-input(type='checkbox', value='Computer science, computer engineering, or software engineering', name='major')
+                                    label.form-check-label(for='defaultCheck1')
+                                        | Computer science, computer engineering, or software engineering
+                                .form-check
+                                    input#defaultCheck2.form-check-input(type='checkbox', value='Another engineering discipline (such as civil, electrical, mechanical, etc.)', name='major')
+                                    label.form-check-label(for='defaultCheck2')
+                                        | Another engineering discipline (such as civil, electrical, mechanical, etc.)
+                                .form-check
+                                    input#defaultCheck2.form-check-input(type='checkbox', value='Another engineering discipline (such as civil, electrical, mechanical, etc.)', name='major')
+                                    label.form-check-label(for='defaultCheck3')
+                                        | Information systems, information technology, or system administration
+                                .form-check
+                                    input#defaultCheck4.form-check-input(type='checkbox', value='A natural science (such as biology, chemistry, physics, etc.)', name='major')
+                                    label.form-check-label(for='defaultCheck4')
+                                        | A natural science (such as biology, chemistry, physics, etc.)
+                                .form-check
+                                    input#defaultCheck5.form-check-input(type='checkbox', value='Mathematics or statistics', name='major')
+                                    label.form-check-label(for='defaultCheck5')
+                                        | Mathematics or statistics
+                                .form-check
+                                    input#defaultCheck6.form-check-input(type='checkbox', value='Web development or web design', name='major')
+                                    label.form-check-label(for='defaultCheck6')
+                                        | Web development or web design
+                                .form-check
+                                    input#defaultCheck7.form-check-input(type='checkbox', value='Business discipline (such as accounting, finance, marketing, etc.)', name='major')
+                                    label.form-check-label(for='defaultCheck7')
+                                        | Business discipline (such as accounting, finance, marketing, etc.)
+                                .form-check
+                                    input#defaultCheck8.form-check-input(type='checkbox', value='Humanities discipline (such as literature, history, philosophy, etc.)', name='major')
+                                    label.form-check-label(for='defaultCheck8')
+                                        | Humanities discipline (such as literature, history, philosophy, etc.)
+                                .form-check
+                                    input#defaultCheck9.form-check-input(type='checkbox', value='Social science (such as anthropology, psychology, political science, etc.)', name='major')
+                                    label.form-check-label(for='defaultCheck9')
+                                        | Social science (such as anthropology, psychology, political science, etc.)
+                                .form-check
+                                    input#defaultCheck10.form-check-input(type='checkbox', value='Fine arts or performing arts (such as graphic design, music, studio art, etc.)', name='major')
+                                    label.form-check-label(for='defaultCheck10')
+                                        | Fine arts or performing arts (such as graphic design, music, studio art, etc.)
+                                .form-check
+                                    input#defaultCheck11.form-check-input(type='checkbox', value='Health science (such as nursing, pharmacy, radiology, etc.)', name='major')
+                                    label.form-check-label(for='defaultCheck11')
+                                        | Health science (such as nursing, pharmacy, radiology, etc.)
+
+                                .form-check
+                                    input#defaultCheck13.form-check-input(type='checkbox', value='Undecided / No Declared Major', name='major')
+                                    label.form-check-label(for='defaultCheck13')
+                                        | Undecided / No Declared Major
+                                .form-check
+                                    input#defaultCheck14.form-check-input(type='checkbox', value='My school does not offer majors / primary areas of study', name='major')
+                                    label.form-check-label(for='defaultCheck14')
+                                        | My school does not offer majors / primary areas of study
+                                .form-check
+                                    input#defaultCheck12.form-check-input(type='checkbox', value='Other (please specify)', name='major')
+                                    label.form-check-label(for='defaultCheck12')
+                                        | Other (please specify)
+                                .form-check
+                                    input#defaultCheck15.form-check-input(type='checkbox', value='Prefer not to answer', name='major', checked)
+                                    label.form-check-label(for='defaultCheck15')
+                                        | Prefer not to answer
+                                    .invalid-feedback
+                                        | Please select at least one selection
+
+                    .col-lg-8.m-3
+                        label.form-label(for='identify') Do you identify as part of an underrepresented group in the technology industry?
+                            select#identify.form-select(aria-label='Default select example', name='underrep_group', required, value=data[0][12])
+                                option(selected='', disabled) Select
+                                option(value='Yes') Yes
+                                option(value='No') No
+                                option(value='Unsure') Unsure
+                                option(value='Prefer not to answer') Prefer not to answer
+                            .invalid-feedback
+                                | Please select one
+
+                    .col-lg-8.m-3
+                        label.form-label(for='describe') Which of the following best describes you?
+                            select#describe.form-select(aria-label='Default select example', name='race', required, value=data[0][15])
+                                option(selected, value='', disabled) Select
+                                option(value='Asian Indian') Asian Indian
+                                option(value='Black or African') Black or African
+                                option(value='Chinese') Chinese
+                                option(value='Filipino') Filipino
+                                option(value='Guamanian or Chamorro') Guamanian or Chamorro
+                                option(value='Hispanic / Latino / Spanish Origin') Hispanic / Latino / Spanish Origin
+                                option(value='Japanese') Japanese
+                                option(value='Korean') Korean
+                                option(value='Middle Eastern') Middle Eastern
+                                option(value='Native American or Alaskan Native') Native American or Alaskan Native
+                                option(value='Native Hawaiian') Native Hawaiian
+                                option(value='Samoan') Samoan
+                                option(value='Vietnamese') Vietnamese
+                                option(value='White') White
+                                option(value='Other Asian (Thai, Cambodian, etc)') Other Asian (Thai, Cambodian, etc)
+                                option(value='Other Pacific Islander') Other Pacific Islander
+                                option(value='Other') Other
+                                option(value='Prefer not to answer') Prefer not to answer
+                            .invalid-feedback
+                                | Please select one
+                    .col-lg-8.m-3
+                        label.form-label(for='preference') Do you consider yourself to be any of the following?
+                            select#preference.form-select(aria-label='Default select example', name='sexual_orient', required, value=data[0][16])
+                                option(selected, value='', disabled) Select
+                                option(value='Heterosexual or straight') Heterosexual or straight
+                                option(value='Gay or lesbian') Gay or lesbian
+                                option(value='Bisexual') Bisexual
+                                option(value='Other') Other
+                                option(value='Prefer not to answer') Prefer not to answer
+                            .invalid-feedback
+                                | Please select one
+                    .col-lg-8.m-3
+                        label.form-label(for='level') What is the highest level of formal education that you have completed?
+                            select#level.form-select(aria-label='Default select example', required, name='edu_completed', value=data[0][11])
+                                option(selected, value='', disabled) Select
+                                option(value='Less than Secondary / High School') Less than Secondary / High School
+                                option(value='Undergraduate University (2 year - community college or similar)') Undergraduate University (2 year - community college or similar)
+                                option(value='Undergraduate University (3+ year)') Undergraduate University (3+ year)
+                                option(value='Graduate University (Masters, Professional, Doctoral, etc)') Graduate University (Masters, Professional, Doctoral, etc)
+                                option(value='Code School / Bootcamp') Code School / Bootcamp
+                                option(value='Other Vocational / Trade Program or Apprenticeship') Other Vocational / Trade Program or Apprenticeship
+                                option(value='Other') Other
+                                option(value='I’m not currently a student') I’m not currently a student
+                                option(value='Prefer not to answer') Prefer not to answer
+                            .invalid-feedback
+                                | Please select one
+                    //.col-lg-8.m-3
+                    //    //label.input-group-text(for='inputGroupFile01') Upload Resume
+                    //    //input#inputGroupFile01.form-control(type='file', accept='.pdf', required='')
+                    //    label.form-label(for='fileinput') Upload Resume
+                    //        .text-muted.small &nbsp max. size 2MiB
+                    //    input#fileinput.form-control(onchange="validateSize(this)" type='file' accept='.pdf' required='')
+                    .col-lg-8.m-3
+                        label.form-label(for='github') Github
+                        input#github(type="url" class='form-control' placeholder='Github' pattern=".*\.github\..*", name='github', required, value=data[0][21])
+                        .invalid-feedback
+                            | Ensure this is a Github link
+                    .col-lg-8.m-3
+                        label.form-label(for='linkedin') LinkedIn
+                        input#linkedin(type="url" class='form-control' placeholder='LinkedIn' pattern=".*\.linkedin\..*", name='linkedin', required, value=data[0][21])
+                        .invalid-feedback
+                            | Ensure this is a Linkedin link
+
+                    hr
+                    .col-lg-8.m-3
+                        .form-check
+                            input#invalidCheck.form-check-input(type='checkbox', value='accept', required='')
+                            label.form-check-label(for='invalidCheck')
+                                | I have read and agreed to the&nbsp
+                                a(href='https://github.com/MLH/mlh-policies/blob/main/member-event-guidelines.md')
+                                    | MLH Contest Terms and Conditions
+                                |  and the
+                                a(href='https://mlh.io/privacy') MLH Privacy Policy
+
+                        .form-check
+                            input#invalidCheck1.form-check-input(type='checkbox', value='accept', required='')
+                            label.form-check-label(for='invalidCheck1')
+                                | I have read and agreed to the&nbsp
+                                // TODO: correct pdf link
+                                a(href='https://github.com/YCPHacks/ycphacks-website-project/blob/front-end/photo_release.pdf') YCP Photo Release Form
+
+                            .invalid-feedback
+                                | You must agree before submitting.
+
+                    button.btn.btn-primary(type='submit', onclick='verify()') Submit
+
+
 
 
 
