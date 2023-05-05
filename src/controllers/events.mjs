@@ -19,8 +19,7 @@ console.log(process.env);
   try {
     const response = await fetch(url, options);
 
-console.dir(response);
-
+    return response;
   } catch (err) {
 console.log(err);
 
@@ -42,12 +41,9 @@ export async function readEventApplication(accessToken, event) {
 
   try {
     const response = await fetch(url, options);
+    const data = await response.json();
 
-    if (response.ok) {
-      console.log(await response.json());
-
-      return response;
-    }
+    return data[0];
   } catch (err) {
 console.log(err);
 
