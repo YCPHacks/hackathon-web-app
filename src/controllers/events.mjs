@@ -5,6 +5,8 @@ export async function createEventApplication(accessToken, application) {
 
   const url = `${process.env.API_BASE_URL}/events/${application.event_name}/application`;
 
+console.log(process.env);
+
   const options = {
     method: 'POST',
     headers: {
@@ -16,13 +18,21 @@ export async function createEventApplication(accessToken, application) {
 
   try {
     const response = await fetch(url, options);
+
+console.dir(response);
+
   } catch (err) {
+console.log(err);
+
     throw err;
   }
 }
 
 export async function readEventApplication(accessToken, event) {
   const { access_token, token_type } = accessToken;
+
+console.log(accessToken);
+console.log(res.locals);
 
   const url = `${process.env.API_BASE_URL}/events/${event}/application`;
   const options = {
@@ -36,12 +46,18 @@ export async function readEventApplication(accessToken, event) {
   try {
     const response = await fetch(url, options);
 
+console.dir(response);
+
     if (response.ok) {
       const data = response.json();
+
+console.dir(data);
 
       return data;
     }
   } catch (err) {
+console.log(err);
+
     throw err;
   }
 }
