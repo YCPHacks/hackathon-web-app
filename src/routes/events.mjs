@@ -37,7 +37,7 @@ events.get('/:event/application', async (req, res) => {
 events.post('/:event/application', async (req, res) => {
   const response = await createEventApplication();
 
-  res.redirect(303, `dashboard/events/${req.params.event}/application`);
+  res.redirect(303, req.originalUrl);
 });
 
 export { events };
