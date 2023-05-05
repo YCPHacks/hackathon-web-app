@@ -2,92 +2,146 @@ extends layout
 
 block content
     form(method="POST")
-        input(type='number', name='age', min='13', max='99', required)
-        input(name="country" type="text" required)
-        select(name="gender" required)
-            option(disabled, value='') Select
-            option(value='Man', selected) Man
-            option(value='Woman') Woman
-            option(value='Non-Binary') Non-Binary
-            option(value='Prefer Not to Answer') Prefer Not to Answer
-            option(value='Other') Other
-        select(name="school" required)
-            option(disabled) Select
-            option(value='York College of Pennsylvania', selected) York College of Pennsylvania
-        select(name="edu_lvl" required)
-            option(disabled='', value='') Select
-            option(value='Less than Secondary / High School', selected) Less than Secondary / High School
-            option(value='Secondary / High School') Secondary / High School
-            option(value='Undergraduate University (2 year - community college or similar)') Undergraduate University (2 year - community college or similar)
-            option(value='Undergraduate University (3+ year)') Undergraduate University (3+ year)
-            option(value='Graduate University (Masters, Professional, Doctoral, etc)') Graduate University (Masters, Professional, Doctoral, etc)
-            option(value='Code School / Bootcamp') Code School / Bootcamp
-            option(value='Other Vocational / Trade Program or Apprenticeship') Other Vocational / Trade Program or Apprenticeship
-            option(value='Other') Other
-            option(value='I’m not currently a student') I’m not currently a student
-            option(value='Prefer not to answer') Prefer not to answer
-        input(name="food_restrict" type="text" placeholder="N/a")
-        select(name="t_shirt_size" required)
-            option(value='', disabled) Select
-            option(value='S' , selected) SM
-            option(value='M') MD
-            option(value='L') LG
-            option(value='XL') XL
-            option(value='XXL') XXL
-        select(name="major" required)
-            option(disabled) Select
-        select(name="pronouns" type="text" value="lorem")
-            option(value='', disabled='') Select
-            option(value='he/him', selected) he/him
-            option(value='she/her') she/her
-            option(value='they/them') they/them
-            option(value='ze/zir') ze/zir
-            option(value='Other') Other
-            option(value='Prefer Not to Answer') Prefer Not to Answer
-        select(name='underrep_group', required)
-            option(disabled) Select
-            option(value='Yes') Yes
-            option(value='No') No
-            option(value='Unsure') Unsure
-            option(value='Prefer not to answer') Prefer not to answer
-        select(name="race")
-            option(disabled) Select
-            option(value='Asian Indian') Asian Indian
-            option(value='Black or African') Black or African
-            option(value='Chinese') Chinese
-            option(value='Filipino') Filipino
-            option(value='Guamanian or Chamorro') Guamanian or Chamorro
-            option(value='Hispanic / Latino / Spanish Origin') Hispanic / Latino / Spanish Origin
-            option(value='Japanese') Japanese
-            option(value='Korean') Korean
-            option(value='Middle Eastern') Middle Eastern
-            option(value='Native American or Alaskan Native') Native American or Alaskan Native
-            option(value='Native Hawaiian') Native Hawaiian
-            option(value='Samoan') Samoan
-            option(value='Vietnamese') Vietnamese
-            option(value='White') White
-            option(value='Other Asian (Thai, Cambodian, etc)') Other Asian (Thai, Cambodian, etc)
-            option(value='Other Pacific Islander') Other Pacific Islander
-            option(value='Other') Other
-            option(value='Prefer not to answer') Prefer not to answer
-        select(name="sex_orient" type="text")
-            option(disabled) Select
-            option(value='Heterosexual or straight', selected) Heterosexual or straight
-            option(value='Gay or lesbian') Gay or lesbian
-            option(value='Bisexual') Bisexual
-            option(value='Other') Other
-            option(value='Prefer not to answer') Prefer not to answer
-        select(name="edu_completed" required)
-            option(disabled) Select
-            option(value='Less than Secondary / High School') Less than Secondary / High School
-            option(value='Undergraduate University (2 year - community college or similar)') Undergraduate University (2 year - community college or similar)
-            option(value='Undergraduate University (3+ year)') Undergraduate University (3+ year)
-            option(value='Graduate University (Masters, Professional, Doctoral, etc)') Graduate University (Masters, Professional, Doctoral, etc)
-            option(value='Code School / Bootcamp') Code School / Bootcamp
-            option(value='Other Vocational / Trade Program or Apprenticeship') Other Vocational / Trade Program or Apprenticeship
-            option(value='Other') Other
-            option(value='I’m not currently a student') I’m not currently a student
-            option(value='Prefer not to answer') Prefer not to answer
-        input(type="url" class="form-control" placeholder="Github" pattern=".*\.github\..*", name = "github", required)
-        input(type="url" class="form-control" placeholder="LinkedIn" pattern=".*\.linkedin\..*", name = "linked_in", required)
+
+
+
+        .col-lg-8.m-3
+            label.form-label(for='age') Age:
+            input#age.form-control(type='number', name='age', min='13', max='99', required)
+            .invalid-feedback
+                | Please enter your age
+
+        .col-lg-8.m-3
+            label.form-label(for='country') Country
+            select#country.form-select(required, name='country')
+                option(selected) Other
+                option(value='United States of America') United States of America
+
+        .col-lg-8.m-3
+            label.form-label(for='Gender') Gender
+            select#Gender.form-select(name="gender", required)
+                option(disabled) Select
+                option(value='Man', selected) Man
+                option(value='Woman') Woman
+                option(value='Non-Binary') Non-Binary
+                option(value='Prefer Not to Answer') Prefer Not to Answer
+                option(value='Other') Other
+
+        .col-lg-8.m-3
+            label.form-label(for='School') School
+            select#School.form-select(name="school" required)
+                option(disabled) Select
+                option(value='York College of Pennsylvania', selected) York College of Pennsylvania
+
+        .col-lg-8.m-3
+            label.form-label(for='edu_lvl') Education Level
+            select#edu_lvl.form-select(name="edu_lvl" required)
+                option(disabled='', value='') Select
+                option(value='Less than Secondary / High School', selected) Less than Secondary / High School
+                option(value='Secondary / High School') Secondary / High School
+                option(value='Undergraduate University (2 year - community college or similar)') Undergraduate University (2 year - community college or similar)
+                option(value='Undergraduate University (3+ year)') Undergraduate University (3+ year)
+                option(value='Graduate University (Masters, Professional, Doctoral, etc)') Graduate University (Masters, Professional, Doctoral, etc)
+                option(value='Code School / Bootcamp') Code School / Bootcamp
+                option(value='Other Vocational / Trade Program or Apprenticeship') Other Vocational / Trade Program or Apprenticeship
+                option(value='Other') Other
+                option(value='I’m not currently a student') I’m not currently a student
+                option(value='Prefer not to answer') Prefer not to answer
+
+        .col-lg-8.m-3
+            label.form-label(for='food') Food Restrictions
+            input#food.form-control(name="food_restrict" type="text" placeholder="Food Restrictions")
+
+        .col-lg-8.m-3
+            label.form-label(for='tShirt') T-Shirt Size
+            select#tShirt.form-select(name="t_shirt_size" required)
+                option(disabled) Select
+                option(value='S' , selected) SM
+                option(value='M') MD
+                option(value='L') LG
+                option(value='XL') XL
+                option(value='XXL') XXL
+
+        .col-lg-8.m-3
+            label.form-label(for='major') Major
+            select#major.form-select(name='major')
+                option(disabled) Select
+                option(value='Computer science, computer engineering, or software engineering', selected) Computer science, computer engineering, or software engineering
+
+
+        .col-lg-8.m-3
+            label.form-label(for='pronouns') Pronouns
+            select#pronouns.form-select(name="pronouns")
+                option(disabled) Select
+                option(value='he/him', selected) he/him
+                option(value='she/her') she/her
+                option(value='they/them') they/them
+                option(value='ze/zir') ze/zir
+                option(value='Other') Other
+                option(value='Prefer Not to Answer') Prefer Not to Answer
+
+        .col-lg-8.m-3
+            label.form-label(for='underrep') Underrepresented Group
+            select#underrep.form-select(name='underrep_group', required)
+                option(disabled) Select
+                option(value='Yes') Yes
+                option(value='No') No
+                option(value='Unsure') Unsure
+                option(value='Prefer not to answer') Prefer not to answer
+
+        .col-lg-8.m-3
+            label.form-label(for='race') Race
+            select#race.form-select(name="race")
+                option(disabled) Select
+                option(value='Asian Indian') Asian Indian
+                option(value='Black or African') Black or African
+                option(value='Chinese') Chinese
+                option(value='Filipino') Filipino
+                option(value='Guamanian or Chamorro') Guamanian or Chamorro
+                option(value='Hispanic / Latino / Spanish Origin') Hispanic / Latino / Spanish Origin
+                option(value='Japanese') Japanese
+                option(value='Korean') Korean
+                option(value='Middle Eastern') Middle Eastern
+                option(value='Native American or Alaskan Native') Native American or Alaskan Native
+                option(value='Native Hawaiian') Native Hawaiian
+                option(value='Samoan') Samoan
+                option(value='Vietnamese') Vietnamese
+                option(value='White') White
+                option(value='Other Asian (Thai, Cambodian, etc)') Other Asian (Thai, Cambodian, etc)
+                option(value='Other Pacific Islander') Other Pacific Islander
+                option(value='Other') Other
+                option(value='Prefer not to answer') Prefer not to answer
+
+        .col-lg-8.m-3
+            label.form-label(for='sexOrient') Sexual Orientation
+            select#sexOrient.form-select(name="sex_orient" type="text")
+                option(disabled) Select
+                option(value='Heterosexual or straight', selected) Heterosexual or straight
+                option(value='Gay or lesbian') Gay or lesbian
+                option(value='Bisexual') Bisexual
+                option(value='Other') Other
+                option(value='Prefer not to answer') Prefer not to answer
+
+        .col-lg-8.m-3
+            label.form-label(for='eduComplete') Education Completed
+            select#eduComplete.form-select(name="edu_completed" required)
+                option(disabled) Select
+                option(value='Less than Secondary / High School') Less than Secondary / High School
+                option(value='Undergraduate University (2 year - community college or similar)') Undergraduate University (2 year - community college or similar)
+                option(value='Undergraduate University (3+ year)') Undergraduate University (3+ year)
+                option(value='Graduate University (Masters, Professional, Doctoral, etc)') Graduate University (Masters, Professional, Doctoral, etc)
+                option(value='Code School / Bootcamp') Code School / Bootcamp
+                option(value='Other Vocational / Trade Program or Apprenticeship') Other Vocational / Trade Program or Apprenticeship
+                option(value='Other') Other
+                option(value='I’m not currently a student') I’m not currently a student
+                option(value='Prefer not to answer') Prefer not to answer
+
+        .col-lg-8.m-3
+            label.form-label(for='github') Github Link
+            input#github(type="url" class="form-control" placeholder="Github" pattern=".*\.github\..*", name = "github", required)
+
+        .col-lg-8.m-3
+            label.form-label(for='linkedin') Linkedin
+            input#linkedin(type="url" class="form-control" placeholder="LinkedIn" pattern=".*\.linkedin\..*", name = "linked_in", required)
+
         input(type="submit")
