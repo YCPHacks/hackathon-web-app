@@ -6,4 +6,8 @@ const router = express.Router();
 
 router.use('/events', events);
 
+router.get('/dashboard', (req, res) => {
+    res.status(200).render('dashboard');
+});
+
 export { router };
