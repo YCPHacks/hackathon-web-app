@@ -35,4 +35,8 @@ app.use((req, res, next) => {
 app.use('/', router);
 app.use('/dashboard', requiresAuth(), dashboard);
 
+app.use((req, res) => {
+  res.status(404).render('_404');
+});
+
 export { app };
