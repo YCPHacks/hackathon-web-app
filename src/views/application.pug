@@ -1,8 +1,8 @@
-extends layout/layout
+extends includes/dashboard_bar
 
 block main
-    form(method="POST")
 
+    form(method="POST")
         .col-lg-8.m-3
             label.form-label(for='age') Age:
             input#age.form-control(type='number', name='age', min='13', max='99', required)
