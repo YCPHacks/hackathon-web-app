@@ -4,7 +4,7 @@ import pkg from 'express-openid-connect';
 const { auth, requiresAuth } = pkg;
 
 import { router } from './routes/index.mjs';
-import { router as events } from './routes/events.mjs';
+import { router as dashboard } from './routes/dashboard.mjs';
 
 const app = express();
 
@@ -33,6 +33,6 @@ app.use((req, res, next) => {
 });
 
 app.use('/', router);
-app.use('/events', requiresAuth(), events);
+app.use('/dashboard', requiresAuth(), dashboard);
 
 export { app };
