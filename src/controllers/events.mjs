@@ -17,9 +17,9 @@ console.log(process.env);
   };
 
   try {
-    const response = await fetch(url, options);
+    return await fetch(url, options);
 
-    return response;
+   // return response;
   } catch (err) {
 console.log(err);
 

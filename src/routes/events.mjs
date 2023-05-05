@@ -14,7 +14,6 @@ router.get('/:event/application', async (req, res) => {
   );
 
   res.locals.application = data;
-console.log(res.locals);
 
   res.render('application');
 });
