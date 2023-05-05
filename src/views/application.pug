@@ -14,23 +14,23 @@ block main
 
             .col-lg-8.m-3
                 label.form-label(for='country') Country
-                select#country.form-select(required, name='country', value= application[7])
-                    option(selected) Other
+                select#country.form-select(required, name='country')
+                    option(selected, value= application[7])= application[7]
                     option(value='United States of America') United States of America
 
 
 
             .col-lg-8.m-3
                 label.form-label(for='School') School
-                select#School.form-select(name="school" required, value= application[8])
-                    option(disabled) Select
-                    option(value='York College of Pennsylvania', selected) York College of Pennsylvania
+                select#School.form-select(name="school" required, )
+                    option(selected, value= application[8])= application[8]
+                    option(value='York College of Pennsylvania') York College of Pennsylvania
 
             .col-lg-8.m-3
                 label.form-label(for='edu_lvl') Education Level
                 select#edu_lvl.form-select(name="edu_lvl" required, value= application[9])
-                    option(disabled='', value='') Select
-                    option(value='Less than Secondary / High School', selected) Less than Secondary / High School
+                    option(selected='', value= application[9])= application[9]
+                    option(value='Less than Secondary / High School') Less than Secondary / High School
                     option(value='Secondary / High School') Secondary / High School
                     option(value='Undergraduate University (2 year - community college or similar)') Undergraduate University (2 year - community college or similar)
                     option(value='Undergraduate University (3+ year)') Undergraduate University (3+ year)
@@ -44,8 +44,8 @@ block main
 
             .col-lg-8.m-3
                 label.form-label(for='eduComplete') Education Completed
-                select#eduComplete.form-select(name="edu_completed" required, value= application[10])
-                    option(disabled) Select
+                select#eduComplete.form-select(name="edu_completed" required)
+                    option(value=value= application[10], selected)= application[10]
                     option(value='Less than Secondary / High School') Less than Secondary / High School
                     option(value='Undergraduate University (2 year - community college or similar)') Undergraduate University (2 year - community college or similar)
                     option(value='Undergraduate University (3+ year)') Undergraduate University (3+ year)
@@ -58,8 +58,8 @@ block main
 
             .col-lg-8.m-3
                 label.form-label(for='underrep') Underrepresented Group
-                select#underrep.form-select(name='underrep_group', value= application[11])
-                    option(disabled) Select
+                select#underrep.form-select(name='underrep_group')
+                    option(selected, value= application[11])= application[11]
                     option(value='Yes') Yes
                     option(value='No') No
                     option(value='Unsure') Unsure
@@ -67,8 +67,8 @@ block main
 
             .col-lg-8.m-3
                 label.form-label(for='Gender') Gender
-                select#Gender.form-select(name="gender", required, value= application[12])
-                    option(disabled) Select
+                select#Gender.form-select(name="gender", required)
+                    option(selected, value= application[12])= application[12]
                     option(value='Man', selected) Man
                     option(value='Woman') Woman
                     option(value='Non-Binary') Non-Binary
@@ -76,8 +76,8 @@ block main
                     option(value='Other') Other
             .col-lg-8.m-3
                 label.form-label(for='pronouns') Pronouns
-                select#pronouns.form-select(name="pronouns", value= application[13])
-                    option(disabled) Select
+                select#pronouns.form-select(name="pronouns")
+                    option(selected, value= application[13])= application[13]
                     option(value='he/him', selected) he/him
                     option(value='she/her') she/her
                     option(value='they/them') they/them
@@ -87,8 +87,8 @@ block main
 
             .col-lg-8.m-3
                 label.form-label(for='race') Race
-                select#race.form-select(name="race", value= application[14])
-                    option(disabled) Select
+                select#race.form-select(name="race")
+                    option(selected, value= application[14])= application[14]
                     option(value='Asian Indian') Asian Indian
                     option(value='Black or African') Black or African
                     option(value='Chinese') Chinese
@@ -110,8 +110,8 @@ block main
 
             .col-lg-8.m-3
                 label.form-label(for='sexOrient') Sexual Orientation
-                select#sexOrient.form-select(name="sex_orient", value= application[15])
-                    option(disabled) Select
+                select#sexOrient.form-select(name="sex_orient")
+                    option(selected, value= application[15])= application[15]
                     option(value='Heterosexual or straight', selected) Heterosexual or straight
                     option(value='Gay or lesbian') Gay or lesbian
                     option(value='Bisexual') Bisexual
@@ -120,14 +120,14 @@ block main
 
             .col-lg-8.m-3
                 label.form-label(for='major') Major
-                select#major.form-select(name='major', value= application[16])
-                    option(disabled) Select
+                select#major.form-select(name='major')
+                    option(selected, value= application[16])= application[16]
                     option(value='Computer science, computer engineering, or software engineering', selected) Computer science, computer engineering, or software engineering
 
             .col-lg-8.m-3
                 label.form-label(for='tShirt') T-Shirt Size
-                select#tShirt.form-select(name="t_shirt_size" required, value= application[17])
-                    option(disabled) Select
+                select#tShirt.form-select(name="t_shirt_size" required)
+                    option(selected, value= application[17])= application[17]
                     option(value='S' , selected) SM
                     option(value='M') MD
                     option(value='L') LG
