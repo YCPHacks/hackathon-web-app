@@ -29,11 +29,7 @@ app.use((req, res, next) => {
   res.locals.user = req.oidc.user ?? {};
   res.locals.userRoles = req.oidc.user?.ycp_hacks_user_roles;
 
-  res.locals.metadata = {
-    originalURL: req.originalUrl
-  };
-
-  console.log(req.originalUrl);
+  console.log(req.body);
 
   next();
 });
