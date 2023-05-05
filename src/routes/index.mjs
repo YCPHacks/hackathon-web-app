@@ -8,9 +8,6 @@ import { router as dashboard } from './dashboard.mjs';
 const router = express.Router();
 
 router.get('/', (req, res) => {
-  res.send('home');
-});
-router.get('/', (req, res) => {
   res.status(200).render('index');
 });
 router.get('/gallery', (req, res) => {
