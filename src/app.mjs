@@ -9,6 +9,7 @@ const app = express();
 app.set('view engine', 'pug');
 app.set('views', './src/views');
 
+app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use(auth({
@@ -32,5 +33,9 @@ app.use((req, res, next) => {
 });
 
 app.use('/', router);
+
+app.use((err, req, res, next) => {
+//  res.status(err.status ?? 500).json({ error: err.message });
+});
 
 export { app };
