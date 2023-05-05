@@ -1,6 +1,7 @@
 import express from 'express';
 
 import {
+  createEventApplication,
   readEventApplication
 } from '../controllers/events.mjs';
 
@@ -13,8 +14,11 @@ events.get('/:event/application', async (req, res) => {
       .catch(console.log);
 
   res.locals.metadata = {
+    ...res.locals.metadata,
     event: req.params.event
   };
+
+  console.log(res.locals);
 
   if (response.status === 400 && response.message === 'Record not found') {
     res.status(200).render('blank_application');
@@ -31,7 +35,9 @@ events.get('/:event/application', async (req, res) => {
 });
 
 events.post('/:event/application', async (req, res) => {
-  res.redirect(303, '/dashboard');
+  const response = await createEventApplication();
+
+  res.redirect(303, `dashboard/events/${req.params.event}/application`);
 });
 
 export { events };
