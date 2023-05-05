@@ -1,10 +1,5 @@
 import express from 'express';
 
-import pkg from 'express-openid-connect';
-const { requiresAuth } = pkg;
-
-import { router as dashboard } from './dashboard.mjs';
-
 const router = express.Router();
 
 router.get('/', (req, res) => {
@@ -22,7 +17,5 @@ router.get('/past_events', (req, res) => {
 router.get('/sponsor', (req, res) => {
   res.status(200).render('sponsor');
 });
-
-
 
 export { router };
