@@ -134,8 +134,8 @@ block main
                         hr
 
                     .col-lg-8.m-3
-                        label.form-label(for='pronoun') What pronouns do you go by?
-                        select#pronoun.form-select(name='pronoun', required)
+                        label.form-label(for='pronouns') What pronouns do you go by?
+                        select#pronouns.form-select(name='pronouns', required)
                             option(selected='', value=data.application[14], disabled='')=data.application[14]
                             option(value='he/him') he/him
                             option(value='she/her') she/her
@@ -287,8 +287,8 @@ block main
                         .invalid-feedback
                             | Ensure this is a Github link
                     .col-lg-8.m-3
-                        label.form-label(for='linkedin') LinkedIn
-                        input#linkedin(type="url" class='form-control' placeholder='LinkedIn' pattern=".*\.linkedin.com\..*", name='linkedin', required, value=data.application[21])
+                        label.form-label(for='linked_in') LinkedIn
+                        input#linked_in(type="url" class='form-control' placeholder='LinkedIn' pattern=".*\.linkedin.com\..*", name='linked_in', required, value=data.application[21])
                         .invalid-feedback
                             | Ensure this is a Linkedin link
 
