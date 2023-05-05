@@ -5,39 +5,28 @@ import {
   readEventApplication
 } from '../controllers/events.mjs';
 
-const events = express.Router();
+const router = express.Router();
 
-events.get('/:event/application', async (req, res) => {
-  const response = await readEventApplication(
-        req.oidc.accessToken.access_token,
-        req.params.event)
-      .catch(console.log);
+router.get('/:event/application', async (req, res) => {
+  const data = await readEventApplication(
+    req.oidc.accessToken,
+    req.params.event
+  );
 
-  res.locals.metadata = {
-    ...res.locals.metadata,
-    event: req.params.event
-  };
-
-  console.log(res.locals);
-
-  if (response.status === 400 && response.message === 'Record not found') {
-    res.status(200).render('blank_application');
-  }
-
-  res.locals = {
-    ...res.locals,
-    data: {
-      application: response.data.application.flat()
-    }
-  };
-
-  res.status(200).render('application');
+  res.render('application');
 });
 
-events.post('/:event/application', async (req, res) => {
-  const response = await createEventApplication();
+router.post('/:event/application', async (req, res) => {
+  const application = { ...req.body };
+
+  console.log(application);
+
+  await createEventApplication(
+    req.oidc.accessToken,
+    application
+  );
 
   res.redirect(303, req.originalUrl);
 });
 
-export { events };
+export { router };

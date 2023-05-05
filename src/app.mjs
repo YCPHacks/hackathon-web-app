@@ -1,13 +1,17 @@
 import express from 'express';
 import 'express-async-errors';
-import { auth } from 'express-openid-connect';
+import pkg from 'express-openid-connect';
+const { auth, requiresAuth } = pkg;
 
 import { router } from './routes/index.mjs';
+import { router as events } from './routes/events.mjs';
 
 const app = express();
 
 app.set('view engine', 'pug');
 app.set('views', './src/views');
+
+app.use('/static', express.static('./src/public'));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -22,22 +26,13 @@ app.use(auth({
   idpLogout: true
 }));
 
-app.use('/static', express.static('./src/public'));
-
 app.use((req, res, next) => {
   res.locals.isAuthenticated = req.oidc.isAuthenticated();
-  res.locals.user = req.oidc.user ?? {};
-  res.locals.userRoles = req.oidc.user?.ycp_hacks_user_roles;
-
-  console.log(req.body);
 
   next();
 });
 
 app.use('/', router);
-
-app.use((err, req, res, next) => {
-//  res.status(err.status ?? 500).json({ error: err.message });
-});
+app.use('/events', requiresAuth(), events);
 
 export { app };
