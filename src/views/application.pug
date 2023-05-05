@@ -14,7 +14,7 @@ block main
 
             .col-lg-8.m-3
                 label.form-label(for='country') Country
-                select#country.form-select(required, name='country')
+                select#country.form-select(required, name='country', value= application[7])
                     option(selected) Other
                     option(value='United States of America') United States of America
 
@@ -22,13 +22,13 @@ block main
 
             .col-lg-8.m-3
                 label.form-label(for='School') School
-                select#School.form-select(name="school" required)
+                select#School.form-select(name="school" required, value= application[8])
                     option(disabled) Select
                     option(value='York College of Pennsylvania', selected) York College of Pennsylvania
 
             .col-lg-8.m-3
                 label.form-label(for='edu_lvl') Education Level
-                select#edu_lvl.form-select(name="edu_lvl" required)
+                select#edu_lvl.form-select(name="edu_lvl" required, value= application[9])
                     option(disabled='', value='') Select
                     option(value='Less than Secondary / High School', selected) Less than Secondary / High School
                     option(value='Secondary / High School') Secondary / High School
@@ -44,7 +44,7 @@ block main
 
             .col-lg-8.m-3
                 label.form-label(for='eduComplete') Education Completed
-                select#eduComplete.form-select(name="edu_completed" required)
+                select#eduComplete.form-select(name="edu_completed" required, value= application[10])
                     option(disabled) Select
                     option(value='Less than Secondary / High School') Less than Secondary / High School
                     option(value='Undergraduate University (2 year - community college or similar)') Undergraduate University (2 year - community college or similar)
@@ -58,7 +58,7 @@ block main
 
             .col-lg-8.m-3
                 label.form-label(for='underrep') Underrepresented Group
-                select#underrep.form-select(name='underrep_group', required)
+                select#underrep.form-select(name='underrep_group', value= application[11])
                     option(disabled) Select
                     option(value='Yes') Yes
                     option(value='No') No
@@ -67,7 +67,7 @@ block main
 
             .col-lg-8.m-3
                 label.form-label(for='Gender') Gender
-                select#Gender.form-select(name="gender", required)
+                select#Gender.form-select(name="gender", required, value= application[12])
                     option(disabled) Select
                     option(value='Man', selected) Man
                     option(value='Woman') Woman
@@ -76,7 +76,7 @@ block main
                     option(value='Other') Other
             .col-lg-8.m-3
                 label.form-label(for='pronouns') Pronouns
-                select#pronouns.form-select(name="pronouns")
+                select#pronouns.form-select(name="pronouns", value= application[13])
                     option(disabled) Select
                     option(value='he/him', selected) he/him
                     option(value='she/her') she/her
@@ -87,7 +87,7 @@ block main
 
             .col-lg-8.m-3
                 label.form-label(for='race') Race
-                select#race.form-select(name="race")
+                select#race.form-select(name="race", value= application[14])
                     option(disabled) Select
                     option(value='Asian Indian') Asian Indian
                     option(value='Black or African') Black or African
@@ -110,7 +110,7 @@ block main
 
             .col-lg-8.m-3
                 label.form-label(for='sexOrient') Sexual Orientation
-                select#sexOrient.form-select(name="sex_orient")
+                select#sexOrient.form-select(name="sex_orient", value= application[15])
                     option(disabled) Select
                     option(value='Heterosexual or straight', selected) Heterosexual or straight
                     option(value='Gay or lesbian') Gay or lesbian
@@ -120,13 +120,13 @@ block main
 
             .col-lg-8.m-3
                 label.form-label(for='major') Major
-                select#major.form-select(name='major')
+                select#major.form-select(name='major', value= application[16])
                     option(disabled) Select
                     option(value='Computer science, computer engineering, or software engineering', selected) Computer science, computer engineering, or software engineering
 
             .col-lg-8.m-3
                 label.form-label(for='tShirt') T-Shirt Size
-                select#tShirt.form-select(name="t_shirt_size" required)
+                select#tShirt.form-select(name="t_shirt_size" required, value= application[17])
                     option(disabled) Select
                     option(value='S' , selected) SM
                     option(value='M') MD
@@ -136,15 +136,15 @@ block main
 
             .col-lg-8.m-3
                 label.form-label(for='food') Food Restrictions
-                input#food.form-control(name="food_restrict" type="text" placeholder="Food Restrictions")
+                input#food.form-control(name="food_restrict" type="text" placeholder="Food Restrictions", value= application[18])
 
             .col-lg-8.m-3
                 label.form-label(for='github') Github Link
-                input#github(type="url" class="form-control" placeholder="Github" pattern=".*\.github\..*", name = "github", required)
+                input#github(type="url" class="form-control" placeholder="Github" pattern=".*\.github\..*", name = "github", required, value= application[19])
 
             .col-lg-8.m-3
                 label.form-label(for='linkedin') Linkedin
-                input#linkedin(type="url" class="form-control" placeholder="LinkedIn" pattern=".*\.linkedin\..*", name = "linked_in", required)
+                input#linkedin(type="url" class="form-control" placeholder="LinkedIn" pattern=".*\.linkedin\..*", name = "linked_in", required, value= application[20])
 
             input(type="submit")
 
