@@ -2,13 +2,13 @@ extends includes/dashboard_bar
 
 block main
 
-    if (res.locals.application)
+    if (application)
         form.regContainer.pb-3(method="POST")
             .display-5.p-2.m-3 Required Contact Information
             hr
             .col-lg-8.m-3
                 label.form-label(for='age') Age:
-                input#age.form-control(type='number', name='age', min='13', max='99', required, value= application[0])
+                input#age.form-control(type='number', name='age', min='13', max='99', required, value= application[6])
                 //.invalid-feedback
                 //    | Please enter your age
 
