@@ -45,7 +45,6 @@ block main
 
     else if (userRoles.includes('Attendee'))
         .row.row-cols-1.row-cols-md-3.g-0.m-3.text-center.justify-content-center
-            // -- Submitted Application
             .col
                 .card.m-1.p-2
                     .card-body
@@ -61,7 +60,7 @@ block main
 
     else
         .row.row-cols-1.row-cols-md-1.g-0.m-3.text-center.justify-content-center
-            // -- If no application
+            // -- If just signed up?
             .col-md-6
                 .card.m-1.p-2
                     .card-body
@@ -72,61 +71,3 @@ block main
                             p In order to participate, you will need to fill out our application.
                             p What better time than now?
                         a.btn.btn-primary(href='/dashboard/apply') Apply Now!
-
-    //else if (userRoles.includes('Attendee'))
-    //    .row.row-cols-1.row-cols-md-3.g-0.m-3.text-center
-            // -- Submitted
-
-            //.col
-            //    .card.m-1.p-2
-            //        .card-body
-            //            h2.card-title Hey, Attendee!
-            //            hr
-            //            p.card-text
-            //                p Yay!! Looks like we got your application
-            //                p If there is anything you would like to change in your application,
-            //                | head to the My Application tab and change what you want!
-            //                p We will send a notification whenever there have been updates
-            //                | to your application! :)
-
-            // -- Accepted
-
-            //.col
-            //    .card.m-1.p-2
-            //        .card-body
-            //            h2.card-title Hey, Attendee!!
-            //            hr
-            //            p.card-text
-            //                p Hey! You've been accepted!
-            //            a.btn.btn-success(href='#') RSVP
-            //            a.btn.btn-danger(href='#') Sorry, I can't participate
-
-
-            // - RSVP-ed
-            //.col
-            //    .card.m-1.p-2
-            //        .card-body
-            //            h2.card-title Upcoming Events
-            //            hr
-            //            p.card-text
-            //                table.table
-            //                    thead
-            //                        tr
-            //                            th(scope='col') Event
-            //                            th(scope='col') Time
-            //                    tbody
-            //                        tr
-            //                            td Event
-            //                            td 10:00
-            //                        tr
-            //                            td Event 1
-            //                            td 12:00
-            //            a.btn.btn-secondary(href='#') View All
-            //.col
-            //    .card.m-1.p-2
-            //        .card-body
-            //            h2.card-title Discord Channel
-            //            hr
-            //            p.card-text
-            //                | This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-            //            a.btn.btn-primary(href='#') Go to Discord Channel

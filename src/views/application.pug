@@ -18,15 +18,7 @@ block main
                 option(selected) Other
                 option(value='United States of America') United States of America
 
-        .col-lg-8.m-3
-            label.form-label(for='Gender') Gender
-            select#Gender.form-select(name="gender", required)
-                option(disabled) Select
-                option(value='Man', selected) Man
-                option(value='Woman') Woman
-                option(value='Non-Binary') Non-Binary
-                option(value='Prefer Not to Answer') Prefer Not to Answer
-                option(value='Other') Other
+
 
         .col-lg-8.m-3
             label.form-label(for='School') School
@@ -49,27 +41,39 @@ block main
                 option(value='I’m not currently a student') I’m not currently a student
                 option(value='Prefer not to answer') Prefer not to answer
 
-        .col-lg-8.m-3
-            label.form-label(for='food') Food Restrictions
-            input#food.form-control(name="food_restrict" type="text" placeholder="Food Restrictions")
 
         .col-lg-8.m-3
-            label.form-label(for='tShirt') T-Shirt Size
-            select#tShirt.form-select(name="t_shirt_size" required)
+            label.form-label(for='eduComplete') Education Completed
+            select#eduComplete.form-select(name="edu_completed" required)
                 option(disabled) Select
-                option(value='S' , selected) SM
-                option(value='M') MD
-                option(value='L') LG
-                option(value='XL') XL
-                option(value='XXL') XXL
+                option(value='Less than Secondary / High School') Less than Secondary / High School
+                option(value='Undergraduate University (2 year - community college or similar)') Undergraduate University (2 year - community college or similar)
+                option(value='Undergraduate University (3+ year)') Undergraduate University (3+ year)
+                option(value='Graduate University (Masters, Professional, Doctoral, etc)') Graduate University (Masters, Professional, Doctoral, etc)
+                option(value='Code School / Bootcamp') Code School / Bootcamp
+                option(value='Other Vocational / Trade Program or Apprenticeship') Other Vocational / Trade Program or Apprenticeship
+                option(value='Other') Other
+                option(value='I’m not currently a student') I’m not currently a student
+                option(value='Prefer not to answer') Prefer not to answer
 
         .col-lg-8.m-3
-            label.form-label(for='major') Major
-            select#major.form-select(name='major')
+            label.form-label(for='underrep') Underrepresented Group
+            select#underrep.form-select(name='underrep_group', required)
                 option(disabled) Select
-                option(value='Computer science, computer engineering, or software engineering', selected) Computer science, computer engineering, or software engineering
+                option(value='Yes') Yes
+                option(value='No') No
+                option(value='Unsure') Unsure
+                option(value='Prefer not to answer') Prefer not to answer
 
-
+        .col-lg-8.m-3
+            label.form-label(for='Gender') Gender
+            select#Gender.form-select(name="gender", required)
+                option(disabled) Select
+                option(value='Man', selected) Man
+                option(value='Woman') Woman
+                option(value='Non-Binary') Non-Binary
+                option(value='Prefer Not to Answer') Prefer Not to Answer
+                option(value='Other') Other
         .col-lg-8.m-3
             label.form-label(for='pronouns') Pronouns
             select#pronouns.form-select(name="pronouns")
@@ -80,15 +84,6 @@ block main
                 option(value='ze/zir') ze/zir
                 option(value='Other') Other
                 option(value='Prefer Not to Answer') Prefer Not to Answer
-
-        .col-lg-8.m-3
-            label.form-label(for='underrep') Underrepresented Group
-            select#underrep.form-select(name='underrep_group', required)
-                option(disabled) Select
-                option(value='Yes') Yes
-                option(value='No') No
-                option(value='Unsure') Unsure
-                option(value='Prefer not to answer') Prefer not to answer
 
         .col-lg-8.m-3
             label.form-label(for='race') Race
@@ -124,18 +119,24 @@ block main
                 option(value='Prefer not to answer') Prefer not to answer
 
         .col-lg-8.m-3
-            label.form-label(for='eduComplete') Education Completed
-            select#eduComplete.form-select(name="edu_completed" required)
+            label.form-label(for='major') Major
+            select#major.form-select(name='major')
                 option(disabled) Select
-                option(value='Less than Secondary / High School') Less than Secondary / High School
-                option(value='Undergraduate University (2 year - community college or similar)') Undergraduate University (2 year - community college or similar)
-                option(value='Undergraduate University (3+ year)') Undergraduate University (3+ year)
-                option(value='Graduate University (Masters, Professional, Doctoral, etc)') Graduate University (Masters, Professional, Doctoral, etc)
-                option(value='Code School / Bootcamp') Code School / Bootcamp
-                option(value='Other Vocational / Trade Program or Apprenticeship') Other Vocational / Trade Program or Apprenticeship
-                option(value='Other') Other
-                option(value='I’m not currently a student') I’m not currently a student
-                option(value='Prefer not to answer') Prefer not to answer
+                option(value='Computer science, computer engineering, or software engineering', selected) Computer science, computer engineering, or software engineering
+
+        .col-lg-8.m-3
+            label.form-label(for='tShirt') T-Shirt Size
+            select#tShirt.form-select(name="t_shirt_size" required)
+                option(disabled) Select
+                option(value='S' , selected) SM
+                option(value='M') MD
+                option(value='L') LG
+                option(value='XL') XL
+                option(value='XXL') XXL
+
+        .col-lg-8.m-3
+            label.form-label(for='food') Food Restrictions
+            input#food.form-control(name="food_restrict" type="text" placeholder="Food Restrictions")
 
         .col-lg-8.m-3
             label.form-label(for='github') Github Link
