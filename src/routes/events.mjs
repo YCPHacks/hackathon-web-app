@@ -19,8 +19,6 @@ router.get('/:event/application', async (req, res) => {
 router.post('/:event/application', async (req, res) => {
   const application = { ...req.body };
 
-  console.log(application);
-
   await createEventApplication(
     req.oidc.accessToken,
     application
