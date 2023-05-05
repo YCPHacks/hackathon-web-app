@@ -31,9 +31,6 @@ console.log(err);
 export async function readEventApplication(accessToken, event) {
   const { access_token, token_type } = accessToken;
 
-console.log(accessToken);
-console.log(res.locals);
-
   const url = `${process.env.API_BASE_URL}/events/${event}/application`;
   const options = {
     method: 'GET',
@@ -46,14 +43,10 @@ console.log(res.locals);
   try {
     const response = await fetch(url, options);
 
-console.dir(response);
-
     if (response.ok) {
-      const data = response.json();
+      console.log(await response.json());
 
-console.dir(data);
-
-      return data;
+      return response;
     }
   } catch (err) {
 console.log(err);

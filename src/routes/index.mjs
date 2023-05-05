@@ -22,4 +22,7 @@ router.get('/past_events', (req, res) => {
 router.get('/sponsor', (req, res) => {
   res.status(200).render('sponsor');
 });
+
+
+
 export { router };
