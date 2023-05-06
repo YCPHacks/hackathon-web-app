@@ -75,28 +75,28 @@ block main
         table.table.table-striped.table-bordered.my-4#myTable
             thead
                 tr
-                    th(scope='col')
-                    th(scope='col') Name
-                    th(scope='col') Link
-                    th(scope='col') Category
-                    th(scope='col') Status
-                    th(scope='col') Location
-                tbody
-                    tr
-                        each hardware of hardware_items
-                            tr
-                                th(scope='row')
-                                    input#checkboxNoLabel.form-check-input(type='checkbox', value=hardware[0], name='hardwareItems')
-                                td= hardware[1]
-                                td
-                                    a(href='#')= hardware[2]
-                                td= hardware[3]
-                                td= hardware[4]
-                                td= hardware[5]
-                                //     .d-grid.gap-2.text-nowrap.justify-content-evenly
-                                //         a.btn.btn-secondary(href='') Message on Discord
-                                //         button.btn.btn-danger(type='button') Return Item
-
-        form#formElem
+        //            th(scope='col')
+        //            th(scope='col') Name
+        //            th(scope='col') Link
+        //            th(scope='col') Category
+        //            th(scope='col') Status
+        //            th(scope='col') Location
+        //        tbody
+        //            tr
+        //                each hardware of hardware_items
+        //                    tr
+        //                        th(scope='row')
+        //                            input#checkboxNoLabel.form-check-input(type='checkbox', value=hardware[0], name='hardwareItems')
+        //                        td= hardware[1]
+        //                        td
+        //                            a(href='#')= hardware[2]
+        //                        td= hardware[3]
+        //                        td= hardware[4]
+        //                        td= hardware[5]
+        //                        //     .d-grid.gap-2.text-nowrap.justify-content-evenly
+        //                        //         a.btn.btn-secondary(href='') Message on Discord
+        //                        //         button.btn.btn-danger(type='button') Return Item
+        //
+        //form#formElem
 
         button.btn.btn-danger(onclick=`getChecked()`) Delete
